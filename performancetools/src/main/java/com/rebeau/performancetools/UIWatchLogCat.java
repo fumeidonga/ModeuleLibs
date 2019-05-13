@@ -39,7 +39,7 @@ public class UIWatchLogCat {
 //        String tag = generateTag(caller);
 //        String tag = "";
 
-        Log.w(tag, content + " , 耗时：" + getTimeUse() + " ms " + Thread.currentThread().getName());
+        Log.w(tag, content + " , "  + Thread.currentThread().getName());
         if("lancet".equals(tag) && isneedtofile){
             saveAllStackInfoToFile("AppUiWatcher", "lancet", content.toString());
         }
@@ -53,7 +53,7 @@ public class UIWatchLogCat {
 //        String tag = generateTag(caller);
         String tag = "";
 
-        Log.w("lancet", content + " , 耗时：" + getTimeUse() + " ms " + Thread.currentThread().getName());
+        Log.w("lancet", content + Thread.currentThread().getName());
         if("lancet".equals(tag) && isneedtofile){
             saveAllStackInfoToFile("AppUiWatcher", "lancet", content.toString());
         }

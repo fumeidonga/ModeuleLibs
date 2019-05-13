@@ -217,6 +217,10 @@ public class AppUiWatcher {
         isWatching = false;
     }
 
+    /**
+     * 获取 单个进程可用的最大内存,表示不受控情况下的极限堆
+     * @return
+     */
     public String getHeapstartsize() {
         if(TextUtils.isEmpty(heapStartsize)) {
             heapStartsize = RomUtil.getSystemProperty("dalvik.vm.heapsize");
