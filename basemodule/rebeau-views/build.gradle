@@ -1,0 +1,45 @@
+
+apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
+
+android {
+    compileSdkVersion build_versions.compile_sdk
+    buildToolsVersion build_versions.build_tools
+
+    defaultConfig {
+        if (!isLibaray.toBoolean()) {
+            applicationId "com.rebeau.views"
+        }
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode build_versions.version_code
+        versionName build_versions.version_name
+
+        testInstrumentationRunner deps.androidjunitrunner
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled false
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(':rebeau-base-common')
+
+    //butterknife
+    implementation (deps.butterknife){
+        exclude group: 'com.android.support', module: 'support-compat'
+    }
+    annotationProcessor deps.butterknife_compiler
+}
+

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ttf="http://schemas.android.com/android/ttf"
+    android:id="@+id/tb_root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/tb_status_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical">
+
+        <ImageButton
+            android:id="@+id/tb_navi_back"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/rb_ui_title_bar_selector_nav_back" />
+
+        <TextView
+            android:id="@+id/tb_center_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxEms="10"
+            android:maxLines="1"
+            android:textColor="#333333"
+            android:textSize="18sp"
+            ttf:enable="true" />
+
+        <TextView
+            android:id="@+id/tb_right_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="15dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxEms="10"
+            android:maxLines="1"
+            android:textColor="@drawable/rb_ui_title_bar_selector_sub_primary_text"
+            android:textSize="14sp" />
+
+        <ImageButton
+            android:id="@+id/tb_right_button"
+            android:layout_width="48dp"
+            android:layout_height="56dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="15dp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tb_right_remind"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:layout_alignRight="@id/tb_right_text"
+            android:layout_alignTop="@id/tb_right_text"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/rb_ui_navigation_shape_oval_red"
+            android:visibility="gone" />
+    </RelativeLayout>
+</LinearLayout>

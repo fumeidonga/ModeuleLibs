@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/network_tips_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000">
+
+    <View
+        android:id="@+id/view_dialog_km_red_gift"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#c0000000" />
+
+    <LinearLayout
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/module_share_white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/ModuleShareTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/module_share_app_normal_margin"
+            android:layout_marginTop="@dimen/module_share_app_normal_margin"
+            android:layout_marginLeft="@dimen/module_share_app_plus_margin"
+            android:layout_marginRight="@dimen/module_share_app_plus_margin"
+            android:gravity="center"
+            android:textColor="@color/module_share_gray_font_dark"
+            android:visibility="gone"
+            tools:text="分享到" />
+
+        <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:orientation="vertical" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/invite_way_list"
+            android:background="@drawable/module_share_list_divider" />
+
+        <TextView
+            android:id="@+id/cancel"
+            style="@style/ModuleShareButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/module_share_app_plus_margin"
+            android:text="取消分享"
+            android:textSize="@dimen/module_share_font_larger" />
+    </LinearLayout>
+
+
+</RelativeLayout>

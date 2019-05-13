@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="module_share_gray_light">#f2f2f2</color>
+    <color name="module_share_gray_font_dark">#646464</color>
+    <color name="module_share_black">#202020</color>
+    <color name="module_share_white">#FFFFFF</color>
+</resources>

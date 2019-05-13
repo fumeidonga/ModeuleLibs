@@ -1,0 +1,15 @@
+<resources>
+    <!-- 分享 -->
+    <string name="module_share_share">分享</string>
+    <string name="module_share_share_title">分享到</string>
+    <string name="module_share_moments">朋友圈</string>
+    <string name="module_share_wechat">微信好友</string>
+    <string name="module_share_qq">QQ</string>
+    <string name="module_share_qrcode">面对面邀请</string>
+    <string name="module_share_qzone">QQ空间</string>
+
+    <!-- item -->
+    <string name="module_share_delete">删除</string>
+    <string name="module_share_add_item">添加</string>
+    <string name="module_share_title_item">功能</string>
+</resources>

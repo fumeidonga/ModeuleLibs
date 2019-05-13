@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 滑动返回阈值-->
+    <dimen name="modulecommon_dimen_swipe_back">100dp</dimen>
+
+
+    <dimen name="rb_ui_title_bar_height">56dp</dimen>
+    <dimen name="rb_ui_title_bar_image_button_width">48dp</dimen>
+    <dimen name="rb_ui_title_bar_image_button_height">56dp</dimen>
+    <dimen name="rb_ui_title_bar_right_text_interval">14dp</dimen>
+    <dimen name="rb_ui_title_bar_primary_title_text_size">20sp</dimen>
+    <dimen name="rb_ui_title_bar_sub_primary_title_text_size">14sp</dimen>
+
+
+</resources>

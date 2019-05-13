@@ -1,0 +1,48 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- dialog style -->
+    <style name="dv_base_fragment_dialog_slide" parent="@android:style/Theme.Dialog">
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowAnimationStyle">@style/dv_slide_in_out_from_bottom</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+    </style>
+    <!-- 从下往上的动画-->
+    <style name="dv_slide_in_out_from_bottom" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/rb_translate_one_to_zero</item>
+        <item name="android:windowExitAnimation">@anim/rb_translate_zero_to_one</item>
+    </style>
+
+    <!-- dialog style -->
+    <style name="dv_base_fragment_dialog_alpha" parent="@android:style/Theme.Dialog">
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowAnimationStyle">@style/dv_alpha_change</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+    </style>
+    <style name="dv_alpha_change" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/rb_alpha_dot9_to_one</item>
+        <item name="android:windowExitAnimation">@anim/rb_alpha_one_to_zero</item>
+    </style>
+
+    <declare-styleable name="ButtonStyle">
+        <attr name="style_type">
+            <enum name="one" value="1" />
+            <enum name="two" value="2" />
+            <enum name="three" value="3" />
+            <enum name="four" value="4" />
+        </attr>
+        <attr name="stroke_width" format="dimension"/>
+    </declare-styleable>
+
+</resources>

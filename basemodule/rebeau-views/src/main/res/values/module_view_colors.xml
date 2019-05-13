@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 基本颜色color -->
+    <color name="rb_ui_color_one">#ff8d00</color>
+    <color name="rb_ui_color_two">#333333</color>
+    <color name="rb_ui_color_three">#666666</color>
+    <color name="rb_ui_color_four">#999999</color>
+    <color name="rb_ui_color_five">#ff4242</color>
+    <color name="rb_ui_color_six">#f5f5f5</color>
+    <color name="rb_ui_color_seven">#ebebeb</color>
+
+    <!-- 基本文字颜色color -->
+    <color name="rb_ui_text_color_one">#ff8d00</color>
+    <color name="rb_ui_text_color_two">#333333</color>
+    <color name="rb_ui_text_color_three">#666666</color>
+    <color name="rb_ui_text_color_four">#999999</color>
+    <color name="rb_ui_text_color_five">#ff4242</color>
+
+    <!-- titlebar相关色 -->
+    <color name="rb_ui_title_bar_text_color_primary_title">@color/rb_ui_text_color_two</color>
+    <color name="rb_ui_title_bar_text_color_sub_primary_title">@color/rb_ui_text_color_two</color>
+    <color name="rb_ui_title_bar_text_color_sub_primary_title_press">#b3333333</color>
+    <color name="rb_ui_title_bar_text_color_sub_primary_sub_title">@color/rb_ui_text_color_four</color>
+    <color name="rb_ui_title_bar_text_color_sub_primary_sub_title_press">#b3999999</color>
+    <color name="rb_ui_title_bar_background_sub_primary">@android:color/white</color>
+    <color name="rb_ui_title_bar_background_sub_primary_reader">@color/rb_ui_text_color_two</color>
+
+    <color name="rb_ui_button_text_color_main">@android:color/white</color>
+    <color name="rb_ui_button_text_color_main_press">@android:color/white</color>
+    <color name="rb_ui_button_text_color_sub">@color/rb_ui_color_one</color>
+    <color name="rb_ui_button_text_color_sub_press">#b3ff8d00</color>
+    <color name="rb_ui_button_text_color_reserve">@color/rb_ui_text_color_two</color>
+    <color name="rb_ui_button_text_color_reserve_press">#b3333333</color>
+    <color name="rb_ui_button_text_color_disabled">@color/rb_ui_text_color_four</color>
+
+    <!-- 线框按钮边线 -->
+    <color name="rb_ui_button_border_line">#d8d8d8</color>
+    <color name="rb_ui_button_border_line_dark">#ccd8d8d8</color>
+    <!-- app主色 -->
+    <color name="rb_ui_app_color_primary">#ff8d00</color>
+    <color name="rb_ui_app_color_primary_dark">#b3ff8d00</color>
+</resources>

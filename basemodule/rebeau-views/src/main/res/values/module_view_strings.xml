@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ModuleViews</string>
+    <!-- 空值页 -->
+    <string name="rb_ui_empty_remind_no_data">暂无数据</string>
+    <string name="rb_ui_empty_remind_network_error">无网络，请检查网络连接后重试</string>
+    <string name="rb_ui_empty_remind_try_again">重试</string>
+
+    <!-- loading相关 -->
+    <string name="rb_ui_loading_main">正在加载中...</string>
+    <string name="rb_ui_loading_more_tip">上滑加载更多数据</string>
+    <string name="rb_ui_loading_more_none">没有更多数据了</string>
+    <string name="rb_ui_loading_more_error">数据加载错误，请重试</string>
+</resources>

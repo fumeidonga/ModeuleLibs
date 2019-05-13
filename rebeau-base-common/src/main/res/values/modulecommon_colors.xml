@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <!-- statusbar相关颜色 -->
+    <color name="rb_ui_status_bar_background">#4d000000</color>
+
+    <color name="white">#FFFFFF</color>
+
+    <color name="color_1b1b1b">#1b1b1b</color>
+    <color name="color_202517">#202517</color>
+    <color name="color_262626">#262626</color>
+    <color name="color_333333">#222222</color>
+    <color name="color_35291E">#35291E</color>
+    <color name="color_3a3a3a">#3a3a3a</color>
+    <color name="color_4a4a4a">#4a4a4a</color>
+    <color name="color_666666">#666666</color>
+    <color name="color_999999">#999999</color>
+    <color name="color_806855">#806855</color>
+    <color name="color_cccccc">#cccccc</color>
+    <color name="color_cecece">#cecece</color>
+    <color name="color_e0e3e5">#e0e3e5</color>
+    <color name="color_ebebeb">#ebebeb</color>
+    <color name="color_f5f5f5">#f5f5f5</color>
+    <color name="color_fea054">#fea054</color>
+    <color name="color_faf6ed">#FAF6ED</color>
+    <color name="color_ff9744">#FF9744</color>
+    <color name="color_fffae4">#FFFAE4</color>
+    <color name="color_ffffff">#ffffff</color>
+    <color name="color_cfcfcf">#cfcfcf</color>
+    <color name="color_8f98a1">#8f98a1</color>
+    <color name="color_222222">#222222</color>
+    <color name="color_ff4242">#ff4242</color>
+    <color name="color_ff631f">#ff631f</color>
+    <color name="color_40000000">#40000000</color>
+    <color name="color_40ffffff">#40ffffff</color>
+    <color name="color_ff7e7b77">#ff7e7b77</color>
+    <color name="color_ff222222">#ff222222</color>
+    <color name="color_ffdddddd">#ffdddddd</color>
+    <color name="color_cbc2b6">#CBC2B6</color>
+    <color name="color_ff5f0f">#ff5f0f</color>
+    <color name="color_5d5b58">#5d5b58</color>
+    <color name="center_line_color">#ebebeb</color>
+
+</resources>

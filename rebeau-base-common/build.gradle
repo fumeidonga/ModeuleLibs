@@ -1,0 +1,231 @@
+apply plugin: 'com.android.library' //说明 module 的类型
+
+//if(isLibaray.toBoolean()){
+//    apply plugin: 'com.android.library'
+//} else {
+//    apply plugin: 'com.android.application'
+//}
+//apply plugin: 'com.jakewharton.butterknife'
+
+//compileSdkVersion:编译版本，真正决定代码是否能编译的关键，比如设置成23，就无法使用httpclient,
+// 低版本编译出来的apk可以在高版本上运行，因为向下兼容，高版本编译的apk运行到低版本，
+
+//buildToolsVersion：编译工具的版本，一般设置为最新即可
+//兼容包得版本一般要配置跟编译版本一致，比如编译版本配置为22，v7兼容包也要配置为22，否则会出错
+
+// minSdkVersion的也没有问题，因为编译时就会考虑兼容性，低版本会有v4,v7这些兼容包
+//minSdkVersion：最小支持版本，比如设置成15，就无法在低于15的版本运行
+
+//targetSdkVersion：只是一个标示，如果targetSdkVersion与目标设备的API版本相同时，
+// 运行效率可能会高一些，编译阶段没有实质性作用
+
+android {
+    compileSdkVersion build_versions.compile_sdk
+    buildToolsVersion build_versions.build_tools
+
+    // compileOptions 块选择编译器使用的版本。默认由 compileSdkVersion 的值来决定
+    // 编译选项
+    // 设置 Java 的版本
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+//        if(!isLibaray.toBoolean()){
+//            applicationId "com.android.modulepays"
+//        }
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode build_versions.version_code
+        versionName build_versions.version_name
+
+        testInstrumentationRunner deps.androidjunitrunner
+
+    }
+
+    /*signingConfigs {  //签名配置
+        release {  //发布版本签名配置
+            storeFile file("fk.keystore")  //密钥文件路径
+            storePassword  "123"  //密钥文件密码
+            keyAlias  "fk"  //key 别名
+            keyPassword  "123"  //key 密码
+        }
+        debug {  //debug版本签名配置
+            storeFile file("fk.keystore")
+            storePassword  "123"
+            keyAlias  "fk"
+            keyPassword  "123"
+        }
+    }*/
+
+    // 编译配置.
+    buildTypes {
+        release {
+            minifyEnabled false
+            //proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled false
+        }
+    }
+
+    // Lint配置.
+    lintOptions {
+        // 移除lint检查的error
+        abortOnError false
+    }
+
+    sourceSets {//目录指向配置
+//        main.java.srcDirs = ['src/main/java']
+//        main.aidl.srcDirs = ['src/main/java']
+//        main.res.srcDirs = ['src/main/res']
+//        main.manifest.srcFile 'src/main/AndroidManifest.xml'
+//        main.jniLibs.srcDirs = ['src/main/libs']
+//        main.jni.srcDirs = []
+
+        main {
+            if (!isLibaray.toBoolean()) {
+                manifest.srcFile 'src/main/debug/AndroidManifest.xml'
+                java.srcDirs = ['src/main/debug/java', 'src/main/java']
+                aidl.srcDirs = ['src/main/debug/java', 'src/main/java']
+                res.srcDirs = ['src/main/debug/res', 'src/main/res']
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'//指定 AndroidManifest 文件
+                //release模式下排除debug文件夹中的所有Java文件
+//                java {
+//                    exclude 'debug/**'
+//                }
+                java.srcDirs = ['src/main/java'] //指定 source 目录
+                aidl.srcDirs = ['src/main/java'] //指定 source 目录
+                resources.srcDirs = ['src/main/java']  //指定 source 目录
+                renderscript.srcDirs = ['src/main/java']  //指定 source 目录
+
+                res.srcDirs = ['src/main/res']//指定资源目录
+                assets.srcDirs = ['assets']  //指定 assets 目录
+                jniLibs.srcDirs = ['libs']  //指定 lib 库目录
+            }
+        }
+    }
+
+    //Library 支持调试模式, 这样在编译完成后，默认情况下我们可以在输出目录看到两个 aar 文件（之前只有一个）。
+    // 然后在项目中声明依赖的时候，区分不同的编译类型进行依赖,改成下面这样的
+//    //implementation project(':rebeau-commons-module')
+//    debugImplementation project(path: ':rebeau-commons-module', configuration: 'debug')
+//    releaseImplementation project(path: ':rebeau-commons-module', configuration: 'release')
+    //publishNonDefault = true
+}
+
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+
+    // ---------   begin  ------------
+    api deps.multidex
+
+    //    test
+    testImplementation deps.junit
+    androidTestImplementation deps.atsl.runner
+    androidTestImplementation deps.espresso.core
+
+    // lifecycle
+    api deps.lifecycle.runtime
+    api deps.lifecycle.extensions
+    api deps.lifecycle.java8
+    annotationProcessor deps.lifecycle.compiler
+
+    //    kotlin
+    api deps.kotlin.stdlib
+
+    //   android design support
+    api deps.support.v4
+    api deps.support.v4_compat
+    api deps.support.v4_core_utils
+    api deps.support.v4_core_ui
+    api deps.support.v4_media_compat
+    api deps.support.v4_fragment
+
+    api deps.support.app_compat
+    api deps.support.cardview
+    api deps.support.gridlayout
+    api deps.support.mediarouter
+    api deps.support.palette
+    api deps.support.recyclerview
+    api deps.support.preference_v7
+
+    api deps.support.preference
+
+    api deps.support.annotations
+
+    api deps.support.design
+
+    api deps.support.customtabs
+
+    api deps.support.constraint_layout
+
+    api deps.support.asynclayoutinflater
+
+    // ---------  fastjson begin  ------------
+    // https://github.com/alibaba/fastjson
+    api deps.fastjson
+    api deps.gson
+
+
+    // ---------  lottie begin (json 动画播放库) ------------
+    api (deps.airbnb_lottie) {
+        exclude(group: 'com.android.support')
+    }
+
+
+    // ---------  logger begin  ------------
+    api deps.logger
+
+    // ---------  rxjava begin  ------------
+    api deps.rx.rxjava2
+    api deps.rx.rx_android
+
+    // ---------  butterknife begin  ------------
+//    apply plugin: 'com.jakewharton.butterknife'
+    /*
+
+    classpath deps.butterknife_plugin
+
+
+    implementation (deps.butterknife){
+        exclude group: 'com.android.support', module: 'support-compat'
+    }
+    //If you are using Kotlin, replace annotationProcessor with kapt
+    annotationProcessor deps.butterknife_compiler
+
+    kapt                deps.butterknife_compiler
+    */
+
+    //dagger
+    /*
+    implementation deps.dagger.runtime
+    implementation deps.dagger.android
+    implementation deps.dagger.androidsupport
+    annotationProcessor deps.dagger.androidprocessor
+    annotationProcessor deps.dagger.compiler
+    */
+
+    //lancet aop 编程切入方案
+    /*
+    classpath deps.lancet_plugin
+    apply plugin: 'me.ele.lancet'
+
+    dependencies {
+        implementation deps.lancet
+    }
+    */
+
+
+    //自动化检测
+//    implementation deps.blockcanary
+
+    //anrwatchdog
+    //new ANRWatchDog().start();
+//    implementation deps.anrwatchdog
+
+}

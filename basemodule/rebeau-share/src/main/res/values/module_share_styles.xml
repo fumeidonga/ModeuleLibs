@@ -1,0 +1,40 @@
+<resources>
+
+    <style name="ModuleShareTitle">
+        <item name="android:textSize">@dimen/module_share_font_larger</item>
+        <item name="android:textColor">@color/module_share_black</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="ModuleShareButton" parent="Base.Widget.AppCompat.Button.Borderless" />
+
+    <style name="ModuleShareButton.Normal">
+        <item name="android:minWidth">10dp</item>
+        <item name="android:minHeight">10dp</item>
+        <item name="android:paddingTop">@dimen/module_share_app_normal_margin</item>
+        <item name="android:paddingBottom">@dimen/module_share_app_normal_margin</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+        <item name="android:textSize">@dimen/module_share_font_normal</item>
+        <item name="android:textColor">@color/module_share_black</item>
+    </style>
+
+
+    <style name="ModuleShareBottomDialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowAnimationStyle">@style/ModuleShareDialogAnimation</item>
+        <item name="android:gravity">bottom</item>
+    </style>
+
+
+    <style name="ModuleShareDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/module_share_slide_up</item>
+        <item name="android:windowExitAnimation">@anim/module_share_slide_down</item>
+    </style>
+</resources>

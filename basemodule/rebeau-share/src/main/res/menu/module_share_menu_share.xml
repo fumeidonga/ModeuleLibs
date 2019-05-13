@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/wechat"
+        android:icon="@drawable/umeng_socialize_wechat"
+        android:title="@string/module_share_wechat" />
+    <item
+        android:id="@+id/moments"
+        android:icon="@drawable/umeng_socialize_wxcircle"
+        android:title="@string/module_share_moments" />
+    <item
+        android:id="@+id/qrcode"
+        android:icon="@drawable/module_share_ic_invite_share_qrcode"
+        android:title="@string/module_share_qrcode" />
+    <item
+        android:id="@+id/qq"
+        android:icon="@drawable/umeng_socialize_qq"
+        android:title="@string/module_share_qq" />
+    <item
+        android:id="@+id/qzone"
+        android:icon="@drawable/umeng_socialize_qzone"
+        android:title="@string/module_share_qzone" />
+</menu>

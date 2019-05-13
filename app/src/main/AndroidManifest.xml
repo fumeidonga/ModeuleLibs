@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.rebeau.technology">
+
+    <application
+        android:name=".app.AppApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".demo.NoNetWorkActivityDemo"></activity>
+        <activity android:name=".demo.EmptyActivityDemo" />
+        <activity android:name=".demo.EmptyActivityDemo1" />
+        <activity android:name=".AboutActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <activity android:name=".android.performance.memory.MemoryActivity"></activity>
+        <activity android:name=".android.performance.kadun.KaDunActivity" />
+        <activity android:name=".android.performance.layout.LayoutActivity" />
+        <activity android:name=".android.performance.loading.LoadingPerformanceActivity" />
+        <activity android:name=".android.dagger.activitys.one_mvp.OneActivity" />
+        <activity android:name=".android.dagger.activitys.two_mvp_dagger.TwoActivity" />
+        <activity android:name=".android.dagger.activitys.three_absdagger.ThreeActivity" />
+        <activity android:name=".android.dagger.activitys.method_inject.FourActivity" />
+        <activity android:name=".android.dagger.fragments.TasksActivity" />
+        <activity android:name=".android.rxjava.HomeActivity" />
+        <activity android:name=".java.testdesignmodel.DesignModelActivity" />
+        <activity android:name=".java.testdesignmodel.builder.BuilderActivity" />
+        <activity android:name=".java.testdesignmodel.factory.FactoryActivity" />
+        <activity android:name=".java.testdesignmodel.adapter.AdapterActivity" />
+        <activity android:name=".java.testdesignmodel.proxy.ProxyActivity" />
+        <activity android:name=".android.dagger.DaggerTestActivity" />
+        <activity android:name=".java.testdesignmodel.facade.FacadeActivity" />
+    </application>
+
+</manifest>

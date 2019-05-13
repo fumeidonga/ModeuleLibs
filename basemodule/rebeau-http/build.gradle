@@ -1,0 +1,51 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion build_versions.compile_sdk
+    buildToolsVersion build_versions.build_tools
+
+    defaultConfig {
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode build_versions.version_code
+        versionName build_versions.version_name
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            //proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+        }
+    }
+    publishNonDefault true
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    //okhttp
+    //https://github.com/square/okhttp
+    api deps.okhttp3
+    api deps.okhttp3_logging_interceptor
+    api deps.okio
+
+    //retrofit
+    //https://github.com/square/retrofit
+    api deps.retrofit.retrofit
+    api deps.retrofit.converter
+    api deps.retrofit.rxjava
+
+    //rxjava
+    //https://github.com/ReactiveX/RxJava
+    implementation deps.rx.rxjava2
+    //https://github.com/ReactiveX/RxAndroid
+    implementation deps.rx.rx_android
+
+    implementation project(':rebeau-base-common')
+}

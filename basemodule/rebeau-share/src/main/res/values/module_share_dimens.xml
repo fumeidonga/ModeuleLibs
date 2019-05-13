@@ -1,0 +1,12 @@
+<resources>
+    <dimen name="module_share_app_normal_margin">10dp</dimen>
+    <dimen name="module_share_app_plus_margin">12dp</dimen>
+    <dimen name="module_share_app_tiny_margin">4dp</dimen>
+
+    <dimen name="module_share_font_larger">16sp</dimen>
+    <dimen name="module_share_font_normal">14sp</dimen>
+    <dimen name="module_share_font_small">10sp</dimen>
+
+    <dimen name="module_share_bottom_dialog_top_icon">38dp</dimen>
+    <dimen name="module_share_bottom_dialog_left_icon">32dp</dimen>
+</resources>

@@ -1,0 +1,28 @@
+include ':app'
+
+include ':performancetools'
+include ':performancetools-no-ap'
+
+include ':rebeau-base-common'
+include ':rebeau-commons'
+
+//include ':basemodule:rebeau-share'
+include ':basemodule:rebeau-pay'
+include ':basemodule:rebeau-imageload'
+include ':basemodule:rebeau-download'
+include ':basemodule:rebeau-permission'
+include ':basemodule:rebeau-views'
+include ':basemodule:rebeau-http'
+include ':basemodule:rebeau-qrcode'
+include ':basemodule:rebeau-database'
+include ':basemodule:rebeau-skin'
+
+
+//threeparty
+//https://github.com/H07000223/FlycoTabLayout
+include ':threeparty:flycotablayout'
+
+
+//demo
+//https://github.com/H07000223/FlycoTabLayout
+include ':demoapp:flycotablayout_demo'

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000">
+
+    <View
+        android:id="@+id/dv_permission_view_dialog_red_gift"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#c0000000" />
+
+    <FrameLayout
+        android:id="@+id/dv_permission_view_dialog_framelayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/dv_util_permission_shape_round_white_bg"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/dv_permission_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:textColor="#333333"
+                android:textSize="18sp"
+                android:text="提示"/>
+
+            <TextView
+                android:id="@+id/dv_permission_network_tips_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:textColor="#666666"
+                android:textSize="14sp"
+                android:text="授予权限以继续程序，是否继续？"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="35dp"
+                android:background="#ebebeb"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="44dp">
+
+                <TextView
+                    android:id="@+id/dv_permission_cancel"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/dv_util_permission_selector_round_lb_white"
+                    android:textColor="#999999"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:text="取消"/>
+
+                <View
+                    android:id="@+id/dv_permission_submit_line"
+                    android:layout_width="1px"
+                    android:layout_height="match_parent"
+                    android:background="#ebebeb"/>
+
+                <TextView
+                    android:id="@+id/dv_permission_submit"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/dv_util_permission_selector_round_rb_white"
+                    android:textColor="#ff9744"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:text="确定"/>
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+</RelativeLayout>

@@ -1,0 +1,106 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion build_versions.compile_sdk
+    buildToolsVersion build_versions.build_tools
+
+    defaultConfig {
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode build_versions.version_code
+        versionName build_versions.version_name
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            buildConfigField("String", "UMENG_APPKEY", '"apprelease"')
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            minifyEnabled true
+            consumerProguardFiles 'proguard-rules.pro'
+
+            manifestPlaceholders = [
+                    "UMENG_APPKEY": "app2",
+                    "QQ_AUTH_ACTIVITY_SCHEMA"   :   "tencent1102351187",
+            ]
+
+        }
+
+        debug {
+            buildConfigField("String", "UMENG_APPKEY", '"appdebug"')
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            minifyEnabled false
+            consumerProguardFiles 'proguard-rules.pro'
+
+            manifestPlaceholders = [
+                    "UMENG_APPKEY": "app3",
+                    "QQ_AUTH_ACTIVITY_SCHEMA"   :   "tencent1102351187",
+            ]
+        }
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file('debug.keystore')
+            storePassword "android"
+            keyAlias "androiddebugkey"
+            keyPassword "android"
+        }
+    }
+
+    //lib.module中需要配置和App.module中大致相同的productFlavors
+    // 任意写
+//    flavorDimensions "versionCode"
+//    productFlavors {
+//        app2 {
+//            if (!isLibaray.toBoolean()) {
+//                //applicationId "com.example.branchOne"
+//            }
+//            buildConfigField ("String", "CONFIG_ENDPOINT", '"http://branchOne.com/android"')
+//            buildConfigField("String", "WEIXIN_APPID", '""')
+//            buildConfigField("String", "WEIXIN_APPSECRET", '""')
+//            buildConfigField("String", "QQ_APPID", '""')
+//            buildConfigField("String", "QQ_APPKEY", '""')
+//            buildConfigField("String", "UMENG_APPKEY", '"app2"')
+//
+//            //使用manifestPlaceholders改变< meta-data>中定义的值
+//            manifestPlaceholders = [
+//                    "UMENG_APPKEY": "app2",
+//            ]
+//        }
+//        app3 {
+//            if (!isLibaray.toBoolean()) {
+//                //applicationId "com.example.branchtwo"
+//            }
+//            buildConfigField ("String", "CONFIG_ENDPOINT", '"http://branchOne.com/android"')
+//            buildConfigField("String", "WEIXIN_APPID", '""')
+//            buildConfigField("String", "WEIXIN_APPSECRET", '""')
+//            buildConfigField("String", "QQ_APPID", '""')
+//            buildConfigField("String", "QQ_APPKEY", '""')
+//            buildConfigField("String", "UMENG_APPKEY", '"app3"')
+//
+//            //使用manifestPlaceholders改变< meta-data>中定义的值
+//            manifestPlaceholders = [
+//                    "UMENG_APPKEY": "app3",
+//            ]
+//        }
+//
+//    }
+
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    // ---------  umeng share begin  ------------
+    //基础组件包
+    api deps.umeng_common
+    //统计
+    api deps.umeng_analytics
+    //微信支付
+    api deps.wechat_sdk_android_with_mta
+
+    // ---------  umeng share end  ------------
+    api project(':basemodule:rebeau-http')
+
+}

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal">
+
+    <View
+        android:id="@+id/trans_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#6a000000"
+        android:visibility="visible" />
+
+    <!-- #AF000000 70%透明灰 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/pop_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:gravity="center"
+            android:padding="13dip"
+            android:text="title"
+            android:textColor="#959595"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:id="@+id/pop_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pop_title"
+            android:background="#ffffff"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:background="#e0e3e6" />
+
+            <TextView
+                android:id="@+id/btn_myquestion_first"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:gravity="center"
+                android:padding="13dip"
+                android:text="拍照" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:background="#e0e3e6" />
+
+            <TextView
+                android:id="@+id/btn_myquestion_second"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/rb_solid_corners_zero"
+                android:gravity="center"
+                android:padding="13dip"
+                android:text="从手机相册选择" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/layout_line"
+            android:layout_width="match_parent"
+            android:layout_height="8dip"
+            android:layout_below="@+id/pop_layout" />
+
+        <LinearLayout
+            android:id="@+id/layout_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout_line"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_ok"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@drawable/rb_solid_corners_zero"
+                android:gravity="center"
+                android:text="确 认" />
+
+            <View
+                android:id="@+id/btn_line"
+                android:layout_width="0.5dp"
+                android:layout_height="45dp"
+                android:background="#e0e3e6" />
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@drawable/rb_solid_corners_zero"
+                android:gravity="center"
+                android:text="取 消" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

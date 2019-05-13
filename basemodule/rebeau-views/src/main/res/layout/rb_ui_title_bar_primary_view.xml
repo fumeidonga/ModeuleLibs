@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:skin="http://schemas.android.com/android/skin"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ttf="http://schemas.android.com/android/ttf"
+    android:id="@+id/tb_root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    skin:enable="true">
+
+    <View
+        android:id="@+id/tb_status_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/tb_title_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/rb_ui_title_bar_height"
+        android:gravity="center_vertical">
+
+        <ImageButton
+            android:id="@+id/tb_left_button"
+            android:layout_width="@dimen/rb_ui_title_bar_image_button_width"
+            android:layout_height="@dimen/rb_ui_title_bar_image_button_height"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:visibility="gone"
+            tools:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tb_left_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxEms="10"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/rb_ui_title_bar_right_text_interval"
+            android:paddingRight="@dimen/rb_ui_title_bar_right_text_interval"
+            android:textColor="@drawable/rb_ui_title_bar_selector_sub_primary_text"
+            android:textSize="@dimen/rb_ui_title_bar_sub_primary_title_text_size"
+            android:visibility="gone"
+            tools:text="TEST"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tb_center_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxEms="10"
+            android:maxLines="1"
+            android:textColor="@color/rb_ui_title_bar_text_color_primary_title"
+            android:textSize="@dimen/rb_ui_title_bar_primary_title_text_size"
+            ttf:enable="true"
+            tools:text="app_name" />
+
+        <TextView
+            android:id="@+id/tb_right_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxEms="10"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/rb_ui_title_bar_right_text_interval"
+            android:paddingRight="@dimen/rb_ui_title_bar_right_text_interval"
+            android:textColor="@drawable/rb_ui_title_bar_selector_sub_primary_text"
+            android:textSize="@dimen/rb_ui_title_bar_sub_primary_title_text_size"
+            android:visibility="gone"
+            tools:text="TEST"
+            tools:visibility="visible" />
+
+        <ImageButton
+            android:id="@+id/tb_right_button"
+            android:layout_width="@dimen/rb_ui_title_bar_image_button_width"
+            android:layout_height="@dimen/rb_ui_title_bar_image_button_height"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            tools:visibility="visible" />
+    </RelativeLayout>
+</LinearLayout>

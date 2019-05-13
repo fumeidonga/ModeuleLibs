@@ -1,0 +1,93 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
+
+android {
+    compileSdkVersion build_versions.compile_sdk
+    buildToolsVersion build_versions.build_tools
+
+    // compileOptions 块选择编译器使用的版本。默认由 compileSdkVersion 的值来决定
+    // 编译选项
+    // 设置 Java 的版本
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode build_versions.version_code
+        versionName build_versions.version_name
+
+        testInstrumentationRunner deps.androidjunitrunner
+
+    }
+
+    // 编译配置.
+    buildTypes {
+        release {
+            minifyEnabled false
+            //proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled false
+        }
+    }
+
+    // Lint配置.
+    lintOptions {
+        // 移除lint检查的error
+        abortOnError false
+    }
+
+    sourceSets {//目录指向配置
+
+        main {
+            if (!isLibaray.toBoolean()) {
+                manifest.srcFile 'src/main/debug/AndroidManifest.xml'
+                java.srcDirs = ['src/main/debug/java', 'src/main/java']
+                aidl.srcDirs = ['src/main/debug/java', 'src/main/java']
+                res.srcDirs = ['src/main/debug/res', 'src/main/res']
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'//指定 AndroidManifest 文件
+                //release模式下排除debug文件夹中的所有Java文件
+//                java {
+//                    exclude 'debug/**'
+//                }
+                java.srcDirs = ['src/main/java'] //指定 source 目录
+                aidl.srcDirs = ['src/main/java'] //指定 source 目录
+                resources.srcDirs = ['src/main/java']  //指定 source 目录
+                renderscript.srcDirs = ['src/main/java']  //指定 source 目录
+
+                res.srcDirs = ['src/main/res']//指定资源目录
+                assets.srcDirs = ['assets']  //指定 assets 目录
+                jniLibs.srcDirs = ['libs']  //指定 lib 库目录
+            }
+        }
+    }
+}
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    api project(':rebeau-base-common')
+
+    api project(':threeparty:flycotablayout')
+
+    implementation project(':basemodule:rebeau-views')
+
+    // ---------  rxjava begin  ------------
+    implementation deps.rx.rxjava2
+    implementation deps.rx.rx_android
+
+    // ---------  rxjava butterknife  ------------
+    implementation (deps.butterknife){
+        exclude group: 'com.android.support', module: 'support-compat'
+    }
+    //If you are using Kotlin, replace annotationProcessor with kapt
+    annotationProcessor deps.butterknife_compiler
+    //kapt                deps.butterknife_compiler
+
+}

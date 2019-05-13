@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="rb_ui_dp_20">20dp</dimen>
+    <dimen name="rb_ui_dp_2">2dp</dimen>
+    <dimen name="rb_ui_dp_3">3dp</dimen>
+    <dimen name="rb_ui_dp_14">14dp</dimen>
+    <dimen name="dp_1">1dp</dimen>
+    <dimen name="dp_5">5dp</dimen>
+    <dimen name="dp_8">8dp</dimen>
+    <dimen name="dp_10">10dp</dimen>
+    <dimen name="dp_11">11dp</dimen>
+    <dimen name="dp_15">15dp</dimen>
+    <dimen name="dp_16">16dp</dimen>
+    <dimen name="dp_17">17dp</dimen>
+    <dimen name="dp_23">23dp</dimen>
+    <dimen name="dp_43">43dp</dimen>
+    <dimen name="dp_44">44dp</dimen>
+    <dimen name="dp_48">48dp</dimen>
+    <dimen name="dp_50">50dp</dimen>
+    <dimen name="dp_52">52dp</dimen>
+    <dimen name="dp_54">54dp</dimen>
+    <dimen name="dp_100">100dp</dimen>
+    <dimen name="dp_130">130dp</dimen>
+    <dimen name="dp_200">200dp</dimen>
+
+    <dimen name="rb_ui_dp_25">25dp</dimen>
+
+
+    <!-- 字体text大小 -->
+    <dimen name="rb_ui_text_size_14">14sp</dimen>
+
+
+</resources>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.android.testdesignmodel.proxy.ProxyActivity">
+
+    <Button
+        android:id="@+id/staticsbutton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="静态代理"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textSize="10sp"
+        android:text="静态代理，都实现统一的接口，代理类持有真正的类的对象，调用时直接使用\n
+        public class StaticProxy implements IStaticProxy {\n
+            IStaticProxy client;\n
+
+            public StaticProxy(IStaticProxy client) {\n
+                this.client = client;\n
+            }\n
+
+            public void buy() {\n
+                DVLogUtils.d(\这里是代购，可以买海外的东西\);\n
+                client.buy();\n
+
+            }\n
+        }
+        IStaticProxy client = new StaticClient();\n
+        IStaticProxy proxy = new StaticProxy(client);\n
+        proxy.buy();"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/staticsbutton1" />
+
+
+    <Button
+        android:id="@+id/staticsbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="动态代理"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textSize="10sp"
+        android:text="DynamicProxy proxyMiddle = new DynamicProxy(client);\n
+        ClassLoader classLoader = proxyMiddle.getClass().getClassLoader();\n
+        IStaticProxy proxy = (IStaticProxy)Proxy.newProxyInstance(classLoader, new Class[]{IStaticProxy.class}, proxyMiddle);\n
+        proxy.buy();"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/staticsbutton" />
+    <Button
+        android:id="@+id/staticsbutton12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:textAllCaps="false"
+        android:text="read me"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+</android.support.constraint.ConstraintLayout>

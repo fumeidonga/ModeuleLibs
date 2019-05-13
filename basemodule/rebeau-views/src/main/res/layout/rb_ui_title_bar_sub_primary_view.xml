@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ttf="http://schemas.android.com/android/ttf"
+    android:id="@+id/tb_root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/rb_ui_title_bar_background_sub_primary"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/tb_status_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/rb_ui_title_bar_height"
+        android:gravity="center_vertical">
+
+        <ImageButton
+            android:id="@+id/tb_navi_back"
+            android:layout_width="@dimen/rb_ui_title_bar_image_button_width"
+            android:layout_height="@dimen/rb_ui_title_bar_image_button_height"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/rb_ui_title_bar_selector_nav_back" />
+
+        <TextView
+            android:id="@+id/tb_center_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxEms="10"
+            android:maxLines="1"
+            android:textColor="@color/rb_ui_title_bar_text_color_sub_primary_title"
+            android:textSize="@dimen/rb_ui_title_bar_primary_title_text_size"
+            ttf:enable="true" />
+
+        <TextView
+            android:id="@+id/tb_right_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxEms="10"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/rb_ui_title_bar_right_text_interval"
+            android:paddingRight="@dimen/rb_ui_title_bar_right_text_interval"
+            android:textColor="@drawable/rb_ui_title_bar_selector_sub_primary_text"
+            android:textSize="@dimen/rb_ui_title_bar_sub_primary_title_text_size"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/tb_right_button"
+            android:layout_width="@dimen/rb_ui_title_bar_image_button_width"
+            android:layout_height="@dimen/rb_ui_title_bar_image_button_height"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone" />
+    </RelativeLayout>
+</LinearLayout>
