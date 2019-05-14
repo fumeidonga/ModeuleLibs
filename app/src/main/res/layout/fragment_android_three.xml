@@ -61,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
                 android:textColor="@android:color/holo_green_dark"
-                android:text=""
+                android:text="setContentView()流程"
                 />
             <Button
                 android:id="@+id/show_dialog6"

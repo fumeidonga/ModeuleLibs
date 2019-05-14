@@ -53,7 +53,7 @@
 
    [kɔːriˈɑːɡrəfər]
 
-    检测UI丢帧跟卡顿，网上的文章还是很多的, 我们查看 BlockDetectByChoreographer
+    检测UI丢帧跟卡顿，网上的文章还是很多的, 我们查看 AppChoreoFrameCallback.java
 
 	<pre>
 	public class FPSFrameCallback implements Choreographer.FrameCallback {
@@ -70,7 +70,7 @@
 	
 	</pre>
 
-[高频采集堆栈的方案 UiWatcher](https://github.com/guohaiyang1992/UiWatcher)， 查看AppUiWatcher
+[高频采集堆栈的方案 UiWatcher](https://github.com/guohaiyang1992/UiWatcher),查看AppUiWatcher
 
 [Choreographer](https://developer.android.com/reference/android/view/Choreographer)
 
@@ -88,6 +88,7 @@
 
 
 ### 3. 布局加载原理
+0. setContentView()流程
 
 1. LayoutInflater 解析xml文件，然后从解析出来的对象里面进行view的创建，
 这里就涉及到IO的操作，这是一个性能点
