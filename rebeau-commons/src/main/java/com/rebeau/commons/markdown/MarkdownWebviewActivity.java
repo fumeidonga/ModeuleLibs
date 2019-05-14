@@ -1,6 +1,6 @@
 package com.rebeau.commons.markdown;
 
-import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -43,6 +43,10 @@ public class MarkdownWebviewActivity extends BaseFragmentActivity {
         View view = LayoutInflater.from(getApplicationContext()).inflate(R.layout.activity_markdown_webview, null);
         ButterKnife.bind(this, view);
 
+        //webview dubug
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            WebView.setWebContentsDebuggingEnabled(true);
+        }
         webView.getSettings().setDefaultTextEncodingName("UTF-8");
         webView.getSettings().setJavaScriptEnabled(true);
         webView.loadUrl("file:///android_asset/index.html");

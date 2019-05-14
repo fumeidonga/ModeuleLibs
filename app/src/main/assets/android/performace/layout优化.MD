@@ -161,11 +161,6 @@ APT编译期间，将XML翻译成java代码
 
  [X2C 使用传送门2](https://github.com/iReaderAndroid/X2C/blob/master/README_CN.md)
 
-导入依赖
-
-    annotationProcessor 'com.zhangyue.we:x2c-apt:1.1.2'
-    implementation 'com.zhangyue.we:x2c-lib:1.0.6'
-
 > 问题
 
 部分属性不支持 (可以修改X2C框架)
