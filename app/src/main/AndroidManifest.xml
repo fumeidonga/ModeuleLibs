@@ -12,20 +12,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".demo.NoNetWorkActivityDemo"></activity>
-        <activity android:name=".demo.EmptyActivityDemo" />
-        <activity android:name=".demo.EmptyActivityDemo1" />
-        <activity android:name=".AboutActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".loading.LoadingActivity"
+            android:theme="@style/ThemeLoadingBackground">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-        <activity android:name=".android.performance.memory.MemoryActivity"></activity>
+        <activity android:name=".demo.NoNetWorkActivityDemo" />
+        <activity android:name=".demo.EmptyActivityDemo" />
+        <activity android:name=".demo.EmptyActivityDemo1" />
+        <activity android:name=".AboutActivity" />
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".android.performance.memory.MemoryActivity" />
         <activity android:name=".android.performance.kadun.KaDunActivity" />
         <activity android:name=".android.performance.layout.LayoutActivity" />
         <activity android:name=".android.performance.loading.LoadingPerformanceActivity" />

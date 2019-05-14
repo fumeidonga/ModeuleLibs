@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <color android:color="@color/white"/>
+    </item>
+    <!--<item>
+        <bitmap
+            android:gravity="bottom"
+            android:src="@drawable/logding_ic_page_zero" />
+    </item>-->
+
+    <item>
+        <bitmap
+            android:gravity="center"
+            android:src="@mipmap/ic_launcher" />
+    </item>
+
+    <item android:bottom="32dp">
+        <bitmap
+            android:gravity="bottom"
+            android:src="@mipmap/ic_launcher_round" />
+    </item>
+<!--
+
+    <item android:bottom="100dp">
+        <bitmap
+            android:gravity="bottom"
+            android:src="@drawable/icon" />
+    </item>-->
+
+    <!--状态栏颜色-->
+    <!--<item android:drawable="@color/colorPrimaryDark" />-->
+    <!--假装这里是个toolbar-->
+    <!--<item
+        android:drawable="@color/colorPrimary"
+        android:top="25dp" />-->
+    <!--状态栏25+toolbar56=距离top81-->
+    <!--<item
+        android:drawable="@android:color/white"
+        android:top="81dp" />-->
+</layer-list>
