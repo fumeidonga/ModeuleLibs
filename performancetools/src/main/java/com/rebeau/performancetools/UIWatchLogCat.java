@@ -40,7 +40,12 @@ public class UIWatchLogCat {
 //        String tag = "";
 
         Log.w(tag, content + " , "  + Thread.currentThread().getName());
-        if("lancet".equals(tag) && isneedtofile){
+        /*if("lancet".equals(tag) && isneedtofile){
+            saveAllStackInfoToFile("AppUiWatcher", "lancet", content.toString());
+        }*/
+        if("normalwatch".equals(tag) && isneedtofile){
+            saveAllStackInfoToFile("AppUiWatcher", "normalwatch", content.toString());
+        } else if("lancet".equals(tag) && isneedtofile){
             saveAllStackInfoToFile("AppUiWatcher", "lancet", content.toString());
         }
     }

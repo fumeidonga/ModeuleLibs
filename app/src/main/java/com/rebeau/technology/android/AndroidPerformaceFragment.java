@@ -2,8 +2,6 @@ package com.rebeau.technology.android;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,15 +37,6 @@ public class AndroidPerformaceFragment extends BaseLazyLoadFragment {
 
     private String mType;
 
-    Handler mHandler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            RBLogUtil.dt();
-            notifyLoadStatus(RBLoadStatusView.LOAD_SUCCESS);
-        }
-    };
-
     @Override
     protected View createSuccessView(@Nullable ViewGroup container) {
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.activity_main_performance, container, false);
@@ -71,7 +60,7 @@ public class AndroidPerformaceFragment extends BaseLazyLoadFragment {
     protected void onLoadData() {
         RBLogUtil.dt();
         isLazyLoad = true;
-        mHandler.sendEmptyMessageDelayed(0, 300);
+        notifyLoadStatus(RBLoadStatusView.LOAD_SUCCESS);
     }
 
 

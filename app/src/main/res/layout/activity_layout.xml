@@ -21,7 +21,7 @@
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
                 android:textColor="@android:color/holo_orange_light"
-                android:text="android 绘制原理"
+                android:text="read me"
                 />
             <Button
                 android:id="@+id/show_dialog1"
@@ -29,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
                 android:textColor="@android:color/holo_red_dark"
-                android:text="硬件加速原理"
+                android:text="layout inflater"
                 />
             <Button
                 android:id="@+id/show_dialog2"
@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
                 android:textColor="@android:color/holo_red_dark"
-                android:text="read me"
+                android:text="CPU_GPU"
                 />
             <Button
                 android:id="@+id/show_dialog3"
@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
                 android:textColor="@android:color/holo_red_dark"
-                android:text="layout inflater"
+                android:text=""
                 />
             <Button
                 android:id="@+id/show_dialog4"
@@ -53,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
                 android:textColor="@android:color/holo_red_dark"
-                android:text="view 的绘制原理 "
+                android:text=" "
                 />
             <Button
                 android:id="@+id/show_dialog5"
@@ -61,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
                 android:textColor="@android:color/holo_red_dark"
-                android:text="事件分发"
+                android:text=""
                 />
             <Button
                 android:id="@+id/show_dialog6"
@@ -69,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
                 android:textColor="@android:color/holo_red_dark"
-                android:text="CPU_GPU"
+                android:text=""
                 />
             <Button
                 android:id="@+id/show_dialog7"

@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".loading.LoadingActivity"
+        <activity
+            android:name=".loading.LoadingActivity"
             android:theme="@style/ThemeLoadingBackground">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,28 +21,70 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".demo.NoNetWorkActivityDemo" />
-        <activity android:name=".demo.EmptyActivityDemo" />
-        <activity android:name=".demo.EmptyActivityDemo1" />
-        <activity android:name=".AboutActivity" />
+        <activity
+            android:name=".demo.NoNetWorkActivityDemo"
+            android:theme="@style/Custom.SwipeBack.Transparent.Theme" />
+        <activity
+            android:name=".demo.EmptyActivityDemo"
+            android:theme="@style/Custom.SwipeBack.Transparent.Theme" />
+        <activity
+            android:name=".demo.EmptyActivityDemo1"
+            android:theme="@style/Custom.SwipeBack.Transparent.Theme" />
+        <activity
+            android:name=".AboutActivity"
+            android:theme="@style/Custom.SwipeBack.Transparent.Theme" />
         <activity android:name=".MainActivity"></activity>
-        <activity android:name=".android.performance.memory.MemoryActivity" />
-        <activity android:name=".android.performance.kadun.KaDunActivity" />
-        <activity android:name=".android.performance.layout.LayoutActivity" />
-        <activity android:name=".android.performance.loading.LoadingPerformanceActivity" />
-        <activity android:name=".android.dagger.activitys.one_mvp.OneActivity" />
-        <activity android:name=".android.dagger.activitys.two_mvp_dagger.TwoActivity" />
-        <activity android:name=".android.dagger.activitys.three_absdagger.ThreeActivity" />
-        <activity android:name=".android.dagger.activitys.method_inject.FourActivity" />
-        <activity android:name=".android.dagger.fragments.TasksActivity" />
-        <activity android:name=".android.rxjava.HomeActivity" />
-        <activity android:name=".java.testdesignmodel.DesignModelActivity" />
-        <activity android:name=".java.testdesignmodel.builder.BuilderActivity" />
-        <activity android:name=".java.testdesignmodel.factory.FactoryActivity" />
-        <activity android:name=".java.testdesignmodel.adapter.AdapterActivity" />
-        <activity android:name=".java.testdesignmodel.proxy.ProxyActivity" />
-        <activity android:name=".android.dagger.DaggerTestActivity" />
-        <activity android:name=".java.testdesignmodel.facade.FacadeActivity" />
+        <activity
+            android:name=".android.performance.memory.MemoryActivity"
+            android:theme="@style/Custom.SwipeBack.Transparent.Theme" />
+        <activity
+            android:name=".android.performance.kadun.KaDunActivity"
+            android:theme="@style/Custom.SwipeBack.Transparent.Theme" />
+        <activity
+            android:name=".android.performance.layout.LayoutActivity"
+            android:theme="@style/Custom.SwipeBack.Transparent.Theme" />
+        <activity
+            android:name=".android.performance.loading.LoadingPerformanceActivity"
+            android:theme="@style/Custom.SwipeBack.Transparent.Theme" />
+        <activity
+            android:name=".android.dagger.activitys.one_mvp.OneActivity"
+            android:theme="@style/Custom.SwipeBack.Transparent.Theme" />
+        <activity
+            android:name=".android.dagger.activitys.two_mvp_dagger.TwoActivity"
+            android:theme="@style/Custom.SwipeBack.Transparent.Theme" />
+        <activity
+            android:name=".android.dagger.activitys.three_absdagger.ThreeActivity"
+            android:theme="@style/Custom.SwipeBack.Transparent.Theme" />
+        <activity
+            android:name=".android.dagger.activitys.method_inject.FourActivity"
+            android:theme="@style/Custom.SwipeBack.Transparent.Theme" />
+        <activity
+            android:name=".android.dagger.fragments.TasksActivity"
+            android:theme="@style/Custom.SwipeBack.Transparent.Theme" />
+        <activity
+            android:name=".android.rxjava.HomeActivity"
+            android:theme="@style/Custom.SwipeBack.Transparent.Theme" />
+        <activity
+            android:name=".java.testdesignmodel.DesignModelActivity"
+            android:theme="@style/Custom.SwipeBack.Transparent.Theme" />
+        <activity
+            android:name=".java.testdesignmodel.builder.BuilderActivity"
+            android:theme="@style/Custom.SwipeBack.Transparent.Theme" />
+        <activity
+            android:name=".java.testdesignmodel.factory.FactoryActivity"
+            android:theme="@style/Custom.SwipeBack.Transparent.Theme" />
+        <activity
+            android:name=".java.testdesignmodel.adapter.AdapterActivity"
+            android:theme="@style/Custom.SwipeBack.Transparent.Theme" />
+        <activity
+            android:name=".java.testdesignmodel.proxy.ProxyActivity"
+            android:theme="@style/Custom.SwipeBack.Transparent.Theme" />
+        <activity
+            android:name=".android.dagger.DaggerTestActivity"
+            android:theme="@style/Custom.SwipeBack.Transparent.Theme" />
+        <activity
+            android:name=".java.testdesignmodel.facade.FacadeActivity"
+            android:theme="@style/Custom.SwipeBack.Transparent.Theme" />
     </application>
 
 </manifest>

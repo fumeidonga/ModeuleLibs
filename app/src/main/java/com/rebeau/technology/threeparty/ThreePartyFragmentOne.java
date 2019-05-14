@@ -9,12 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.rebeau.base.utils.RBLogUtil;
-import com.rebeau.commons.fragment.BaseAppFragment;
 import com.rebeau.commons.fragment.BaseLazyLoadFragment;
 import com.rebeau.technology.R;
 import com.rebeau.views.loading.RBLoadStatusView;
-
-import java.util.ArrayList;
 
 import butterknife.ButterKnife;
 

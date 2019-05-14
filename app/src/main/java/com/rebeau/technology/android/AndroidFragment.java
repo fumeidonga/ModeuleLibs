@@ -15,7 +15,7 @@ public class AndroidFragment extends BaseTopTabVPFragment {
     @Override
     public void initTabUI() {
 
-        mTitles = new String[]{"基础", "深入", "原理", "更多"};
+        mTitles = new String[]{"基础", "深入", "原理", "优化"};
     }
 
     @Override
@@ -25,8 +25,8 @@ public class AndroidFragment extends BaseTopTabVPFragment {
             mFragmentMap = new HashMap<>(mTitles.length);
         }
         mFragmentMap.put(0, AndroidFragmentOne.newInstance("android fragment 0"));
-        mFragmentMap.put(1, AndroidFragmentDetail.newInstance("android fragment 1"));
-        mFragmentMap.put(2, AndroidFragmentDetail.newInstance("android fragment 2"));
+        mFragmentMap.put(1, AndroidFragmentTwo.newInstance("android fragment 1"));
+        mFragmentMap.put(2, AndroidFragmetThree.newInstance("android fragment 2"));
         mFragmentMap.put(3, AndroidPerformaceFragment.newInstance("android fragment 3"));
     }
 

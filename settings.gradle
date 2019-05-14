@@ -26,3 +26,4 @@ include ':threeparty:flycotablayout'
 //demo
 //https://github.com/H07000223/FlycoTabLayout
 include ':demoapp:flycotablayout_demo'
+//include ':demoapp:androidfillmemory'

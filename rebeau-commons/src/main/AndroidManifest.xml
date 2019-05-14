@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.rebeau.commons" >
+    package="com.rebeau.commons">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -37,7 +37,9 @@
 
     <application>
 
-        <activity android:name="com.rebeau.commons.markdown.MarkdownWebviewActivity"></activity>
+        <activity
+            android:name="com.rebeau.commons.markdown.MarkdownWebviewActivity"
+            android:theme="@style/Custom.SwipeBack.Transparent.Theme" />
     </application>
 
 </manifest>

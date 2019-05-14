@@ -37,6 +37,7 @@ import io.reactivex.disposables.Disposable;
 /**
  * Created by Administrator on 2018/3/28.
  * 配置的主题，不能使用Theme.AppCompat
+ * @style/Custom.SwipeBack.Transparent.Theme
  */
 
 public abstract class BaseFragmentActivity extends FragmentActivity implements SlidingPaneLayout.SlidingPaneListener{
@@ -61,6 +62,7 @@ public abstract class BaseFragmentActivity extends FragmentActivity implements S
 
     /**
      * 自定义侧滑返回View
+     * activity use theme  @style/Custom.SwipeBack.Transparent.Theme
      */
     protected SlidingPaneLayout mSlidingPaneLayout;
 
