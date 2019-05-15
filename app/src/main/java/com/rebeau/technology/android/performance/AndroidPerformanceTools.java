@@ -36,6 +36,6 @@ public class AndroidPerformanceTools extends Activity {
 
     @OnClick(R.id.show_dialog0)
     public void systrace(){
-
+        MarkdownUtils.setData(this, "android/performace/systrace.MD");
     }
 }

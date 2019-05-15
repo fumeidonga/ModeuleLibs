@@ -7,7 +7,6 @@ import android.os.Debug;
 import android.os.Handler;
 import android.os.HandlerThread;
 
-import com.rebeau.performancetools.UIWatchLogCat;
 import com.rebeau.performancetools.uiwatch.dao.NormalMonitorBean;
 
 import java.io.BufferedReader;
@@ -150,7 +149,7 @@ public class NormalMonitor extends AbsMonitor {
             long softirq = scanner.nextLong();
             cpuTotal = user + nice + system +
                     idle + ioWait + irq + softirq;
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
             if (scanner != null) {
@@ -177,7 +176,7 @@ public class NormalMonitor extends AbsMonitor {
                     scanner.nextLong() +
                     scanner.nextLong() +
                     scanner.nextLong();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
             if (scanner != null) {
