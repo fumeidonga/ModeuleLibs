@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".android.performance.AndroidPerformanceTools"></activity>
         <activity
             android:name=".loading.LoadingActivity"
             android:theme="@style/ThemeLoadingBackground">
@@ -33,7 +34,7 @@
         <activity
             android:name=".AboutActivity"
             android:theme="@style/Custom.SwipeBack.Transparent.Theme" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
         <activity
             android:name=".android.performance.memory.MemoryActivity"
             android:theme="@style/Custom.SwipeBack.Transparent.Theme" />

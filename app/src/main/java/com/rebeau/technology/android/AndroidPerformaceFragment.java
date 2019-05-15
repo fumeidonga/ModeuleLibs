@@ -11,6 +11,7 @@ import com.rebeau.base.utils.RBLogUtil;
 import com.rebeau.commons.fragment.BaseLazyLoadFragment;
 import com.rebeau.commons.markdown.MarkdownUtils;
 import com.rebeau.technology.R;
+import com.rebeau.technology.android.performance.AndroidPerformanceTools;
 import com.rebeau.technology.android.performance.kadun.KaDunActivity;
 import com.rebeau.technology.android.performance.layout.LayoutActivity;
 import com.rebeau.technology.android.performance.memory.MemoryActivity;
@@ -61,6 +62,12 @@ public class AndroidPerformaceFragment extends BaseLazyLoadFragment {
         RBLogUtil.dt();
         isLazyLoad = true;
         notifyLoadStatus(RBLoadStatusView.LOAD_SUCCESS);
+    }
+
+
+    @OnClick(R.id.android_performace_tools)
+    public void android_profile_cpu(){
+        startActivity(new Intent(mActivity, AndroidPerformanceTools.class));
     }
 
 
