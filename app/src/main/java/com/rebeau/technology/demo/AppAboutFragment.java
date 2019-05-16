@@ -1,8 +1,6 @@
 package com.rebeau.technology.demo;
 
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,14 +37,6 @@ public class AppAboutFragment extends BaseAppFragment {
         return fragment;
     }
 
-    Handler mHandler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            notifyLoadStatus(RBLoadStatusView.LOAD_SUCCESS);
-        }
-    };
-
     @Override
     protected View createSuccessView(@Nullable ViewGroup container) {
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.activity_about_fragment, container, false);
@@ -56,6 +46,6 @@ public class AppAboutFragment extends BaseAppFragment {
 
     @Override
     protected void onLoadData() {
-        mHandler.sendEmptyMessageDelayed(0, 1000);
+        notifyLoadStatus(RBLoadStatusView.LOAD_SUCCESS);
     }
 }
