@@ -23,19 +23,23 @@ public class AndroidPerformanceTools extends Activity {
     @OnClick(R.id.show_dialog)
     public void show_dialog(){
 
-    }
-
-
-
-    @OnClick(R.id.android_performace_tools)
-    public void android_profile_cpu(){
         MarkdownUtils.setData(this, "android/performace/android_prifile_cup.MD");
     }
 
-
+    @OnClick(R.id.android_performace_tools)
+    public void android_profile_cpu(){
+        MarkdownUtils.setData(this, "android/performace/android_prifile_memory.MD");
+    }
 
     @OnClick(R.id.show_dialog0)
     public void systrace(){
         MarkdownUtils.setData(this, "android/performace/systrace.MD");
+    }
+
+
+    @OnClick(R.id.show_dialog1)
+    public void show_dialog1(){
+        MarkdownUtils.setData(this, "android/performace/MAT.MD");
+
     }
 }

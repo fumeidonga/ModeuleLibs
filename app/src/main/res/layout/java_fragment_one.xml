@@ -1,34 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_f5f5f5"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/java_fragment_lamada"
+    <ScrollView
+        android:id="@+id/scrollable"
         android:layout_width="match_parent"
-        android:textAllCaps="false"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/holo_green_dark"
-        android:text=" Lambda"
-        />
-    <Button
-        android:id="@+id/java_fragment_rxjava"
-        android:layout_width="match_parent"
-        android:textAllCaps="false"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/holo_green_dark"
-        android:text=" rx java"
-        />
-    <Button
-        android:id="@+id/java_fragment_designmodel"
-        android:layout_width="match_parent"
-        android:textAllCaps="false"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/holo_green_dark"
-        android:text=" 设计模式"
-        />
+        android:layout_height="match_parent">
 
-</RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/java_fragment_innerclass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" 内部类"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_green_dark" />
+
+            <Button
+                android:id="@+id/java_fragment_lamada"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" Lambda"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_green_dark" />
+
+            <Button
+                android:id="@+id/java_fragment_rxjava"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" rx java"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_green_dark" />
+
+            <Button
+                android:id="@+id/java_fragment_designmodel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" 设计模式"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_green_dark" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

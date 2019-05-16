@@ -35,7 +35,7 @@ import io.reactivex.functions.Function;
 import io.reactivex.functions.Predicate;
 import io.reactivex.schedulers.Schedulers;
 
-public class HomeActivity extends BaseActivity {
+public class RxjavaActivity extends BaseActivity {
 
     /**
      * Observable 三部曲

@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
                 android:textColor="@android:color/holo_green_dark"
-                android:text="android profile cpu"
+                android:text="android profile memory"
                 />
 
             <Button

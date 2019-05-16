@@ -13,7 +13,7 @@ import com.rebeau.base.utils.RBLogUtil;
 import com.rebeau.commons.fragment.BaseLazyLoadFragment;
 import com.rebeau.commons.markdown.MarkdownUtils;
 import com.rebeau.technology.R;
-import com.rebeau.technology.android.rxjava.HomeActivity;
+import com.rebeau.technology.android.rxjava.RxjavaActivity;
 import com.rebeau.technology.java.testdesignmodel.DesignModelActivity;
 import com.rebeau.views.loading.RBLoadStatusView;
 
@@ -35,26 +35,12 @@ public class JavaFragmentOne extends BaseLazyLoadFragment {
         return fragment;
     }
 
-    private String mType;
-
-    Handler mHandler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            RBLogUtil.dt();
-            notifyLoadStatus(RBLoadStatusView.LOAD_SUCCESS);
-        }
-    };
-
     @Override
     protected View createSuccessView(@Nullable ViewGroup container) {
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.java_fragment_one, container, false);
         ButterKnife.bind(this, view);
 
         RBLogUtil.dt();
-        if (getArguments() != null) {
-            mType = getArguments().getString("type");
-        }
         return view;
     }
 
@@ -69,7 +55,12 @@ public class JavaFragmentOne extends BaseLazyLoadFragment {
     protected void onLoadData() {
         RBLogUtil.dt();
         isLazyLoad = true;
-        mHandler.sendEmptyMessageDelayed(0, 1000);
+        notifyLoadStatus(RBLoadStatusView.LOAD_SUCCESS);
+    }
+
+    @OnClick(R.id.java_fragment_innerclass)
+    public void innerClass(){
+        MarkdownUtils.setData(mActivity, "lamada/InnerClass.MD");
     }
 
     @OnClick(R.id.java_fragment_lamada)
@@ -79,7 +70,7 @@ public class JavaFragmentOne extends BaseLazyLoadFragment {
 
     @OnClick(R.id.java_fragment_rxjava)
     public void rxjava(){
-        startActivity(new Intent(mActivity, HomeActivity.class));
+        startActivity(new Intent(mActivity, RxjavaActivity.class));
     }
 
     @OnClick(R.id.java_fragment_designmodel)

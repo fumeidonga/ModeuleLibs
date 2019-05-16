@@ -32,7 +32,7 @@ public class JavaFragment extends BaseTopTabVPFragment {
         if (mFragmentMap == null) {
             mFragmentMap = new HashMap<>(mTitles.length);
         }
-        mFragmentMap.put(0, JavaFragmentDetail.newInstance("java fragment 0"));
+        mFragmentMap.put(0, JavaFragmentOne.newInstance("java fragment 0"));
         mFragmentMap.put(1, JavaFragmentDetail.newInstance("java fragment 1"));
         mFragmentMap.put(2, JavaFragmentDetail.newInstance("java fragment 2"));
         mFragmentMap.put(3, JavaFragmentDetail.newInstance("java fragment 3"));

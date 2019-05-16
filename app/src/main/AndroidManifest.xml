@@ -63,11 +63,9 @@
             android:name=".android.dagger.fragments.TasksActivity"
             android:theme="@style/Custom.SwipeBack.Transparent.Theme" />
         <activity
-            android:name=".android.rxjava.HomeActivity"
-            android:theme="@style/Custom.SwipeBack.Transparent.Theme" />
+            android:name=".android.rxjava.RxjavaActivity"/>
         <activity
-            android:name=".java.testdesignmodel.DesignModelActivity"
-            android:theme="@style/Custom.SwipeBack.Transparent.Theme" />
+            android:name=".java.testdesignmodel.DesignModelActivity" />
         <activity
             android:name=".java.testdesignmodel.builder.BuilderActivity"
             android:theme="@style/Custom.SwipeBack.Transparent.Theme" />
