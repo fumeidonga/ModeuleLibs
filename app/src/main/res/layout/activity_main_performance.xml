@@ -19,7 +19,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
-                android:textColor="@android:color/holo_orange_light"
+                android:textColor="@android:color/holo_green_light"
                 android:text="read me"
                 />
 
@@ -28,8 +28,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
-                android:textColor="@android:color/holo_orange_light"
-                android:text="工具"
+                android:textColor="@android:color/holo_red_dark"
+                android:text="性能优化相关 工具 、 库"
                 />
 
             <Button
@@ -37,7 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
-                android:textColor="@android:color/holo_orange_light"
+                android:textColor="@android:color/holo_green_light"
                 android:text="1. App 布局优化"
                 />
             <Button
@@ -53,7 +53,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
-                android:textColor="@android:color/holo_red_dark"
+                android:textColor="@android:color/holo_green_light"
                 android:text="3. App 卡顿优化"
                 />
             <Button
@@ -69,7 +69,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
-                android:textColor="@android:color/holo_red_dark"
+                android:textColor="@android:color/holo_green_light"
                 android:text="5. App 线程优化"
                 />
             <Button
@@ -85,7 +85,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
-                android:textColor="@android:color/holo_red_dark"
+                android:textColor="@android:color/holo_green_light"
                 android:text="7. App 电量优化"
                 />
             <Button
@@ -101,7 +101,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
-                android:textColor="@android:color/holo_red_dark"
+                android:textColor="@android:color/holo_green_light"
                 android:text="9. App 稳定性优化"
                 />
             <Button

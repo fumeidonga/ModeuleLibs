@@ -20,7 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
-                android:textColor="@android:color/holo_orange_light"
+                android:textColor="@android:color/holo_green_light"
                 android:text="read me"
                 />
             <Button
@@ -37,7 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
-                android:textColor="@android:color/holo_orange_light"
+                android:textColor="@android:color/holo_green_light"
                 android:text="页面卡顿检测步骤"
                 />
 
@@ -54,7 +54,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
-                android:textColor="@android:color/holo_red_dark"
+                android:textColor="@android:color/holo_green_light"
                 android:text=""
                 />
             <Button

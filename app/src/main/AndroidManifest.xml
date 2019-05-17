@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".android.thread.ThreadActivity"></activity>
         <activity android:name=".android.performance.apk.ApkPerformanceActivity" />
         <activity android:name=".android.performance.AndroidPerformanceTools" />
         <activity
@@ -36,38 +37,23 @@
             android:name=".AboutActivity"
             android:theme="@style/Custom.SwipeBack.Transparent.Theme" />
         <activity android:name=".MainActivity" />
-        <activity
-            android:name=".android.performance.memory.MemoryActivity"/>
-        <activity
-            android:name=".android.performance.kadun.KaDunActivity" />
-        <activity
-            android:name=".android.performance.layout.LayoutActivity"/>
-        <activity
-            android:name=".android.performance.loading.LoadingPerformanceActivity" />
-        <activity
-            android:name=".android.dagger.activitys.one_mvp.OneActivity"/>
-        <activity
-            android:name=".android.dagger.activitys.two_mvp_dagger.TwoActivity" />
-        <activity
-            android:name=".android.dagger.activitys.three_absdagger.ThreeActivity"/>
-        <activity
-            android:name=".android.dagger.activitys.method_inject.FourActivity" />
-        <activity
-            android:name=".android.dagger.fragments.TasksActivity" />
+        <activity android:name=".android.performance.memory.MemoryActivity" />
+        <activity android:name=".android.performance.kadun.KaDunActivity" />
+        <activity android:name=".android.performance.layout.LayoutActivity" />
+        <activity android:name=".android.performance.loading.LoadingPerformanceActivity" />
+        <activity android:name=".android.dagger.activitys.one_mvp.OneActivity" />
+        <activity android:name=".android.dagger.activitys.two_mvp_dagger.TwoActivity" />
+        <activity android:name=".android.dagger.activitys.three_absdagger.ThreeActivity" />
+        <activity android:name=".android.dagger.activitys.method_inject.FourActivity" />
+        <activity android:name=".android.dagger.fragments.TasksActivity" />
         <activity android:name=".android.rxjava.RxjavaActivity" />
         <activity android:name=".java.testdesignmodel.DesignModelActivity" />
-        <activity
-            android:name=".java.testdesignmodel.builder.BuilderActivity" />
-        <activity
-            android:name=".java.testdesignmodel.factory.FactoryActivity" />
-        <activity
-            android:name=".java.testdesignmodel.adapter.AdapterActivity" />
-        <activity
-            android:name=".java.testdesignmodel.proxy.ProxyActivity" />
-        <activity
-            android:name=".android.dagger.DaggerTestActivity"/>
-        <activity
-            android:name=".java.testdesignmodel.facade.FacadeActivity" />
+        <activity android:name=".java.testdesignmodel.builder.BuilderActivity" />
+        <activity android:name=".java.testdesignmodel.factory.FactoryActivity" />
+        <activity android:name=".java.testdesignmodel.adapter.AdapterActivity" />
+        <activity android:name=".java.testdesignmodel.proxy.ProxyActivity" />
+        <activity android:name=".android.dagger.DaggerTestActivity" />
+        <activity android:name=".java.testdesignmodel.facade.FacadeActivity" />
     </application>
 
 </manifest>

@@ -20,7 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
-                android:textColor="@android:color/holo_orange_light"
+                android:textColor="@android:color/holo_green_light"
                 android:text="read me"
                 />
             <Button

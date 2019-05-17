@@ -16,6 +16,14 @@
             android:layout_height="match_parent">
 
             <Button
+                android:id="@+id/performance_ku"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_green_dark"
+                android:text="相关的库 "
+                />
+            <Button
                 android:id="@+id/leakcanary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

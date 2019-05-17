@@ -20,11 +20,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
-                android:textColor="@android:color/holo_orange_light"
+                android:textColor="@android:color/holo_green_light"
                 android:text=""
                 />
             <Button
-                android:id="@+id/show_dialog1"
+                android:id="@+id/thread"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"

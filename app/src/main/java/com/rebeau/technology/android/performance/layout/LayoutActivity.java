@@ -45,7 +45,7 @@ public class LayoutActivity extends BaseFragmentActivity {
 
     @OnClick(R.id.show_dialog2)
     public void button2(){
-        MarkdownUtils.setData(this, "android/performace/CPU_GPU.MD");
+        MarkdownUtils.setData(this, "android/performace/ram/CPU_GPU.MD");
     }
 
     @OnClick(R.id.show_dialog3)

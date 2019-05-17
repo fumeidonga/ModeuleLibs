@@ -16,6 +16,7 @@ import com.rebeau.technology.android.performance.apk.ApkPerformanceActivity;
 import com.rebeau.technology.android.performance.kadun.KaDunActivity;
 import com.rebeau.technology.android.performance.layout.LayoutActivity;
 import com.rebeau.technology.android.performance.memory.MemoryActivity;
+import com.rebeau.technology.android.thread.ThreadActivity;
 import com.rebeau.views.loading.RBLoadStatusView;
 
 import butterknife.ButterKnife;
@@ -94,7 +95,7 @@ public class AndroidPerformaceFragment extends BaseLazyLoadFragment {
     }
 
     @OnClick(R.id.show_dialog3)
-    public void button3(){
+    public void start(){
         //用来测试卡顿监听
         try {
             //Thread.sleep(1000);
@@ -105,33 +106,33 @@ public class AndroidPerformaceFragment extends BaseLazyLoadFragment {
     }
 
     @OnClick(R.id.show_dialog4)
-    public void button4(){
-
+    public void threads(){
+        startActivity(new Intent(mActivity, ThreadActivity.class));
     }
 
     @OnClick(R.id.show_dialog5)
-    public void button5(){
+    public void net(){
 
     }
 
     @OnClick(R.id.show_dialog6)
-    public void button6(){
+    public void diangliang(){
 
     }
 
     @OnClick(R.id.show_dialog7)
-    public void button7(){
+    public void apks(){
 
         startActivity(new Intent(mActivity, ApkPerformanceActivity.class));
     }
 
     @OnClick(R.id.show_dialog8)
-    public void button8(){
+    public void wending(){
 
     }
 
     @OnClick(R.id.show_dialog9)
-    public void button9(){
+    public void zhuangxiang(){
 
     }
 

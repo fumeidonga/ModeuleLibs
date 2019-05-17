@@ -12,7 +12,7 @@ import java.io.InputStreamReader;
  */
 public class MarkdownUtils {
 
-    public static String fileName;
+    public static String fileName= "";
 
     public static void setData(Context context, String data){
         fileName = data;

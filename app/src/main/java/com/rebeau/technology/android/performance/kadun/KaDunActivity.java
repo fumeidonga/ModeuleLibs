@@ -20,19 +20,18 @@ public class KaDunActivity extends Activity {
 
     @OnClick(R.id.show_dialog0)
     public void button0(){
-        MarkdownUtils.setData(this, "android/performace/卡顿优化.MD");
+        MarkdownUtils.setData(this, "android/performace/kadun/卡顿优化.MD");
     }
 
     @OnClick(R.id.show_dialog1)
     public void button1(){
-        MarkdownUtils.setData(this, "android/performace/性能优化相关库.md");
 
     }
 
 
     @OnClick(R.id.android_performace_t)
     public void android_performace_t(){
-        MarkdownUtils.setData(this, "android/performace/页面卡顿自检步骤.MD");
+        MarkdownUtils.setData(this, "android/performace/kadun/页面卡顿自检步骤.md");
     }
 
     @OnClick(R.id.show_dialog2)

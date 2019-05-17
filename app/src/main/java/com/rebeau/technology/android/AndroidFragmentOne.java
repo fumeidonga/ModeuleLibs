@@ -12,6 +12,7 @@ import com.rebeau.commons.fragment.BaseLazyLoadFragment;
 import com.rebeau.commons.markdown.MarkdownUtils;
 import com.rebeau.technology.R;
 import com.rebeau.technology.android.dagger.DaggerTestActivity;
+import com.rebeau.technology.android.thread.ThreadActivity;
 import com.rebeau.views.loading.RBLoadStatusView;
 
 import butterknife.ButterKnife;
@@ -61,9 +62,9 @@ public class AndroidFragmentOne extends BaseLazyLoadFragment {
         //startActivity(new Intent(mActivity, MainPerformanceActivity.class));
     }
 
-    @OnClick(R.id.show_dialog1)
-    public void button1(){
-
+    @OnClick(R.id.thread)
+    public void thread(){
+        startActivity(new Intent(mActivity, ThreadActivity.class));
     }
 
     @OnClick(R.id.show_dialog2)

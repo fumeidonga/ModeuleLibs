@@ -20,15 +20,21 @@ public class AndroidPerformanceTools extends Activity {
 
 
 
+    @OnClick(R.id.performance_ku)
+    public void performance_ku(){
+        MarkdownUtils.setData(this, "android/performace/性能优化相关库.md");
+    }
+
+
     @OnClick(R.id.show_dialog)
     public void show_dialog(){
 
-        MarkdownUtils.setData(this, "android/performace/android_prifile_cup.MD");
+        MarkdownUtils.setData(this, "android/performace/ram/android_prifile_cup.MD");
     }
 
     @OnClick(R.id.android_performace_tools)
     public void android_profile_cpu(){
-        MarkdownUtils.setData(this, "android/performace/android_prifile_memory.MD");
+        MarkdownUtils.setData(this, "android/performace/ram/android_prifile_memory.MD");
     }
 
     @OnClick(R.id.show_dialog0)

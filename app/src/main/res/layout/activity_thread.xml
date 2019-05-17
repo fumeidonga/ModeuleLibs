@@ -14,40 +14,24 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <Button
-                android:id="@+id/show_dialog"
+                android:id="@+id/readme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
                 android:textColor="@android:color/holo_green_light"
                 android:text="read me"
                 />
-
             <Button
                 android:id="@+id/android_performace_tools"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
-                android:textColor="@android:color/holo_green_light"
-                android:text=""
+                android:textColor="@android:color/holo_red_dark"
+                android:text="线程优化"
                 />
 
-            <Button
-                android:id="@+id/show_dialog0"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:textColor="@android:color/holo_green_light"
-                android:text=""
-                />
-            <Button
-                android:id="@+id/show_dialog1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:textColor="@android:color/holo_red_dark"
-                android:text=""
-                />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

@@ -4,6 +4,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.webkit.WebView;
@@ -59,7 +60,19 @@ public class MarkdownWebviewActivity extends BaseFragmentActivity {
 
     @Override
     protected String getTitleBarName() {
-        return "";
+
+        if(TextUtils.isEmpty(MarkdownUtils.fileName)) {
+            return "";
+        }
+
+        String title = "";
+
+        try {
+            title = MarkdownUtils.fileName.substring(MarkdownUtils.fileName.lastIndexOf("/") + 1);
+        }catch (Exception e){
+        }
+
+        return title;
     }
 
     @Override
