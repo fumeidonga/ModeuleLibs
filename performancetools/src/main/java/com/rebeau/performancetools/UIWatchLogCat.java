@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 import android.os.Environment;
 import android.util.Log;
 
+import com.rebeau.base.utils.RBLogUtil;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -166,14 +168,14 @@ public class UIWatchLogCat {
             //写入文件
             channel.write(buff);
         } catch (IOException e) {
-            e.printStackTrace();
+            RBLogUtil.et("error");
         } finally {
             //关闭流,刷新到文件
             if (rfile != null) {
                 try {
                     rfile.close();
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    RBLogUtil.et("error");
                 }
             }
         }

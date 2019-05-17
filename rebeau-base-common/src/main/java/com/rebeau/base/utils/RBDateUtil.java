@@ -295,7 +295,7 @@ public class RBDateUtil {
 			date = sdf.parse(str);
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			RBLogUtil.et("error");
 		}
 		return date;
 	}
@@ -382,7 +382,7 @@ public class RBDateUtil {
 		try {
 			date = str2Date(dateStr, FORMAT_WITH_Z);
 		} catch (Exception e) {
-			e.printStackTrace();
+			RBLogUtil.et("error");
 			isDate = false;
 		}
 		if (date == null) {

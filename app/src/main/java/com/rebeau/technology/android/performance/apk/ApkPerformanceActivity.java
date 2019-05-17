@@ -1,4 +1,4 @@
-package com.rebeau.technology.android.performance.memory;
+package com.rebeau.technology.android.performance.apk;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -9,26 +9,25 @@ import com.rebeau.technology.R;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MemoryActivity extends Activity {
+public class ApkPerformanceActivity extends Activity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_memory);
-
+        setContentView(R.layout.activity_apk_performance);
         mActivity = this;
         ButterKnife.bind(this);
     }
 
     Activity mActivity;
-    @OnClick(R.id.readme)
-    public void readme(){
-        MarkdownUtils.setData(mActivity, "android/performace/ram_performance_readme.MD");
+    @OnClick(R.id.show_dialog)
+    public void button(){
+        MarkdownUtils.setData(mActivity, "android/performace/apk_performance_readme.MD");
     }
 
     @OnClick(R.id.android_performace_tools)
     public void android_profile_cpu(){
-        MarkdownUtils.setData(this, "android/performace/ram/内存优化.MD");
 
     }
 

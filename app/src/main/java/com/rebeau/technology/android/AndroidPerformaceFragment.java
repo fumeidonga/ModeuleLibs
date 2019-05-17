@@ -12,6 +12,7 @@ import com.rebeau.commons.fragment.BaseLazyLoadFragment;
 import com.rebeau.commons.markdown.MarkdownUtils;
 import com.rebeau.technology.R;
 import com.rebeau.technology.android.performance.AndroidPerformanceTools;
+import com.rebeau.technology.android.performance.apk.ApkPerformanceActivity;
 import com.rebeau.technology.android.performance.kadun.KaDunActivity;
 import com.rebeau.technology.android.performance.layout.LayoutActivity;
 import com.rebeau.technology.android.performance.memory.MemoryActivity;
@@ -64,25 +65,24 @@ public class AndroidPerformaceFragment extends BaseLazyLoadFragment {
         notifyLoadStatus(RBLoadStatusView.LOAD_SUCCESS);
     }
 
+    @OnClick(R.id.read_me)
+    public void readMe(){
+        MarkdownUtils.setData(mActivity, "android/performace/性能优化.MD");
+    }
 
     @OnClick(R.id.android_performace_tools)
-    public void android_profile_cpu(){
+    public void performace_tools(){
         startActivity(new Intent(mActivity, AndroidPerformanceTools.class));
     }
 
 
-    @OnClick(R.id.show_dialog)
-    public void button(){
-        MarkdownUtils.setData(mActivity, "android/performace/性能优化.MD");
-    }
-
-    @OnClick(R.id.show_dialog0)
-    public void button0(){
+    @OnClick(R.id.layout_performance)
+    public void layout_performance(){
         startActivity(new Intent(mActivity, LayoutActivity.class));
     }
 
-    @OnClick(R.id.show_dialog1)
-    public void button1(){
+    @OnClick(R.id.memory_performance)
+    public void memory_performance(){
         startActivity(new Intent(mActivity, MemoryActivity.class));
     }
 
@@ -99,7 +99,7 @@ public class AndroidPerformaceFragment extends BaseLazyLoadFragment {
         try {
             //Thread.sleep(1000);
         } catch (Exception e) {
-            e.printStackTrace();
+            RBLogUtil.et("error");
         }
         RBLogUtil.dt("");
     }
@@ -122,6 +122,7 @@ public class AndroidPerformaceFragment extends BaseLazyLoadFragment {
     @OnClick(R.id.show_dialog7)
     public void button7(){
 
+        startActivity(new Intent(mActivity, ApkPerformanceActivity.class));
     }
 
     @OnClick(R.id.show_dialog8)

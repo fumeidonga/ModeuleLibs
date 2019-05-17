@@ -78,7 +78,7 @@ public abstract class BaseShareView {
             fos.flush();
             fos.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            RBLogUtil.et("error");
         }
 
         return saveFile;

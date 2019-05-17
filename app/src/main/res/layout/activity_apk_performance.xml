@@ -14,42 +14,22 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
-            <Button
-                android:id="@+id/leakcanary"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:textColor="@android:color/holo_green_dark"
-                android:text="LeakCanary "
-                />
-
-            <Button
-                android:id="@+id/lint"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:textColor="@android:color/holo_green_dark"
-                android:text="Lint "
-                />
-
             <Button
                 android:id="@+id/show_dialog"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
-                android:textColor="@android:color/holo_green_dark"
-                android:text="android profile cpu"
+                android:textColor="@android:color/holo_orange_light"
+                android:text="read me"
                 />
-
 
             <Button
                 android:id="@+id/android_performace_tools"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
-                android:textColor="@android:color/holo_green_dark"
-                android:text="android profile memory"
+                android:textColor="@android:color/holo_orange_light"
+                android:text=""
                 />
 
             <Button
@@ -57,18 +37,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
-                android:textColor="@android:color/holo_green_dark"
-                android:text="systrace"
+                android:textColor="@android:color/holo_orange_light"
+                android:text=""
                 />
-
-
             <Button
                 android:id="@+id/show_dialog1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
-                android:textColor="@android:color/holo_green_dark"
-                android:text="MAT(Memory Analyzer Tool)"
+                android:textColor="@android:color/holo_red_dark"
+                android:text=""
                 />
         </LinearLayout>
     </ScrollView>

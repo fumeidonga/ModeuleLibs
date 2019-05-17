@@ -15,6 +15,7 @@ import android.view.ViewParent;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.rebeau.base.utils.RBLogUtil;
 import com.rebeau.performancetools.UIWatchLogCat;
 
 import java.util.LinkedList;
@@ -172,7 +173,7 @@ public class LancetFragmentHook {
             try {
                 msgList.add(v.getResources().getResourceName(v.getId()));
             } catch (Exception e) {
-                e.printStackTrace();
+                RBLogUtil.et("error");
                 msgList.add("~");
             }
         } else {

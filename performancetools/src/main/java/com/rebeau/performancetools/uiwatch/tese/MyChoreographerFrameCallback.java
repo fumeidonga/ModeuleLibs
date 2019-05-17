@@ -3,6 +3,8 @@ package com.rebeau.performancetools.uiwatch.tese;
 import android.util.Log;
 import android.view.Choreographer;
 
+import com.rebeau.base.utils.RBLogUtil;
+
 import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -123,9 +125,9 @@ public class MyChoreographerFrameCallback implements Choreographer.FrameCallback
                 return mLastFrameTimeField.getLong(Choreographer.getInstance());
             }
         } catch (NoSuchFieldException e) {
-            e.printStackTrace();
+            RBLogUtil.et("error");
         } catch (IllegalAccessException e) {
-            e.printStackTrace();
+            RBLogUtil.et("error");
         }
         return 0L;
     }

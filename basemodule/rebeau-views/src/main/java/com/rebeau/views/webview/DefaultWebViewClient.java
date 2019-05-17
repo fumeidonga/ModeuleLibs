@@ -128,7 +128,7 @@ public class DefaultWebViewClient extends WebViewClient {
 				// 在app/src/main下创建一个assets文件夹
 				// assets文件夹里再创建一个images文件夹,放一个error.png的图片
 			} catch (Exception e) {
-				e.printStackTrace();
+				RBLogUtil.et("error");
 			}
 			// 步骤4:替换资源
 			WebResourceResponse response = new WebResourceResponse("image/png", "utf-8", is);
@@ -190,7 +190,7 @@ public class DefaultWebViewClient extends WebViewClient {
 				// 在app/src/main下创建一个assets文件夹
 				// assets文件夹里再创建一个images文件夹,放一个error.png的图片
 			} catch (Exception e) {
-				e.printStackTrace();
+				RBLogUtil.et("error");
 			}
 			//步骤4:替换资源
 			WebResourceResponse response = new WebResourceResponse("image/png", "utf-8", is);
@@ -218,7 +218,7 @@ public class DefaultWebViewClient extends WebViewClient {
 			response = new WebResourceResponse(mime, "UTF-8",
 					new FileInputStream(new File("/缓存文件的位置/" + "md5String(url)" + style)));
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			RBLogUtil.et("error");
 		}
 		return response;
 	}

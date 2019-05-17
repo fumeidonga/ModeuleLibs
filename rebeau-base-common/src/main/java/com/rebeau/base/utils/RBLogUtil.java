@@ -364,7 +364,7 @@ public class RBLogUtil {
 				writer.close();
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			RBLogUtil.et("error");
 		}
 	}
 

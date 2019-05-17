@@ -69,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
                 android:textColor="@android:color/holo_green_dark"
-                android:text="  "
+                android:text=" Binder 机制分析 "
                 />
             <Button
                 android:id="@+id/show_dialog7"

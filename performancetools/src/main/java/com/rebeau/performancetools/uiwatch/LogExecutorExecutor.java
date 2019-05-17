@@ -7,6 +7,7 @@ import android.os.Message;
 import android.text.TextUtils;
 
 import com.rebeau.base.utils.RBDateUtil;
+import com.rebeau.base.utils.RBLogUtil;
 import com.rebeau.performancetools.UIWatchLogCat;
 
 import java.io.File;
@@ -165,14 +166,14 @@ public class LogExecutorExecutor extends AbsLogExecutor {
             //写入文件
             channel.write(buff);
         } catch (IOException e) {
-            e.printStackTrace();
+            RBLogUtil.et("error");
         } finally {
             //关闭流,刷新到文件
             if (rfile != null) {
                 try {
                     rfile.close();
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    RBLogUtil.et("error");
                 }
             }
         }

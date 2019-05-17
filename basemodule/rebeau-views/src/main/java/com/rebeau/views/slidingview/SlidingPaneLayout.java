@@ -12,8 +12,9 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.Scroller;
 
-import com.rebeau.views.R;
+import com.rebeau.base.utils.RBLogUtil;
 import com.rebeau.base.utils.RBScreenUtil;
+import com.rebeau.views.R;
 
 
 /**
@@ -231,7 +232,7 @@ public class SlidingPaneLayout extends FrameLayout {
         try {
             super.dispatchDraw(canvas);
         } catch (Exception e) {
-            e.printStackTrace();
+            RBLogUtil.et("error");
         }
     }
 

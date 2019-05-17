@@ -1,16 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_f5f5f5"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_centerInParent="true"
-        style="@style/my_about_item_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="three party one " />
+    <ScrollView
+        android:id="@+id/scrollable"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-</RelativeLayout>
+            <Button
+                android:id="@+id/leakcanary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_green_dark"
+                android:text="LeakCanary 原理"
+                />
+
+            <Button
+                android:id="@+id/lint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_green_dark"
+                android:text="Event bus 原理解析 及手写框架 "
+                />
+
+            <Button
+                android:id="@+id/show_dialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_green_dark"
+                android:text="okhttp 原理解析"
+                />
+
+
+            <Button
+                android:id="@+id/android_performace_tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_green_dark"
+                android:text="dagger 原理"
+                />
+
+            <Button
+                android:id="@+id/show_dialog0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_green_dark"
+                android:text="retrofit 源码解析"
+                />
+
+
+            <Button
+                android:id="@+id/show_dialog1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_green_dark"
+                android:text="glide 源码"
+                />
+            <Button
+                android:id="@+id/show_dialog2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_green_dark"
+                android:text="fresco 源码"
+                />
+            <Button
+                android:id="@+id/show_dialog3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_green_dark"
+                android:text="butterknife 源码"
+                />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

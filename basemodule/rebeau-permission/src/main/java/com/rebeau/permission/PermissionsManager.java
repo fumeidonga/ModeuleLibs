@@ -168,7 +168,7 @@ public class PermissionsManager {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            RBLogUtil.et("error");
         }
 
         return b;
@@ -221,7 +221,7 @@ public class PermissionsManager {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            RBLogUtil.et("error");
             Intent intent = new Intent();
             intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
             intent.addCategory(Intent.CATEGORY_DEFAULT);

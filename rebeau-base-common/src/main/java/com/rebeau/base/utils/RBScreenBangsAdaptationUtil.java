@@ -276,7 +276,7 @@ public class RBScreenBangsAdaptationUtil {
                         }
                     } catch (Exception e) {
                         bangHeight = 0;
-                        e.printStackTrace();
+                        RBLogUtil.et("error");
                     }
                 }
                 ScreenBangHolder.getInstance().setIsScreenBang(bangHeight > 0);
@@ -366,7 +366,7 @@ public class RBScreenBangsAdaptationUtil {
                 field.setAccessible(true);
                 field.setInt(lp, value);
             } catch (Exception e) {
-                e.printStackTrace();
+                RBLogUtil.et("error");
             }
             window.setAttributes(lp);
         } else {

@@ -12,6 +12,8 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.rebeau.base.utils.RBLogUtil;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -131,7 +133,7 @@ public class RomUtil {
             String version = emuiVersion.substring(emuiVersion.indexOf("_") + 1);
             return Double.parseDouble(version);
         } catch (Exception e) {
-            e.printStackTrace();
+            RBLogUtil.et("error");
         }
         return 4.0;
     }

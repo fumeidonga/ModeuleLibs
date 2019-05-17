@@ -29,6 +29,12 @@ public class KaDunActivity extends Activity {
 
     }
 
+
+    @OnClick(R.id.android_performace_t)
+    public void android_performace_t(){
+        MarkdownUtils.setData(this, "android/performace/页面卡顿自检步骤.MD");
+    }
+
     @OnClick(R.id.show_dialog2)
     public void button2(){
 

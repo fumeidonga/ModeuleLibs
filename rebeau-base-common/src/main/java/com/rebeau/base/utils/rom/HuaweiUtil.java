@@ -8,6 +8,8 @@ import android.os.Build;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.rebeau.base.utils.RBLogUtil;
+
 public class HuaweiUtil {
     private static final String TAG = "HuaweiUtil";
 
@@ -71,7 +73,7 @@ public class HuaweiUtil {
 //   ComponentName comp = new ComponentName("com.android.settings","com.android.settings.permission.single_app_activity");//此处可跳转到指定app对应的权限管理页面，但是需要相关权限，未解决
             intent.setComponent(comp);
             context.startActivity(intent);
-            e.printStackTrace();
+            RBLogUtil.et("error");
             Log.e(TAG, Log.getStackTraceString(e));
         } catch (Exception e) {
             //抛出异常时提示信息

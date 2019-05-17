@@ -180,7 +180,7 @@ function setContactInfo(data) {
 				jsonArray.put(object2);
 				return jsonArray.toString();
 			} catch (JSONException e) {
-				e.printStackTrace();
+				RBLogUtil.et("error");
 			}
 			return null;
 		}
