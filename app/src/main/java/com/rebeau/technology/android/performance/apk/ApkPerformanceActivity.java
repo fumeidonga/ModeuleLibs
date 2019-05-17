@@ -23,7 +23,7 @@ public class ApkPerformanceActivity extends Activity {
     Activity mActivity;
     @OnClick(R.id.show_dialog)
     public void button(){
-        MarkdownUtils.setData(mActivity, "android/performace/apk_performance_readme.MD");
+        MarkdownUtils.setData(mActivity, "android/performace/apk/apk_performance_readme.MD");
     }
 
     @OnClick(R.id.android_performace_tools)

@@ -13,8 +13,12 @@ import java.io.InputStreamReader;
 public class MarkdownUtils {
 
     public static String fileName= "";
+    public static boolean defaultWeb = true;
 
     public static void setData(Context context, String data){
+        if(data.endsWith("md") || data.endsWith("MD")) {
+            defaultWeb = false;
+        }
         fileName = data;
         startActivitys(context);
     }
@@ -24,6 +28,7 @@ public class MarkdownUtils {
 //        解决方案：在读取的源字符串的每一行末尾加上一个‘\n’
 // eg:
 
+        defaultWeb = true;
         InputStream is = context.getAssets().open(fileName);
         BufferedReader br = new BufferedReader(new InputStreamReader(is));
 

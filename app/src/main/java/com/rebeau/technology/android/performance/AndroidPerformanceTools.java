@@ -25,6 +25,15 @@ public class AndroidPerformanceTools extends Activity {
         MarkdownUtils.setData(this, "android/performace/性能优化相关库.md");
     }
 
+    @OnClick(R.id.leakcanary)
+    public void leakcanary(){
+        //MarkdownUtils.setData(this, "android/performace/性能优化相关库.md");
+    }
+
+    @OnClick(R.id.lint)
+    public void lint(){
+        //MarkdownUtils.setData(this, "android/performace/性能优化相关库.md");
+    }
 
     @OnClick(R.id.show_dialog)
     public void show_dialog(){

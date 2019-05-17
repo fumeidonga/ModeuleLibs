@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".android.thread.ThreadActivity"></activity>
+        <activity android:name=".android.yuanli.KaifaGaoshoukeActivity"></activity>
+        <activity android:name=".android.thread.ThreadActivity" />
         <activity android:name=".android.performance.apk.ApkPerformanceActivity" />
         <activity android:name=".android.performance.AndroidPerformanceTools" />
         <activity

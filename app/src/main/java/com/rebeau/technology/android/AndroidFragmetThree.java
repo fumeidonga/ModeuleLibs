@@ -56,35 +56,58 @@ public class AndroidFragmetThree extends BaseLazyLoadFragment {
     }
 
     @OnClick(R.id.show_dialog0)
-    public void button0(){
+    public void draws(){
         MarkdownUtils.setData(mActivity, "android/performace/Android绘制原理.MD");
     }
 
     @OnClick(R.id.show_dialog1)
-    public void button1(){
+    public void yingjianjiasu(){
         MarkdownUtils.setData(mActivity, "android/performace/Android硬件加速原理.MD");
 
     }
 
     @OnClick(R.id.show_dialog2)
-    public void button2(){
+    public void draw2(){
         MarkdownUtils.setData(mActivity, "android/performace/view的绘制原理.MD");
     }
 
     @OnClick(R.id.show_dialog3)
-    public void button3(){
+    public void handlers(){
 
 
     }
 
     @OnClick(R.id.show_dialog4)
-    public void button4(){
+    public void view_event(){
 
         MarkdownUtils.setData(mActivity, "android/performace/事件分发.md");
     }
 
     @OnClick(R.id.show_dialog5)
-    public void button5(){
+    public void setcontents(){
+
+    }
+
+    @OnClick(R.id.show_dialog6)
+    public void binder(){
+
+    }
+
+    @OnClick(R.id.choreographer)
+    public void choreographer(){
+        MarkdownUtils.setData(mActivity, "android/performace/choreographer.md");
+
+    }
+
+
+    @OnClick(R.id.show_dialog8)
+    public void show_dialog8(){
+
+    }
+
+
+    @OnClick(R.id.show_dialog9)
+    public void show_dialog9(){
 
     }
 }

@@ -1,8 +1,6 @@
 package com.rebeau.technology.threeparty;
 
 import com.rebeau.commons.fragment.BaseTopSegmentTabVPFragment;
-import com.rebeau.commons.fragment.BaseTopTabVPFragment;
-import com.rebeau.technology.demo.AppAboutFragment;
 import com.rebeau.views.loading.RBLoadStatusView;
 
 import java.util.HashMap;
@@ -17,7 +15,7 @@ public class ThreePartyFragment extends BaseTopSegmentTabVPFragment {
     @Override
     public void initTabUI() {
 
-        mTitles = new String[]{"简介", "原理"};
+        mTitles = new String[]{"原理", "Bug"};
     }
 
     @Override

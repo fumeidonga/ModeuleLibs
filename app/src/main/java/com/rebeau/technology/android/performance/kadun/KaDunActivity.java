@@ -25,7 +25,7 @@ public class KaDunActivity extends Activity {
 
     @OnClick(R.id.show_dialog1)
     public void button1(){
-
+        MarkdownUtils.setData(this, "android/performace/性能优化相关库.md");
     }
 
 

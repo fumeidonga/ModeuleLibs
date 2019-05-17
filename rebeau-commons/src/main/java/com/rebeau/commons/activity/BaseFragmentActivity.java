@@ -16,11 +16,11 @@ import android.widget.LinearLayout;
 
 import com.rebeau.base.cache.DataManager;
 import com.rebeau.base.config.Constants;
+import com.rebeau.base.thread.DVThreadManager;
 import com.rebeau.base.utils.RBAppManager;
 import com.rebeau.base.utils.RBLogUtil;
-import com.rebeau.commons.lifecycle.RBActivityLifecycleCallbacks;
-import com.rebeau.base.thread.DVThreadManager;
 import com.rebeau.base.utils.RBStatusBarUtil;
+import com.rebeau.commons.lifecycle.RBActivityLifecycleCallbacks;
 import com.rebeau.views.loading.RBLoadStatusView;
 import com.rebeau.views.loading.RBMainButton;
 import com.rebeau.views.night.RBNightShadowHelper;

@@ -1,8 +1,6 @@
 package com.rebeau.technology.threeparty;
 
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,12 +8,12 @@ import android.view.ViewGroup;
 
 import com.rebeau.base.utils.RBLogUtil;
 import com.rebeau.commons.fragment.BaseLazyLoadFragment;
+import com.rebeau.commons.markdown.MarkdownUtils;
 import com.rebeau.technology.R;
 import com.rebeau.views.loading.RBLoadStatusView;
 
-import java.util.ArrayList;
-
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * author: david
@@ -30,14 +28,6 @@ public class ThreePartyFragmentTwo extends BaseLazyLoadFragment {
         fragment.setArguments(args);
         return fragment;
     }
-
-    Handler mHandler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            notifyLoadStatus(RBLoadStatusView.LOAD_SUCCESS);
-        }
-    };
 
     @Override
     protected View createSuccessView(@Nullable ViewGroup container) {
@@ -56,6 +46,17 @@ public class ThreePartyFragmentTwo extends BaseLazyLoadFragment {
     protected void onLoadData() {
         RBLogUtil.dt();
         isLazyLoad = true;
-        mHandler.sendEmptyMessageDelayed(0, 1000);
+        notifyLoadStatus(RBLoadStatusView.LOAD_SUCCESS);
+    }
+
+    @OnClick(R.id.badtoke)
+    public void badtoke(){
+        MarkdownUtils.setData(mActivity, "android/bug/badtoken.md");
+    }
+
+    @OnClick(R.id.timeout)
+    public void timeout(){
+        MarkdownUtils.setData(mActivity, "android/bug/timeout.md");
+
     }
 }

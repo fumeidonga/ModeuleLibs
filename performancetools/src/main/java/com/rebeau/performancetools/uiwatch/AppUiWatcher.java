@@ -203,6 +203,20 @@ public class AppUiWatcher {
         NormalMonitor.getInstance().start(context);
     }
 
+    /**
+     * getWindow().getDecorView().getViewTreeObserver().addOnDrawListener
+     * 通过addOnDrawListener实现监听界面是否存在绘制行为
+     * 来决定是否要监听帧率
+     */
+    public void postFrameCallback(){
+        Choreographer.getInstance().postFrameCallback(frameCallback);
+    }
+
+    public void removeFrameCallback(){
+        Choreographer.getInstance().removeFrameCallback(frameCallback);
+    }
+    ////////////////////////////////////
+
     @SuppressLint("NewApi")
     public void stopWatch() {
         //关闭帧率监听

@@ -72,12 +72,12 @@
                 android:text=" Binder 机制分析 "
                 />
             <Button
-                android:id="@+id/show_dialog7"
+                android:id="@+id/choreographer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
                 android:textColor="@android:color/holo_green_dark"
-                android:text=""
+                android:text="Choreographer 监控性能 帧率等"
                 />
             <Button
                 android:id="@+id/show_dialog8"

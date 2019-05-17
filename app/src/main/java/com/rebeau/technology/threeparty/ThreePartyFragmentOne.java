@@ -1,8 +1,6 @@
 package com.rebeau.technology.threeparty;
 
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +12,7 @@ import com.rebeau.technology.R;
 import com.rebeau.views.loading.RBLoadStatusView;
 
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * author: david
@@ -28,14 +27,6 @@ public class ThreePartyFragmentOne extends BaseLazyLoadFragment {
         fragment.setArguments(args);
         return fragment;
     }
-
-    Handler mHandler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            notifyLoadStatus(RBLoadStatusView.LOAD_SUCCESS);
-        }
-    };
 
     @Override
     protected View createSuccessView(@Nullable ViewGroup container) {
@@ -54,6 +45,39 @@ public class ThreePartyFragmentOne extends BaseLazyLoadFragment {
     protected void onLoadData() {
         RBLogUtil.dt();
         isLazyLoad = true;
-        mHandler.sendEmptyMessageDelayed(0, 1000);
+        notifyLoadStatus(RBLoadStatusView.LOAD_SUCCESS);
+    }
+
+    @OnClick(R.id.leakcanary)
+    public void leakcanary(){
+        //MarkdownUtils.setData(mActivity, "android/performace/view的绘制原理.MD");
+    }
+
+    @OnClick(R.id.lint)
+    public void lint(){
+    }
+
+    @OnClick(R.id.show_dialog)
+    public void okhttp(){
+    }
+
+    @OnClick(R.id.android_performace_tools)
+    public void daggers(){
+    }
+
+    @OnClick(R.id.show_dialog0)
+    public void retrofits(){
+    }
+
+    @OnClick(R.id.show_dialog1)
+    public void glide(){
+    }
+
+    @OnClick(R.id.show_dialog2)
+    public void fresco(){
+    }
+
+    @OnClick(R.id.show_dialog3)
+    public void butterknifes(){
     }
 }

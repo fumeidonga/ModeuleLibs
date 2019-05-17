@@ -51,6 +51,8 @@
 
 3. Choreographer
 
+   具体的可查看 原理/Choreographer.md
+
    [kɔːriˈɑːɡrəfər]
 
     检测UI丢帧跟卡顿，网上的文章还是很多的, 我们查看 AppChoreoFrameCallback.java

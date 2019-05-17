@@ -1,5 +1,6 @@
 package com.rebeau.technology.android;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -9,9 +10,11 @@ import android.view.ViewGroup;
 import com.rebeau.base.utils.RBLogUtil;
 import com.rebeau.commons.fragment.BaseLazyLoadFragment;
 import com.rebeau.technology.R;
+import com.rebeau.technology.android.yuanli.KaifaGaoshoukeActivity;
 import com.rebeau.views.loading.RBLoadStatusView;
 
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * author: david
@@ -31,7 +34,7 @@ public class AndroidFragmentTwo extends BaseLazyLoadFragment {
 
     @Override
     protected View createSuccessView(@Nullable ViewGroup container) {
-        View view = LayoutInflater.from(getActivity()).inflate(R.layout.android_fragment_one, container, false);
+        View view = LayoutInflater.from(getActivity()).inflate(R.layout.android_fragment_two, container, false);
         ButterKnife.bind(this, view);
 
         RBLogUtil.dt();
@@ -50,5 +53,11 @@ public class AndroidFragmentTwo extends BaseLazyLoadFragment {
         RBLogUtil.dt();
         isLazyLoad = true;
         notifyLoadStatus(RBLoadStatusView.LOAD_SUCCESS);
+    }
+
+
+    @OnClick(R.id.show_dialog0)
+    public void button0(){
+        startActivity(new Intent(mActivity, KaifaGaoshoukeActivity.class));
     }
 }
