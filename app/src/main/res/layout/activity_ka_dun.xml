@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
                 android:textColor="@android:color/holo_red_dark"
-                android:text=""
+                android:text="ANR"
                 />
             <Button
                 android:id="@+id/show_dialog3"
