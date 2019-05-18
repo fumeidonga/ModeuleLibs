@@ -84,6 +84,24 @@ ___
 ## 表格的合并
 markdown支持html，
 
+<table>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+</table>
+
 ### 合并列
 <table>
     <tr>
