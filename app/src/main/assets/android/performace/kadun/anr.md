@@ -202,7 +202,6 @@ free: 296 2436 N/A 2732
      | state=S schedstat=( 759680053 37680105100 3160 ) utm=55 stm=20 core=3 HZ=100
      | stack=0xff27a000-0xff27c000 stackSize=8MB
      | held mutexes=
-     kernel: (couldn't read /proc/self/task/28568/stack)
      native: #00 pc 00013494 /system/lib/libc.so (syscall 28)
      native: #01 pc 000a9c73 /system/lib/libart.so (_ZN3art17ConditionVariable4WaitEPNS_6ThreadE 82)
      native: #02 pc 0026b26f /system/lib/libart.so (artFindNativeMethod 1342)

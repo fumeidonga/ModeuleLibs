@@ -34,9 +34,9 @@ public abstract class AbsLogExecutor {
     public Handler mLogHandler;
     //----------------base config----------------------
     /**
-     * 堆栈信息最多保存条数,最少1 至多无限制,默认10
+     * 堆栈信息最多保存条数,最少1 至多无限制,默认3
      */
-    int cacheDataSize = 10;
+    int cacheDataSize = 3;
 
     /**
      * 卡顿时输出日志的log,默认为 AppUiWatcher

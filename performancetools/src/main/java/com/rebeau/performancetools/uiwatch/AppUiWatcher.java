@@ -37,9 +37,9 @@ public class AppUiWatcher {
     private int minSkipFrameCount = 3;
 
     /**
-     * 堆栈信息最多保存条数,最少1至多无限制,默认10
+     * 堆栈信息最多保存条数,最少1至多无限制,默认3
      */
-    private int cacheDataSize = 10;
+    private int cacheDataSize = 3;
 
     /**
      * 卡顿时输出日志的log,默认为 AppUiWatcher

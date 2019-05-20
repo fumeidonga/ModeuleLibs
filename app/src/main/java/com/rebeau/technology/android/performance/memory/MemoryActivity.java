@@ -23,7 +23,7 @@ public class MemoryActivity extends Activity {
     Activity mActivity;
     @OnClick(R.id.readme)
     public void readme(){
-        MarkdownUtils.setData(mActivity, "android/performace/ram_performance_readme.MD");
+        MarkdownUtils.setData(mActivity, "android/performace/ram/ram_performance_readme.MD");
     }
 
     @OnClick(R.id.android_performace_tools)
