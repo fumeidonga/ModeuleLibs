@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.WindowManager;
 
 import com.rebeau.base.utils.RBLogUtil;
+import com.rebeau.base.utils.RBScreenBangsAdaptationUtil;
 import com.rebeau.commons.activity.BaseFragmentActivity;
 import com.rebeau.permission.PermissionsManager;
 import com.rebeau.permission.PermissionsTipsDialog;
@@ -19,8 +20,11 @@ import com.rebeau.technology.R;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-import butterknife.ButterKnife;
-
+/**
+ *
+ * vivo 手机的全屏需要手动在设置中打开，上vivo市场的应用会自动打开
+ *
+ */
 public class LoadingActivity extends BaseFragmentActivity implements PermissionsManager.PermissionListener  {
 
     LoadHandler mHandler;
@@ -37,9 +41,17 @@ public class LoadingActivity extends BaseFragmentActivity implements Permissions
 
         @Override
         public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            reference.get().startActivity(new Intent(reference.get(), MainActivity.class));
-            reference.get().finish();
+            if(msg.what == 0) {
+                if (reference.get() != null) {
+                    super.handleMessage(msg);
+                    reference.get().showRationaleDialog();
+                }
+            } else {
+                if (reference.get() != null) {
+                    reference.get().startActivity(new Intent(reference.get(), MainActivity.class));
+                    reference.get().finish();
+                }
+            }
         }
     }
 
@@ -48,19 +60,23 @@ public class LoadingActivity extends BaseFragmentActivity implements Permissions
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
 
-
         if(!hasPermissions()) {
             PermissionsManager.requestPermissions(this, this, PermissionsManager.READ_PHONE_STATE, PermissionsManager.WRITE_EXTERNAL_STORAGE,
                     PermissionsManager.READ_EXTERNAL_STORAGE);
         } else {
             openApp();
         }
+
+        /**
+         * 显示刘海屏
+         */
+        RBScreenBangsAdaptationUtil.displayScreenBang(this);
     }
 
     @Override
     protected View createSuccessView() {
         View view = LayoutInflater.from(this).inflate(R.layout.activity_loading, null);
-        ButterKnife.bind(this, view);
+        //ButterKnife.bind(this, view);
         return view;
     }
 
@@ -178,7 +194,7 @@ public class LoadingActivity extends BaseFragmentActivity implements Permissions
     }
 
     private void openApp() {
-        mHandler.sendEmptyMessageDelayed(0, 1500);
+        mHandler.sendEmptyMessageDelayed(1, 1500);
     }
 
 
@@ -206,6 +222,16 @@ public class LoadingActivity extends BaseFragmentActivity implements Permissions
 
     @Override
     protected boolean isNeedLoadCreateView() {
+        return false;
+    }
+
+    @Override
+    protected boolean isActivityLoadingEnable() {
+        return false;
+    }
+
+    @Override
+    protected boolean isSlidingPaneBackEnable() {
         return false;
     }
 }

@@ -25,7 +25,6 @@
     <style name="ThemeLoadingBackground" parent="android:Theme">
         <item name="android:windowBackground">@drawable/splash_bg</item>
         <item name="android:windowFullscreen">true</item>
-        <!--<item name="android:windowDrawsSystemBarBackgrounds">false</item>   request api 21-->
         <item name="android:windowNoTitle">true</item>
     </style>
 

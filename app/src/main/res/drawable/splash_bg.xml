@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
-        <color android:color="@color/white"/>
+        <color android:color="@color/white" />
     </item>
-    <!--<item>
+
+<!--    <item>
         <bitmap
-            android:gravity="bottom"
-            android:src="@drawable/logding_ic_page_zero" />
+            android:tileMode="repeat"
+            android:src="@mipmap/ic_launcher" />
     </item>-->
+
+    <item
+        android:bottom="@dimen/dp_8"
+        android:left="@dimen/dp_8"
+        android:right="@dimen/dp_8"
+        android:top="@dimen/dp_8">
+        <color android:color="@color/white" />
+    </item>
 
     <item>
         <bitmap
@@ -20,22 +29,4 @@
             android:gravity="bottom"
             android:src="@mipmap/ic_launcher_round" />
     </item>
-<!--
-
-    <item android:bottom="100dp">
-        <bitmap
-            android:gravity="bottom"
-            android:src="@drawable/icon" />
-    </item>-->
-
-    <!--状态栏颜色-->
-    <!--<item android:drawable="@color/colorPrimaryDark" />-->
-    <!--假装这里是个toolbar-->
-    <!--<item
-        android:drawable="@color/colorPrimary"
-        android:top="25dp" />-->
-    <!--状态栏25+toolbar56=距离top81-->
-    <!--<item
-        android:drawable="@android:color/white"
-        android:top="81dp" />-->
 </layer-list>

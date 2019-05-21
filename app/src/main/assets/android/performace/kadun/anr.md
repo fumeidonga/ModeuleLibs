@@ -24,8 +24,72 @@ Application Not Responding
     AsyncTask的回调中除了doInBackground, 其他都是执行在主线程的.
     View的post(Runnable)是执行在主线程的.
 
+#### 2. ANR机制
+Android对于不同的ANR类型(Broadcast, Service, InputEvent)都有一套监测机制，
 
-#### 2. 原因
+在监测到ANR以后，需要显示ANR对话框、输出日志(发生ANR时的进程函数调用栈、CPU使用情况等)。
+整个ANR机制的代码也是横跨了Android的几个层：app -> framework -> Native
+
+##### 2.1 ANR监测机制
+
+###### 2.1.1 Srevice处理超时
+
+当Service的生命周期开始时，通过AMS.MainHandler抛出一个定时消息，当Service的生命周期结束时，
+之前抛出的SERVICE_TIMEOUT_MSG消息在这个方法中会被清除。 如果在超时时间内，SERVICE_TIMEOUT_MSG
+没有被清除，那么，AMS.MainHandler就会响应这个消息， 然后报告ANR，最终调用AMS.appNotResponding()方法
+
+###### 2.1.2 Broadcast处理超时
+广播消息的调度
+AMS维护了两个广播队列BroadcastQueue:
+
+foreground queue，前台队列的超时时间是10秒
+
+background queue，后台队列的超时时间是60秒
+
+所有发送的广播都会进入到队列中等待调度,，在发送广播时，可以通过Intent.FLAG_RECEIVER_FOREGROUND参数
+将广播投递到前台队列。 AMS线程会不断地从队列中取出广播消息派发到各个接收器,
+
+。。。
+
+
+###### 2.1.3 Input处理超时
+InputDispatcher - InputChannel - 窗口
+InputChannel其实是封装后的Linux管道(Pipe)。 每一个窗口都会有一个独立的InputChannel，窗口需要将这个
+InputChannel注册到InputDispatcher
+
+
+<pre>
+场景1: 窗口处于paused状态，不能处理输入事件
+
+“Waiting because the [targetType] window is paused.”
+
+场景2: 窗口还未向InputDispatcher注册，无法将事件派发到窗口
+
+“Waiting because the [targetType] window’s input channel is not registered with the input dispatcher. The window may be in the process of being removed.”
+
+场景3: 窗口和InputDispatcher的连接已经中断，即InputChannel不能正常工作
+
+“Waiting because the [targetType] window’s input connection is [status]. The window may be in the process of being removed.”
+
+场景4: InputChannel已经饱和，不能再处理新的事件
+
+“Waiting because the [targetType] window’s input channel is full. Outbound queue length: %d. Wait queue length: %d.”
+
+场景5: 对于按键类型(KeyEvent)的输入事件，需要等待上一个事件处理完毕
+
+“Waiting to send key event because the [targetType] window has not finished processing all of the input events that were previously delivered to it. Outbound queue length: %d. Wait queue length: %d.”
+
+场景6: 对于触摸类型(TouchEvent)的输入事件，可以立即派发到当前的窗口，因为TouchEvent都是发生在用户当前可见的窗口。但有一种情况， 如果当前应用由于队列有太多的输入事件等待派发，导致发生了ANR，那TouchEvent事件就需要排队等待派发。
+
+“Waiting to send non-key event because the %s window has not finished processing certain input events that were delivered to it over %0.1fms ago. Wait queue length: %d. Wait queue head age: %0.1fms.”
+</pre>
+
+
+##### 2.2 ANR报告机制
+
+
+
+#### 3. 原因
 - 主线程阻塞或主线程数据读取
 
 避免死锁的出现，使用子线程来处理耗时操作或阻塞任务。尽量避免在主线程query provider、不要滥用SharePreferenceS
@@ -111,7 +175,7 @@ free: 296 2436 N/A 2732
 
 
 
-#### 3. 排查分析的思路：
+#### 4. 排查分析的思路：
 
 1. 查看events_log
     
@@ -181,10 +245,15 @@ free: 296 2436 N/A 2732
 
 3. 报错的log
 
+    main log，通过检索”ANR in “关键字，可以找到ANR的信息，日志的上下文会包含CPU的使用情况
+    dropbox，通过检索”anr”类型，可以找到ANR的信息
+    
     android系统会自动帮我们生成一个log日志输出文件，在data/system/dropbox/下，真机测试需要root权限，
     模拟器在DDMS下可以查看
+    
+    [6类ANR实例剖析](https://www.cnblogs.com/Jokeyyu/p/9101879.html)
 
-#### 4. 我们以bugly上的ANR为例
+#### 5. 我们以bugly上的ANR为例
 
 [demo](https://bugly.qq.com/v2/crash-reporting/blocks/4c87c7482a/1754087?pid=1)
 
@@ -288,6 +357,72 @@ CPU usage from 0ms to 14957ms later:
 4 com.kmxs.reader.readerad.g.c(ViewManager.java:209) 对应到代码里面,然后再具体问题具体分析：
         
 adViewHolder.tv_no_ad_read.setText(CommonMethod.watchVideoFreeAdDesc());这边涉及到动画的执行，sp文件的读取
+
+
+[demo3](https://www.baidu.com)
+<pre>
+
+W Watchdog: *** WATCHDOG KILLING SYSTEM PROCESS: Blocked in monitor com.android.server.wm.WindowManagerService on foreground thread (android.fg)
+
+Watchdog告诉我们Monitor Checker超时了，具体在哪呢？ 名为android.fg的线程在WindowManagerService的monitor()方法被阻塞了。这里隐含了两层意思：
+
+WindowManagerService实现了Watchdog.Monitor这个接口，并将自己作为Monitor Checker的对象加入到了Watchdog的监测集中
+
+monitor()方法是运行在android.fg线程中的。Android将android.fg设计为一个全局共享的线程，意味着它的消息队列可以被其他线程共享， Watchdog的Monitor Checker就是使用的android.fg线程的消息队列。因此，出现Monitor Checker的超时，肯定是android.fg线程阻塞在monitor()方法上。
+
+我们打开system_server进程的traces，检索 android.fg 可以快速定位到该线程的函数调用栈：
+"android.fg" prio=5 tid=25 Blocked
+  | group="main" sCount=1 dsCount=0 obj=0x12eef900 self=0x7f7a8b1000
+  | sysTid=973 nice=0 cgrp=default sched=0/0 handle=0x7f644e9000
+  | state=S schedstat=( 3181688530 2206454929 8991 ) utm=251 stm=67 core=1 HZ=100
+  | stack=0x7f643e7000-0x7f643e9000 stackSize=1036KB
+  | held mutexes=
+  at com.android.server.wm.WindowManagerService.monitor(WindowManagerService.java:13125)
+  - waiting to lock <0x126dccb8> (a java.util.HashMap) held by thread 91
+  at com.android.server.Watchdog$HandlerChecker.run(Watchdog.java:204)
+  at android.os.Handler.handleCallback(Handler.java:815)
+  
+  android.fg线程调用栈告诉我们几个关键的信息：
+
+这个线程当前的状态是Blocked，阻塞
+由Watchdog发起调用monitor()，这是一个Watchdog检查，阻塞已经超时
+waiting to lock <0x126dccb8>： 阻塞的原因是monitor()方法中在等锁<0x126dccb8>
+held by thread 91： 这个锁被编号为91的线程持有，需要进一步观察91号线程的状态。
+
+可以在traces.txt文件中检索 tid=91 来快速找到91号线程的函数调用栈信息：
+"Binder_C" prio=5 tid=91 Native
+  | group="main" sCount=1 dsCount=0 obj=0x12e540a0 self=0x7f63289000
+  | sysTid=1736 nice=0 cgrp=default sched=0/0 handle=0x7f6127c000
+  | state=S schedstat=( 96931835222 49673449591 260122 ) utm=7046 stm=2647 core=2 HZ=100
+  | stack=0x7f5ffbc000-0x7f5ffbe000 stackSize=1008KB
+  | held mutexes=
+  at libcore.io.Posix.writeBytes(Native method)
+  at libcore.io.Posix.write(Posix.java:258)
+  at libcore.io.BlockGuardOs.write(BlockGuardOs.java:313)
+  at libcore.io.IoBridge.write(IoBridge.java:537)
+  at java.io.FileOutputStream.write(FileOutputStream.java:186)
+  at com.android.internal.util.FastPrintWriter.flushBytesLocked(FastPrintWriter.java:334)
+  at com.android.internal.util.FastPrintWriter.flushLocked(FastPrintWriter.java:355)
+  at com.android.internal.util.FastPrintWriter.appendLocked(FastPrintWriter.java:303)
+  at com.android.internal.util.FastPrintWriter.print(FastPrintWriter.java:466)
+  - locked <@addr=0x134c4910> (a com.android.internal.util.FastPrintWriter$DummyWriter)
+  at com.android.server.wm.WindowState.dump(WindowState.java:1510)
+  at com.android.server.wm.WindowManagerService.dumpWindowsNoHeaderLocked(WindowManagerService.java:12279)
+  at com.android.server.wm.WindowManagerService.dumpWindowsLocked(WindowManagerService.java:12266)
+  at com.android.server.wm.WindowManagerService.dump(WindowManagerService.java:12654)
+  - locked <0x126dccb8> (a java.util.HashMap)
+  at android.os.Binder.dump(Binder.java:324)
+  at android.os.Binder.onTransact(Binder.java:290)
+  
+  91号线程的名字是Binder_C，它的函数调用栈告诉我们几个关键信息：
+
+Native，表示线程处于运行状态(RUNNING)，并且正在执行JNI方法
+在WindowManagerService.dump()方法申请了锁<0x126dccb8>，这个锁正是android.fg线程所等待的
+FileOutputStream.write()表示Binder_C线程在执行IO写操作，正式因为这个写操作一直在阻塞，导致线程持有的锁不能释放
+
+</pre>
+
+[demo4](https://duanqz.github.io/2015-10-12-Watchdog-Analysis#31-%E6%97%A5%E5%BF%97%E8%8E%B7%E5%8F%96)
 
 
 分析cpu、io、锁等

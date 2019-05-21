@@ -1,13 +1,5 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-    </style>
-
     <!-- dialog style -->
     <style name="dv_base_fragment_dialog_slide" parent="@android:style/Theme.Dialog">
         <item name="android:windowTitleStyle">@null</item>
