@@ -102,7 +102,7 @@ com.android.internal.policy.PhoneWindow.java
         ViewGroup contentParent = (ViewGroup)findViewById(ID_ANDROID_CONTENT);
         
         if (contentParent == null) {
-            throw new RuntimeException("Window couldn't find content container view");
+            throw new RuntimeException(Window couldn't find content container view);
         }
         
         ...
