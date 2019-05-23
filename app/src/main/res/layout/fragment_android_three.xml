@@ -16,14 +16,6 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/show_dialog0"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:textColor="@android:color/holo_green_light"
-                android:text="android 绘制原理"
-                />
-            <Button
                 android:id="@+id/show_dialog1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -32,12 +24,36 @@
                 android:text="硬件加速原理"
                 />
             <Button
-                android:id="@+id/show_dialog2"
+                android:id="@+id/show_dialog0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
                 android:textColor="@android:color/holo_green_dark"
+                android:text="android 绘制原理"
+                />
+            <Button
+                android:id="@+id/show_dialog2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_red_dark"
                 android:text="view 的绘制原理 "
+                />
+            <Button
+                android:id="@+id/show_dialog8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_green_dark"
+                android:text="layout inflate"
+                />
+            <Button
+                android:id="@+id/show_dialog5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_red_dark"
+                android:text="setContentView()流程"
                 />
             <Button
                 android:id="@+id/show_dialog3"
@@ -56,14 +72,6 @@
                 android:text="view 事件分发"
                 />
             <Button
-                android:id="@+id/show_dialog5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:textColor="@android:color/holo_green_dark"
-                android:text="setContentView()流程"
-                />
-            <Button
                 android:id="@+id/show_dialog6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -76,16 +84,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
-                android:textColor="@android:color/holo_green_dark"
+                android:textColor="@android:color/holo_red_dark"
                 android:text="Choreographer 监控性能 帧率等"
-                />
-            <Button
-                android:id="@+id/show_dialog8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:textColor="@android:color/holo_green_dark"
-                android:text=""
                 />
             <Button
                 android:id="@+id/show_dialog9"

@@ -102,8 +102,8 @@ public class AndroidFragmetThree extends BaseLazyLoadFragment {
 
 
     @OnClick(R.id.show_dialog8)
-    public void show_dialog8(){
-
+    public void layoutinflater(){
+        MarkdownUtils.setData(mActivity, "android/performace/LayoutInflater.MD");
     }
 
 
