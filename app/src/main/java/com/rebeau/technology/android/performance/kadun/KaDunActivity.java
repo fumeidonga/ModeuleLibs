@@ -42,6 +42,7 @@ public class KaDunActivity extends Activity {
 
     @OnClick(R.id.show_dialog3)
     public void button3(){
+        MarkdownUtils.setData(this, "android/performace/kadun/anr原理.md");
 
     }
 

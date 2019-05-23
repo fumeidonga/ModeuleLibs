@@ -86,6 +86,7 @@ public class AndroidFragmetThree extends BaseLazyLoadFragment {
     @OnClick(R.id.show_dialog5)
     public void setcontents(){
 
+        MarkdownUtils.setData(mActivity, "android/yuanli/setContentview.md");
     }
 
     @OnClick(R.id.show_dialog6)
