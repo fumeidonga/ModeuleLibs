@@ -97,12 +97,8 @@ public class AndroidPerformaceFragment extends BaseLazyLoadFragment {
     @OnClick(R.id.show_dialog3)
     public void start(){
         //用来测试卡顿监听
-        try {
-            //Thread.sleep(1000);
-        } catch (Exception e) {
-            RBLogUtil.et("error");
-        }
-        RBLogUtil.dt("");
+
+        MarkdownUtils.setData(mActivity, "android/performace/启动优化.md");
     }
 
     @OnClick(R.id.show_dialog4)

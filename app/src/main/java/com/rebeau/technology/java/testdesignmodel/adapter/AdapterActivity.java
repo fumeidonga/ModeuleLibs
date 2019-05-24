@@ -35,6 +35,6 @@ public class AdapterActivity extends Activity {
     @OnClick(R.id.button7)
     public void readme(){
 
-        MarkdownUtils.setData(this, "testdesignmodel/builder/建造者.MD");
+        MarkdownUtils.setData(this, "testdesignmodel/adapter/适配器.md");
     }
 }

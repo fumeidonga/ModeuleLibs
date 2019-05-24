@@ -108,7 +108,8 @@ public class AndroidFragmetThree extends BaseLazyLoadFragment {
 
 
     @OnClick(R.id.show_dialog9)
-    public void show_dialog9(){
+    public void startApp(){
 
+        MarkdownUtils.setData(mActivity, "android/yuanli/App启动流程.md");
     }
 }
