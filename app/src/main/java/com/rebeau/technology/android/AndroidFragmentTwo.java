@@ -60,4 +60,11 @@ public class AndroidFragmentTwo extends BaseLazyLoadFragment {
     public void button0(){
         startActivity(new Intent(mActivity, KaifaGaoshoukeActivity.class));
     }
+
+
+    @OnClick(R.id.show_dialog9)
+    public void startApp(){
+
+        startActivity(new Intent(mActivity, ErrorActivity.class));
+    }
 }

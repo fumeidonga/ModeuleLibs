@@ -16,6 +16,15 @@
             android:layout_height="match_parent">
 
             <Button
+                android:id="@+id/mobile_init"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_red_dark"
+                android:text="Android系统启动流程(开机)"
+                />
+
+            <Button
                 android:id="@+id/show_dialog9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

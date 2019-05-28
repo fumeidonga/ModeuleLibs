@@ -135,6 +135,10 @@ public class NormalMonitor extends AbsMonitor {
     // 系统总时间片
     private static final int BUFFER_SIZE = 1000;//文件读取缓存大小
 
+    /**
+     * 这个方法只有api < 26 才可以用
+     * @return
+     */
     public static long getCPU_total() {
         long cpuTotal = 0;
         Scanner scanner = null;

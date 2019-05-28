@@ -12,12 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".android.ErrorActivity"></activity>
 
         <meta-data
             android:name="android.max_aspect"
             android:value="2.1" />
 
-        <activity android:name=".android.yuanli.KaifaGaoshoukeActivity"></activity>
+        <activity android:name=".android.yuanli.KaifaGaoshoukeActivity" />
         <activity android:name=".android.thread.ThreadActivity" />
         <activity android:name=".android.performance.apk.ApkPerformanceActivity" />
         <activity android:name=".android.performance.AndroidPerformanceTools" />
