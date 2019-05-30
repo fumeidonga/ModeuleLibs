@@ -294,3 +294,5 @@ git branch -a 查看所有的远程分支
 
     参考 https://github.com/difcareer/AndroidSourceReader 
     或者自行搜索
+
+选择 Open an existing Android Studio project，找到源码目录，点击 Android.ipr
