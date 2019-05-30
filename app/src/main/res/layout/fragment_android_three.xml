@@ -20,8 +20,35 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
-                android:textColor="@android:color/holo_red_dark"
+                android:textColor="@android:color/holo_green_dark"
                 android:text="Android系统启动流程(开机)"
+                />
+
+            <Button
+                android:id="@+id/show_dialog6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_red_dark"
+                android:text=" Binder 机制分析 "
+                />
+
+            <Button
+                android:id="@+id/service_start"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_green_dark"
+                android:text="service 启动流程"
+                />
+
+            <Button
+                android:id="@+id/activity_start"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_red_dark"
+                android:text="Activity启动流程"
                 />
 
             <Button
@@ -90,19 +117,11 @@
                 android:text="view 事件分发"
                 />
             <Button
-                android:id="@+id/show_dialog6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:textColor="@android:color/holo_green_dark"
-                android:text=" Binder 机制分析 "
-                />
-            <Button
                 android:id="@+id/choreographer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
-                android:textColor="@android:color/holo_red_dark"
+                android:textColor="@android:color/holo_green_dark"
                 android:text="Choreographer 监控性能 帧率等"
                 />
         </LinearLayout>

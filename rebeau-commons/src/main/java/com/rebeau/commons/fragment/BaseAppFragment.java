@@ -22,9 +22,9 @@ import io.reactivex.disposables.Disposable;
 
 
 /**
- * 项目基类Fragment，定义公共基础操作
- * 说明：
- * （未继承皮肤Fragment组件，当需要使用皮肤功能时，将Fragment->SkinBaseFragment，
+ * 对于Fragment的一些操作，还可以参考
+ * https://github.com/YoKeyword/Fragmentation
+ * 来进行优化修改
  */
 
 public abstract class BaseAppFragment extends Fragment {

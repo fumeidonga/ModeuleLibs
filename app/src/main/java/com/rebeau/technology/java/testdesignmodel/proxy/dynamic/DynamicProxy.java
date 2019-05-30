@@ -38,8 +38,10 @@ public class DynamicProxy implements InvocationHandler {
     }
 
     public <T> T getProxy(){
-        return (T) Proxy.newProxyInstance(object.getClass().getClassLoader(),
+        return (T) Proxy.newProxyInstance(
+                object.getClass().getClassLoader(),
                 object.getClass().getInterfaces(),
-                this);
+                this
+            );
     }
 }

@@ -118,4 +118,14 @@ public class AndroidFragmetThree extends BaseLazyLoadFragment {
 
         MarkdownUtils.setData(mActivity, "android/yuanli/开机流程.md");
     }
+    @OnClick(R.id.activity_start)
+    public void activity_start(){
+
+        MarkdownUtils.setData(mActivity, "android/yuanli/Activity启动.md");
+    }
+    @OnClick(R.id.service_start)
+    public void service_start(){
+
+        MarkdownUtils.setData(mActivity, "android/yuanli/service启动.md");
+    }
 }
