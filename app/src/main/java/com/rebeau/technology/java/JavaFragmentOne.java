@@ -2,8 +2,6 @@ package com.rebeau.technology.java;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -76,5 +74,10 @@ public class JavaFragmentOne extends BaseLazyLoadFragment {
     @OnClick(R.id.java_fragment_designmodel)
     public void designmmd(){
         startActivity(new Intent(mActivity, DesignModelActivity.class));
+    }
+
+    @OnClick(R.id.java_reflect)
+    public void java_reflect(){
+
     }
 }

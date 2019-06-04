@@ -48,6 +48,13 @@
                 android:textAllCaps="false"
                 android:textColor="@android:color/holo_green_dark" />
 
+            <Button
+                android:id="@+id/java_reflect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" 反射"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_green_dark" />
 
         </LinearLayout>
     </ScrollView>
