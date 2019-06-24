@@ -12,6 +12,7 @@ import com.rebeau.commons.fragment.BaseLazyLoadFragment;
 import com.rebeau.commons.markdown.MarkdownUtils;
 import com.rebeau.technology.R;
 import com.rebeau.technology.android.dagger.DaggerTestActivity;
+import com.rebeau.technology.android.jichu.ConstraintLayoutActivity;
 import com.rebeau.technology.android.thread.ThreadActivity;
 import com.rebeau.views.loading.RBLoadStatusView;
 
@@ -108,6 +109,12 @@ public class AndroidFragmentOne extends BaseLazyLoadFragment {
     @OnClick(R.id.show_dialog9)
     public void button9(){
         MarkdownUtils.setData(mActivity, "android/监听锁屏.md");
+
+    }
+
+    @OnClick(R.id.show_dialog10)
+    public void button10(){
+        startActivity(new Intent(mActivity, ConstraintLayoutActivity.class));
 
     }
 }

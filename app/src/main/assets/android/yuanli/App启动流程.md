@@ -10,6 +10,10 @@
 
 ![](https://github.com/fumeidonga/markdownPic/blob/master/yuanli/launcher_app.png?raw=true)
 
+9.0 的图
+
+![](https://github.com/fumeidonga/markdownPic/blob/master/yuanli/launcher_app.jpg?raw=true)
+
 ## 概念
 每个Android App都在一个独立空间里, 意味着其运行在一个单独的进程中, 拥有自己的VM, 被系统分配一个唯一的user ID.
 Android App由很多不同组件组成, 这些组件还可以启动其他App的组件. 因此, Android App并没有一个类似程序入口的main()方法.

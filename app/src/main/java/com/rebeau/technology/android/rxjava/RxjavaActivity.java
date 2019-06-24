@@ -4,7 +4,7 @@ import android.support.annotation.NonNull;
 
 import com.rebeau.base.utils.RBLogUtil;
 import com.rebeau.technology.R;
-import com.rebeau.technology.android.rxjava.base.BaseActivity;
+import com.rebeau.technology.android.rxjava.base.RxTestActivity;
 import com.rebeau.technology.android.rxjava.base.Man;
 import com.rebeau.technology.android.rxjava.base.Woman;
 
@@ -35,7 +35,7 @@ import io.reactivex.functions.Function;
 import io.reactivex.functions.Predicate;
 import io.reactivex.schedulers.Schedulers;
 
-public class RxjavaActivity extends BaseActivity {
+public class RxjavaActivity extends RxTestActivity {
 
     /**
      * Observable 三部曲

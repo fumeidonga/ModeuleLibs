@@ -1,117 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <ScrollView
-        android:id="@+id/scrollable"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/read_me"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <Button
-                android:id="@+id/read_me"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:textColor="@android:color/holo_green_light"
-                android:text="read me"
-                />
+            android:layout_height="wrap_content"
+            android:text="read me"
+            android:textAllCaps="false"
+            android:textColor="@android:color/holo_green_light" />
 
-            <Button
-                android:id="@+id/android_performace_tools"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:textColor="@android:color/holo_red_dark"
-                android:text="性能优化相关 工具 、 库"
-                />
+        <Button
+            android:id="@+id/android_performace_tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="性能优化相关 工具 、 库"
+            android:textAllCaps="false"
+            android:textColor="@android:color/holo_red_dark" />
 
-            <Button
-                android:id="@+id/layout_performance"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:textColor="@android:color/holo_green_light"
-                android:text="1. App 布局优化"
-                />
-            <Button
-                android:id="@+id/memory_performance"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:textColor="@android:color/holo_red_dark"
-                android:text="2. App 内存优化"
-                />
-            <Button
-                android:id="@+id/show_dialog2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:textColor="@android:color/holo_green_light"
-                android:text="3. App 卡顿优化"
-                />
-            <Button
-                android:id="@+id/show_dialog3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:textColor="@android:color/holo_red_dark"
-                android:text="4. App 启动优化"
-                />
-            <Button
-                android:id="@+id/show_dialog4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:textColor="@android:color/holo_green_light"
-                android:text="5. App 线程优化"
-                />
-            <Button
-                android:id="@+id/show_dialog5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:textColor="@android:color/holo_red_dark"
-                android:text="6. App 网络优化"
-                />
-            <Button
-                android:id="@+id/show_dialog6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:textColor="@android:color/holo_green_light"
-                android:text="7. App 电量优化"
-                />
-            <Button
-                android:id="@+id/show_dialog7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:textColor="@android:color/holo_red_dark"
-                android:text="8. App 瘦身优化"
-                />
-            <Button
-                android:id="@+id/show_dialog8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:textColor="@android:color/holo_green_light"
-                android:text="9. App 稳定性优化"
-                />
-            <Button
-                android:id="@+id/show_dialog9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:textColor="@android:color/holo_red_dark"
-                android:text="10. App 专项技术优化"
-                />
-        </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+        <Button
+            android:id="@+id/layout_performance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1. App 布局优化"
+            android:textAllCaps="false"
+            android:textColor="@android:color/holo_green_light" />
+
+        <Button
+            android:id="@+id/memory_performance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2. App 内存优化"
+            android:textAllCaps="false"
+            android:textColor="@android:color/holo_red_dark" />
+
+        <Button
+            android:id="@+id/show_dialog2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3. App 卡顿优化"
+            android:textAllCaps="false"
+            android:textColor="@android:color/holo_green_light" />
+
+        <Button
+            android:id="@+id/show_dialog3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="4. App 启动优化"
+            android:textAllCaps="false"
+            android:textColor="@android:color/holo_red_dark" />
+
+        <Button
+            android:id="@+id/show_dialog4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="5. App 线程优化"
+            android:textAllCaps="false"
+            android:textColor="@android:color/holo_green_light" />
+
+        <Button
+            android:id="@+id/show_dialog5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="6. App 网络优化"
+            android:textAllCaps="false"
+            android:textColor="@android:color/holo_red_dark" />
+
+        <Button
+            android:id="@+id/show_dialog6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="7. App 电量优化"
+            android:textAllCaps="false"
+            android:textColor="@android:color/holo_green_light" />
+
+        <Button
+            android:id="@+id/show_dialog7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="8. App 瘦身优化"
+            android:textAllCaps="false"
+            android:textColor="@android:color/holo_red_dark" />
+
+        <Button
+            android:id="@+id/show_dialog8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="9. App 稳定性优化"
+            android:textAllCaps="false"
+            android:textColor="@android:color/holo_green_light" />
+
+        <Button
+            android:id="@+id/show_dialog9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="10. App 专项技术优化"
+            android:textAllCaps="false"
+            android:textColor="@android:color/holo_red_dark" />
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

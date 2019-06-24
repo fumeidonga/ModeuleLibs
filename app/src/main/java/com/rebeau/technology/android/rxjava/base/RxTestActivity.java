@@ -13,7 +13,7 @@ import com.rebeau.technology.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class BaseActivity extends AppCompatActivity {
+public class RxTestActivity extends AppCompatActivity {
 
     @BindView(R.id.bottom0)
     Button button0;

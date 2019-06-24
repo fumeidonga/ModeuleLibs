@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".android.ErrorActivity"></activity>
+        <activity android:name=".android.ErrorActivity" />
 
         <meta-data
             android:name="android.max_aspect"
@@ -61,6 +61,7 @@
         <activity android:name=".java.testdesignmodel.proxy.ProxyActivity" />
         <activity android:name=".android.dagger.DaggerTestActivity" />
         <activity android:name=".java.testdesignmodel.facade.FacadeActivity" />
+        <activity android:name=".android.jichu.ConstraintLayoutActivity"></activity>
     </application>
 
 </manifest>
