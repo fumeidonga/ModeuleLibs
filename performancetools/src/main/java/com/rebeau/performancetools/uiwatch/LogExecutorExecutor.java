@@ -214,21 +214,27 @@ public class LogExecutorExecutor extends AbsLogExecutor {
 
         //初始化Log信息
         logStackInfoBuilder.delete(0, logStackInfoBuilder.length());
-        logStackInfoBuilder.append("---------------------------------------------------");
-        logStackInfoBuilder.append("\n");
 
         //追加堆栈信息
         boolean hasUsefulInfo = false;
         for (StackTraceElement mStackInfo : stackTraceElements) {
             String info = mStackInfo.toString();
             if (checkInfoUseful(info)) {
-                logStackInfoBuilder.append(info);
-                logStackInfoBuilder.append("\n");
                 hasUsefulInfo = true;
+                break;
             }
         }
-        logStackInfoBuilder.append("---------------------------------------------------");
-        logStackInfoBuilder.append("\n");
+        if(hasUsefulInfo) {
+            logStackInfoBuilder.append("======>");
+            logStackInfoBuilder.append("\n");
+            for (StackTraceElement mStackInfo : stackTraceElements) {
+                String info = mStackInfo.toString();
+                logStackInfoBuilder.append(info);
+                logStackInfoBuilder.append("\n");
+            }
+            logStackInfoBuilder.append("<======");
+            logStackInfoBuilder.append("\n");
+        }
 
         //判断是否需要添加
         //获取当前堆栈信息,存储到队列
