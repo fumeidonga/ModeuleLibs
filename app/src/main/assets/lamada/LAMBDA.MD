@@ -21,13 +21,40 @@ public interface WorkerInterface {
 
 
 ### Lambda表达式结构
-(argument) -> {body}
+(argument)     ->           {body}
+
+(方法参数) lambda运算符   {方法的实现}
+
+<pre>
+
+我们翻译一下 FunctionalInterface fi = (argument) ->  {body}
+fi将会持有一个实现了FunctionalInterface接口的匿名类的实例，匿名类中一个方法的定义为{body; }
+
+eg: () -> System.out.println("Hello World"); 等价于
+FunctionalInterface fi = new FunctionalInterface() {
+    @Override
+    public void theOneMethod() {
+        System.out.println("Hello world");
+    }
+};
+
+eg: () -> 1;等价于
+FunctionalInterface fi = new FunctionalInterface() {
+    @Override
+    public int theOneMethod() {
+        return 1;
+    }
+};
+所有的这种只有一个方法的接口都可以这么转换
+
+</pre>
 
 * 一个 Lambda 表达式可以有零个或多个参数
 * 所有参数需包含在圆括号内，参数之间用逗号相隔
 * 参数的类型既可以明确声明，也可以根据上下文来推断，例如：(int a)与(a)效果相同
 	
 <pre>
+
 argument多个,
 
 (argument, argument1, ...) -> {body}
@@ -40,12 +67,12 @@ argument多个,
 
 	() -> {body}
 
-* 如果 Lambda 表达式的主体只有一条语句，花括号{}可省略
+* 如果 Lambda 表达式的*主体只有一条语句*，花括号{}可省略
 
     // 不需要参数,返回值为 1
 
 	() -> 1
-* 当只有一个参数，且其类型可推导时，圆括号（）可省略
+* 当*只有一个参数*，且其类型可推导时，圆括号（）可省略
   
     接收一个参数(数字类型),返回其 a * a 的值
 
@@ -92,11 +119,36 @@ Runnable r = new Runnable(){
     }
 }
 
-编译器会自动推断：根据线程类的构造函数签名 public Thread(Runnable r) { }，将该 Lambda 表达式赋给 Runnable 接口
+编译器会自动推断：根据线程类的构造函数签名 
+public Thread(Runnable r) { }，将该 Lambda 表达式赋给 Runnable 接口
 new Thread(
    () -> System.out.println("hello world")
 ).start();
 </pre>
+
+######接收lambdas
+
+因为lambda是一个接口的实现，去使一个方法接收lambda并没有什么特别的要做：任何函数只要是函数式接口都能够接收一个lambda
+
+eg：
+<pre>
+new Thread(Runnable r).start();
+
+这里面的runnable参数我们就可以用下面的方式来替代
+Runnable r = () -> System.out.println("hello world");
+
+等同于
+
+Runnable r = new Runnable(){
+    public void run(){
+      System.out.println("hello world");
+    }
+}
+
+new Thread(() -> System.out.println("hello world")).start();
+
+</pre>
+
 
 ### 其他函数 
 
