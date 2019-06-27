@@ -63,7 +63,7 @@ public class JavaFragmentOne extends BaseLazyLoadFragment {
 
     @OnClick(R.id.java_fragment_lamada)
     public void ladamda(){
-        MarkdownUtils.setData(mActivity, "lamada/LAMADA.MD");
+        MarkdownUtils.setData(mActivity, "lamada/LAMBDA.MD");
     }
 
     @OnClick(R.id.java_fragment_rxjava)
