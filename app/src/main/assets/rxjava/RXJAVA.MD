@@ -146,6 +146,8 @@ subscribe(Consumer<? super T>           onNext,
 
 - Map
 
+![](https://github.com/fumeidonga/markdownPic/blob/master/yuanli/Stream.map.png?raw=true)
+
 类型转换，就是将上游发来的事件转换为任意想要的类型,eg:
 
 将integer 转换成String 类型：
@@ -158,6 +160,8 @@ map(new Function<Integer, String>() {
 })
 
 - flatmap / concatMap
+
+![](https://github.com/fumeidonga/markdownPic/blob/master/yuanli/Stream.flatMap.png?raw=true)
 
 将一个Observable转换成另一个Observable, 我们看例子
 
@@ -213,6 +217,8 @@ map(new Function<Integer, String>() {
     }
 
 - filter 、 debounce
+
+![](https://github.com/fumeidonga/markdownPic/blob/master/yuanli/Stream.filter.png?raw=true)
 
 对事件进行过滤，返回的是满足条件的，
 
