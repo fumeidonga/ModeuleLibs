@@ -41,15 +41,23 @@ public class UIWatchLogCat {
 //        String tag = generateTag(caller);
 //        String tag = "";
 
-        Log.d(tag, content + " , "  + Thread.currentThread().getName());
-        /*if("lancet".equals(tag) && isneedtofile){
-            saveAllStackInfoToFile("AppUiWatcher", "lancet", content.toString());
-        }*/
+        String constring = content.toString();
+        if(constring.contains("begin")) {
+            Log.w(tag, constring);
+        } else {
+            Log.w(tag, constring + " , time：" + getTimeUse());
+        }
+        if("normalwatch".equals(tag) && isneedtofile){
+            saveAllStackInfoToFile("AppUiWatcher", "normalwatch", constring);
+        } else if("lancet".equals(tag) && isneedtofile){
+            saveAllStackInfoToFile("AppUiWatcher", "lancet", constring);
+        }
+        /*Log.d(tag, content + " , "  + Thread.currentThread().getName());
         if("normalwatch".equals(tag) && isneedtofile){
             saveAllStackInfoToFile("AppUiWatcher", "normalwatch", content.toString());
         } else if("lancet".equals(tag) && isneedtofile){
             saveAllStackInfoToFile("AppUiWatcher", "lancet", content.toString());
-        }
+        }*/
     }
 
     public static void di(Object content) {
@@ -60,9 +68,15 @@ public class UIWatchLogCat {
 //        String tag = generateTag(caller);
         String tag = "";
 
-        Log.w("lancet", content + " , "  + Thread.currentThread().getName());
+        String constring = content.toString();
+        if(constring.contains("begin")) {
+            Log.w("lancet", constring);
+        } else {
+            Log.w("lancet", constring + " , time：" + getTimeUse());
+        }
+
         if("lancet".equals(tag) && isneedtofile){
-            saveAllStackInfoToFile("AppUiWatcher", "lancet", content.toString());
+            saveAllStackInfoToFile("AppUiWatcher", "lancet", constring);
         }
     }
 
