@@ -31,12 +31,12 @@ public class LogExecutorExecutor extends AbsLogExecutor {
     /**
      * 日志堆栈信息的构造builder
      */
-    private StringBuilder logStackInfoBuilder;
+    private StringBuilder mLogStackInfoBuilder;
 
     /**
      * log堆栈信息队列,只保存限制的条数,防止内存占用过大
      */
-    private List<String> logStackInfoQueue;
+    private List<String> mLogStackInfoQueue;
 
     /**
      * 单例创建实例
@@ -58,8 +58,8 @@ public class LogExecutorExecutor extends AbsLogExecutor {
 
     private void init() {
         mLogHandlerThread = new HandlerThread(TAG + "_Thread");
-        logStackInfoBuilder = new StringBuilder();
-        logStackInfoQueue = new LinkedList<>();
+        mLogStackInfoBuilder = new StringBuilder();
+        mLogStackInfoQueue = new LinkedList<>();
     }
 
 
@@ -99,27 +99,27 @@ public class LogExecutorExecutor extends AbsLogExecutor {
      */
     private void startOutputLogTask() {
         //校验缓存信息的队列
-        if (logStackInfoQueue == null || logStackInfoQueue.isEmpty()) {
+        if (mLogStackInfoQueue == null || mLogStackInfoQueue.isEmpty()) {
             return;
         }
         //将获取的队列内的内容遍历获取
-        logStackInfoBuilder.delete(0, logStackInfoBuilder.length());
-        logStackInfoBuilder.append(" \n");
-        logStackInfoBuilder.append(" \n");
-        logStackInfoBuilder.append("~~~~~~~~~~~~~~~~~~~start~~~~~~~~~~~~~~~~~~~~~~");
-        logStackInfoBuilder.append(" \n");
-        logStackInfoBuilder.append(" \n");
-        for (String stackInfo : logStackInfoQueue) {
-            logStackInfoBuilder.append(stackInfo);
-            logStackInfoBuilder.append("\n");
+        mLogStackInfoBuilder.delete(0, mLogStackInfoBuilder.length());
+        mLogStackInfoBuilder.append(" \n");
+        mLogStackInfoBuilder.append(" \n");
+        mLogStackInfoBuilder.append("~~~~~~~~~~~~~~~~~~~start~~~~~~~~~~~~~~~~~~~~~~");
+        mLogStackInfoBuilder.append(" \n");
+        mLogStackInfoBuilder.append(" \n");
+        for (String stackInfo : mLogStackInfoQueue) {
+            mLogStackInfoBuilder.append(stackInfo);
+            mLogStackInfoBuilder.append("\n");
         }
-        logStackInfoBuilder.append("~~~~~~~~~~~~~~~~~~~end~~~~~~~~~~~~~~~~~~~~~~");
-        logStackInfoBuilder.append("\n");
-        logStackInfoBuilder.append(" \n");
+        mLogStackInfoBuilder.append("~~~~~~~~~~~~~~~~~~~end~~~~~~~~~~~~~~~~~~~~~~");
+        mLogStackInfoBuilder.append("\n");
+        mLogStackInfoBuilder.append(" \n");
         //清除原队列数据
-        logStackInfoQueue.clear();
+        mLogStackInfoQueue.clear();
         //获取全部的堆栈信息
-        String allStackInfo = logStackInfoBuilder.toString();
+        String allStackInfo = mLogStackInfoBuilder.toString();
         //输出信息并视情况缓存
         UIWatchLogCat.printLog(tag, allStackInfo);
         //检测是否需要存储到本地
@@ -212,44 +212,72 @@ public class LogExecutorExecutor extends AbsLogExecutor {
             return;
         }
 
-        //初始化Log信息
-        logStackInfoBuilder.delete(0, logStackInfoBuilder.length());
 
         //追加堆栈信息
         boolean hasUsefulInfo = false;
-        for (StackTraceElement mStackInfo : stackTraceElements) {
-            String info = mStackInfo.toString();
-            if (checkInfoUseful(info)) {
-                hasUsefulInfo = true;
-                break;
-            }
-        }
-        if(hasUsefulInfo) {
-            logStackInfoBuilder.append("======>");
-            logStackInfoBuilder.append("\n");
+
+        boolean method1 = false;
+
+//        这里有两种添加堆栈的方式， 一种是只关注跟包名对应等，另一种是添加所有的信息
+        if(method1) {
+            //////////////////////////// 1 begin ///////////////////////////////////////////
+            //初始化Log信息
+            mLogStackInfoBuilder.delete(0, mLogStackInfoBuilder.length());
+            mLogStackInfoBuilder.append("---------------------------------------------------");
+            mLogStackInfoBuilder.append("\n");
+
             for (StackTraceElement mStackInfo : stackTraceElements) {
                 String info = mStackInfo.toString();
-                logStackInfoBuilder.append(info);
-                logStackInfoBuilder.append("\n");
+                if (checkInfoUseful(info)) {
+                    mLogStackInfoBuilder.append(info);
+                    mLogStackInfoBuilder.append("\n");
+                    hasUsefulInfo = true;
+                }
             }
-            logStackInfoBuilder.append("<======");
-            logStackInfoBuilder.append("\n");
+            mLogStackInfoBuilder.append("---------------------------------------------------");
+            mLogStackInfoBuilder.append("\n");
+            //////////////////////////// 1 end ///////////////////////////////////////////
+        } else {
+            //////////////////////////// 2 begin ///////////////////////////////////////////
+            //初始化Log信息
+            mLogStackInfoBuilder.delete(0, mLogStackInfoBuilder.length());
+
+            for (StackTraceElement mStackInfo : stackTraceElements) {
+                String info = mStackInfo.toString();
+                if (checkInfoUseful(info)) {
+                    hasUsefulInfo = true;
+                    break;
+                }
+            }
+            if(hasUsefulInfo) {
+                mLogStackInfoBuilder.append("======>");
+                mLogStackInfoBuilder.append("\n");
+                for (StackTraceElement mStackInfo : stackTraceElements) {
+                    String info = mStackInfo.toString();
+                    mLogStackInfoBuilder.append(info);
+                    mLogStackInfoBuilder.append("\n");
+                }
+                mLogStackInfoBuilder.append("<======");
+                mLogStackInfoBuilder.append("\n");
+            }
+            //////////////////////////// 2 end ///////////////////////////////////////////
         }
+
 
         //判断是否需要添加
         //获取当前堆栈信息,存储到队列
-        String currentStackInfo = logStackInfoBuilder.toString();
+        String currentStackInfo = mLogStackInfoBuilder.toString();
         //获取上一个堆栈信息比较是否相同
-        String lastInfo = logStackInfoQueue.isEmpty() ? "" : logStackInfoQueue.get(logStackInfoQueue.size() - 1);
+        String lastInfo = mLogStackInfoQueue.isEmpty() ? "" : mLogStackInfoQueue.get(mLogStackInfoQueue.size() - 1);
         //不相同且有有效内容
         boolean isNeedAdd = hasUsefulInfo && !currentStackInfo.equals(lastInfo);
         if (isNeedAdd) {
             //将当前堆栈信息存储到队列中
-            logStackInfoQueue.add(currentStackInfo);
+            mLogStackInfoQueue.add(currentStackInfo);
         }
         //判断存储队列是否已经超出限制,视情况移除队列前的内容,在队尾增加
-        if (logStackInfoQueue.size() > cacheDataSize) {
-            logStackInfoQueue.remove(0);
+        if (mLogStackInfoQueue.size() > cacheDataSize) {
+            mLogStackInfoQueue.remove(0);
         }
     }
 
