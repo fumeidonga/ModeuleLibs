@@ -104,8 +104,10 @@ Systrace允许你监视和跟踪Android系统的行为(trace)。它会告诉你�
 	
 	例如：
 	
+	python systrace.py  -o mynewtrace.html sched freq idle am wm gfx view binder_driver hal dalvik camera input res app
+
 	python systrace.py –a com.kmxs.reader -o mynewtrace.html sched freq idle am wm gfx view binder_driver hal dalvik camera input res app
-	
+
 	python systrace.py –b 32768 –t 5 -a com.rebeau.technology -o mynewtrace.html sched freq idle am wm gfx view binder_driver hal  dalvik camera input res app
 	
 	这里根据提示停止
@@ -115,8 +117,10 @@ Systrace允许你监视和跟踪Android系统的行为(trace)。它会告诉你�
 	
 	$ cd android-sdk/platform-tools/systrace
 	
+	python systrace.py  -o mynewtrace.html sched freq idle am wm gfx view dalvik input res app
+
 	python systrace.py –a com.kmxs.reader -o mynewtrace.html sched freq idle am wm gfx view dalvik input res app
-	
+
 	$ python systrace.py –b 32768 –t 5 –a com.kmxs.reader -o mynewtrace.html sched freq idle am wm gfx view dalvik input res app
 	
 	这里5s自动停止
