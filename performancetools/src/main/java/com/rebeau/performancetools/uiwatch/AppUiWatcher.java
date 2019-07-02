@@ -2,6 +2,7 @@ package com.rebeau.performancetools.uiwatch;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.os.StrictMode;
 import android.text.TextUtils;
 import android.view.Choreographer;
 
@@ -170,6 +171,8 @@ public class AppUiWatcher {
      */
     @SuppressLint("NewApi")
     public void startWatch(Context context) {
+        initStrictMode();
+
         if (isWatching) {
             return;
         }
@@ -201,6 +204,31 @@ public class AppUiWatcher {
 
         LogMonitor.getInstance().startMonitor();
         NormalMonitor.getInstance().start(context);
+    }
+
+    // 启用严格模式
+    private void initStrictMode(){
+
+        //开启Thread策略模式
+        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectNetwork()//监测主线程使用网络io
+                .detectNetwork()//监测主线程使用网络
+                .detectCustomSlowCalls()//监测自定义运行缓慢函数
+                .detectDiskReads() // 检测在UI线程读磁盘操作
+                .detectDiskWrites() // 检测在UI线程写磁盘操作
+//                .detectResourceMismatches() // 检测发现资源不匹配
+                .penaltyLog() //写入日志
+//                .penaltyDialog()//监测到上述状况时弹出对话框
+                .build());
+        //开启VM策略模式
+        StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectLeakedSqlLiteObjects()//监测sqlite泄露
+                .detectLeakedClosableObjects()//检测资源没有正确关闭,比如IO
+                .detectLeakedRegistrationObjects()//检测BroadcastReceiver、ServiceConnection是否被释放
+                .detectLeakedSqlLiteObjects()//检测数据库资源是否没有正确关闭
+                .detectActivityLeaks() //检测Activity 的内存泄露情况
+//                .setClassInstanceLimit(BaseAppActivity.class, 1) // 设置某个类的同时处于内存中的实例上限，可以协助检查内存泄露
+                .penaltyLog()//写入日志
+//                .penaltyDeath()//出现上述情况异常终止
+                .build());
     }
 
     /**
