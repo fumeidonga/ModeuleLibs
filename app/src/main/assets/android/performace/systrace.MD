@@ -221,6 +221,19 @@ Google Chrome浏览器可以打开systrace，如果打不开，可以通过chrom
   </tbody>
 </table>
 	
+	
+- Expensive Bitmap uploads
+
+说明有大的位图上传给 gpu，这里耗时
+
+- Long View#draw()
+
+说明view 的 onDraw 方法耗时严重，
+
+- Scheduling delay
+
+调度延迟，可能是 UI 线程延迟，或是 GPU 工作量大，CPU 等待 GPU 通知造成延迟。结合具体，这里是 GPU 任务量大，通知 CPU 延迟了。
+	
 一般来说，我们可以先通过查找，然后按M键，定位
 
 [Inefficient View alpha usage](https://www.jianshu.com/p/3b9650307633)

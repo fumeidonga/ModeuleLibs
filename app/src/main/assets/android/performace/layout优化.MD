@@ -175,9 +175,25 @@ APT编译期间，将XML翻译成java代码
 
 view的绘制流程： measure 、layout、 draw
 
+属性设置上，尽可能的在父view中设置 和 padding ，减少merge次数
+<pre>
+设置本 View 视图的最终大小。
+如果该 View 对象是个 ViewGroup 类型，需要重写该 onMeasure() 方法，对其子视图进行遍历 measure() 过程。
+measureChildren()，内部使用了一个 for 循环对子视图进行遍历，分别调用了子视图的 measure() 方法。
+measureChild()，为指定的子视图 measure，会被 measureChildren 调用。
+measureChildWidthMargins()，为指定的子视图考虑了 margin 和 padding 的 measure。
+</pre>
+去掉不必要的背景，去掉渐变框，去掉滚动条，在一定程度上是能加快绘制速度的
+
 * 减少层级
 
+* 去除不必要的背景， 由于 在 draw 的步骤中，会单独绘制背景。因此去除不必要的背景会加快 View 的绘制
+
+* 尽可能少的使用 margin、padding。在测量和布局的过程中，对有 margin 和 padding 的 View 会进行单独的处理步骤，这样会花费时间。我们可以在父 View 中设置 margin 和 padding，从而避免在子 View 中每个单独设置和配置
+
 * 布局view group的选择
+
+* 去除不必要的 scrollbar。这样能减少 draw 的流程，慎用渐变， 也能减少 draw 的流程
 
 * merge
 

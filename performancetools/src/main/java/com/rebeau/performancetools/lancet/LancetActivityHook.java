@@ -1,5 +1,6 @@
 package com.rebeau.performancetools.lancet;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import com.rebeau.performancetools.UIWatchLogCat;
@@ -55,5 +56,40 @@ public class LancetActivityHook {
         
     }
 
+    @Insert(value = "initSubStatusBar")
+    @TargetClass(value = "com.rebeau.base.utils.RBStatusBarUtil")
+    public static void initSubStatusBar(Activity activity) {
+        UIWatchLogCat.dt("lancet", " StatusBarUtil---> initSubStatusBar begin3 ");
+        UIWatchLogCat.resetTime();
+        Origin.callVoid();
+        UIWatchLogCat.dt("lancet", " StatusBarUtil---> initSubStatusBar end3 ");
+    }
+
+    @Insert(value = "initLoadStatusView")
+    @TargetClass(value = "com.rebeau.commons.activity.BaseFragmentActivity")
+    private void initLoadStatusView() {
+        UIWatchLogCat.dt("lancet", "BaseAppActivity ---> initLoadStatusView begin ");
+        UIWatchLogCat.resetTime();
+        Origin.callVoid();
+        UIWatchLogCat.dt("lancet", "BaseAppActivity ---> initLoadStatusView end ");
+    }
+
+    @Insert(value = "initSlidingPaneBack")
+    @TargetClass(value = "com.rebeau.commons.activity.BaseFragmentActivity")
+    private void initSlidingPaneBack() {
+        UIWatchLogCat.dt("lancet", "BaseAppActivity ---> initSlidingPaneBack begin ");
+        UIWatchLogCat.resetTime();
+        Origin.callVoid();
+        UIWatchLogCat.dt("lancet", "BaseAppActivity ---> initSlidingPaneBack end ");
+    }
+
+    @Insert(value = "initTitleBar")
+    @TargetClass(value = "com.rebeau.commons.activity.BaseFragmentActivity")
+    protected void initTitleBar() {
+        UIWatchLogCat.dt("lancet", "BaseAppActivity ---> initTitleBar begin ");
+        UIWatchLogCat.resetTime();
+        Origin.callVoid();
+        UIWatchLogCat.dt("lancet", "BaseAppActivity ---> initTitleBar end ");
+    }
 
 }

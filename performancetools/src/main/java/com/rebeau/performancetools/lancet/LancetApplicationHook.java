@@ -28,7 +28,7 @@ public class LancetApplicationHook {
     }
 
     /*@Insert(value = "onCreate",mayCreateSuper = true)
-    @TargetClass(value = "com.kmxs.reader.app.MainApplication",scope = Scope.LEAF)
+    @TargetClass(value = "app.MainApplication",scope = Scope.LEAF)
     protected void onCreate() {
         UIWatchLogCat.dt("lancet", This.get().getClass().getName() + " ---> onCreate begin ");
         UIWatchLogCat.resetTime();
