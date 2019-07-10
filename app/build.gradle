@@ -1,6 +1,8 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.jakewharton.butterknife'
 
+apply plugin: 'newrelic'
+
 if (isPerformance.toBoolean()) {
     apply plugin: 'me.ele.lancet'
 }
@@ -56,6 +58,28 @@ android {
             path "src/main/cpp/CMakeLists.txt"
         }
     }
+
+    // Specifies two flavor dimensions.
+    flavorDimensions "version"
+
+    // productFlavors共有配置
+    productFlavors.all { flavor ->
+        flavor.dimension "version"
+    }
+
+    productFlavors {
+        boy {
+            dimension "version"
+            applicationId "com.rebeau.technology1"
+
+        }
+
+        girl {
+            dimension "version"
+            applicationId "com.rebeau.technology2"
+
+        }
+    }
 }
 
 dependencies {
@@ -91,4 +115,6 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-compat'
     }
     annotationProcessor deps.butterknife_compiler
+
+    implementation deps.new_relic
 }

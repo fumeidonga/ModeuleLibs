@@ -11,6 +11,7 @@ import android.content.res.Configuration;
 import android.os.Build;
 import android.support.v4.app.Fragment;
 
+import com.newrelic.agent.android.NewRelic;
 import com.rebeau.base.utils.RBLogUtil;
 import com.rebeau.commons.BaseApplication;
 import com.rebeau.commons.lifecycle.RBActivityLifecycleCallbacks;
@@ -64,6 +65,9 @@ public class AppApplication extends BaseApplication  implements HasActivityInjec
         RBLogUtil.dt(test1);
         registerActivityLifecycleCallback();
 
+        NewRelic.withApplicationToken(
+                "AAacfdee65c44676170f1fd1ddc85f1261c711bf11"
+        ).start(getApplicationContext());
 
         ///target sdk 23以下才能用
         //BlockCanary.install(this, new AppBlockCanaryContext()).start();

@@ -171,11 +171,19 @@ APT编译期间，将XML翻译成java代码
 失去系统兼容性
 
 
-#### 3） 优化布局层级及复杂度
+#### 3） 优化布局及复杂度
 
-view的绘制流程： measure 、layout、 draw
+1. view的绘制流程： measure 、layout、 draw
+- measure: 为整个 View 树计算实际的大小，即设置实际的高（对应属性：mMeasureHeight）和宽（对应属性：mMeasureWidth），
+  每个 View 的控件的实际宽高都是由父视图和本身视图所决定的
+  
+- layout：为将整个根据子视图的大小以及布局参数将 View 树放到合适的位置上
 
-属性设置上，尽可能的在父view中设置 和 padding ，减少merge次数
+- draw：利用前两部得到的参数，将视图显示在屏幕上  
+
+首先会创建一个DecorView, 一个ViewRootImpl -> performTraversals() -> performMeasure() -> measure()测量是从外到内开始，先是最外层等viewGroup，到里面的view，
+内部使用了一个 for 循环对子视图进行遍历，分别调用了子视图的 measure() 方法，layout则是要设置坐标轴
+
 <pre>
 设置本 View 视图的最终大小。
 如果该 View 对象是个 ViewGroup 类型，需要重写该 onMeasure() 方法，对其子视图进行遍历 measure() 过程。
@@ -185,32 +193,56 @@ measureChildWidthMargins()，为指定的子视图考虑了 margin 和 padding �
 </pre>
 去掉不必要的背景，去掉渐变框，去掉滚动条，在一定程度上是能加快绘制速度的
 
-* 减少层级
+所以我们有了优化的方向，
 
-* 去除不必要的背景， 由于 在 draw 的步骤中，会单独绘制背景。因此去除不必要的背景会加快 View 的绘制
+1. 从内优化
+ 
+	* 减少层级， 这样会加快 View 的循环遍历过程
+	
+	* 去除不必要的背景， 减少复杂shape使用，由于 在 draw 的步骤中，会单独绘制背景。因此去除不必要的背景会加快 View 的绘制
+	
+	* 尽可能少的使用 margin、padding。在测量和布局的过程中，对有 margin 和 padding 的 View 会进行单独的处理步骤，这样会花费时间。我们可以在父 View 中设置 margin 和 padding，从而避免在子 View 中每个单独设置和配置
+	
+	* 慎用渐变。能减少 draw 的流程
+	
+	* 去除不必要的 scrollbar。这样能减少 draw 的流程，慎用渐变， 也能减少 draw 的流程
+	
+	* 布局view group的选择
 
-* 尽可能少的使用 margin、padding。在测量和布局的过程中，对有 margin 和 padding 的 View 会进行单独的处理步骤，这样会花费时间。我们可以在父 View 中设置 margin 和 padding，从而避免在子 View 中每个单独设置和配置
+	* 避免层级叠加
 
-* 布局view group的选择
+2. 从外优化	
 
-* 去除不必要的 scrollbar。这样能减少 draw 的流程，慎用渐变， 也能减少 draw 的流程
+	* 布局嵌套过于复杂。这会直接 View 的层级变多
+	
+	* View 的过渡绘制
+	
+	* View 的频繁重新渲染
+	
+	* UI 线程中进行耗时操作。在 Android 4.0 之后，不允许在 UI 线程做网络操作
+	
+	* 冗余资源及错误逻辑导致加载和执行缓慢。简单的说，就是代码写的烂。
+	
+	* 频繁触发 GC，导致渲染受阻。当系统在短时间内有大量对象销毁，会造成内存抖动，频繁触发 GC 线程，而 GC 线程的优先级高于 UI 线程，因而会造成渲染受阻
 
-* merge
+	* 减少不必要的infalte、使用OpenGL
+	
+	* 用SurfaceView或TextureView代替普通View
+	
+	* 自定义view使用clipRect 屏蔽被遮盖的view绘制
+	
+	    使用clipRect指定绘制区域，告诉系统哪些需要绘制，哪些不需要
+	
+	    canvas.clipRect(...)
 
-* viewstub
 
-* onDraw 中避免耗时
+#### 4） < include> 、< viewstub>标签、< merge>标签
 
+include标签常用于将布局中的公共部分提取出来供其他layout共用，以实现布局模块化，在使用了include后可能导致布局嵌套过多，多余不必要的layout节点
 
+ViewStub在visible / inflate后会被移除， 被它所包含的layout所替代， 这个在写代码的时候需要注意下
 
-#### 4） 避免过度绘制
+merge标签可用于两种典型情况：
 
-* 去掉多余背景色，减少复杂shape使用
-
-* 避免层级叠加
-
-* 自定义view使用clipRect 屏蔽被遮盖的view绘制
-
-    使用clipRect指定绘制区域，告诉系统哪些需要绘制，哪些不需要
-
-    canvas.clipRect(...)
+	- 布局顶结点是FrameLayout且不需要设置background或padding等属性，可以用merge代替，因为Activity内容试图的parent view就是个FrameLayout，所以可以用merge消除只剩一个
+	- 某布局作为子布局被其他布局include时，使用merge当作该布局的顶节点，这样在被引入时顶结点会自动被忽略，而将其子节点全部合并到主布局中

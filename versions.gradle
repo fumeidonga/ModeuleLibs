@@ -200,6 +200,12 @@ versions.blockcanary                     = "1.5.0"
 //https://github.com/SalomonBrys/ANR-WatchDog
 versions.anrwatchdog                     = "1.4.0"
 
+//NewRelic 性能监控
+//apply plugin: 'android'
+//apply plugin: 'newrelic'
+//https://newrelic.com/
+versions.new_relic                       = "5.23.0"
+
 
 def deps = [:]
 
@@ -369,6 +375,8 @@ deps.lancet_plugin                        = "me.ele:lancet-plugin:$versions.lanc
 deps.lancet                               = "me.ele:lancet-base:$versions.lancet"
 deps.blockcanary                          = "com.github.markzhai:blockcanary-android:$versions.blockcanary"
 deps.anrwatchdog                          = "com.github.anrwatchdog:anrwatchdog:$versions.anrwatchdog"
+deps.new_relic                            = "com.newrelic.agent.android:android-agent:$versions.new_relic"
+deps.new_relic_plugin                     = "com.newrelic.agent.android:agent-gradle-plugin:$versions.new_relic"
 ext.deps = deps
 
 def addRepos(RepositoryHandler handler) {

@@ -10,6 +10,8 @@ buildscript {
         classpath deps.android_gradle_plugin
         classpath deps.butterknife_plugin
 
+        classpath deps.new_relic_plugin
+
         if (isPerformance.toBoolean()) {
             classpath deps.lancet_plugin
         }

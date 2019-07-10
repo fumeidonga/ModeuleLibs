@@ -428,7 +428,8 @@ public abstract class BaseFragmentActivity extends FragmentActivity implements S
      */
     private LinearLayout createContentLayout() {
         LinearLayout contentLayout = new LinearLayout(this);
-        contentLayout.setBackgroundColor(getResources().getColor(android.R.color.white));
+        //设置统一的背景色
+        //contentLayout.setBackgroundColor(getResources().getColor(android.R.color.white));
         contentLayout.setOrientation(LinearLayout.VERTICAL);
         // 如果显示TitleBar，则将其动态加入布局中
         if (isActivityTitleBarEnable()) {
