@@ -11,7 +11,7 @@
     但是这不是直接转换的，XML布局文件需要在CPU中首先转换为多边形或者纹理，
     然后再传递给GPU进行格栅化，对于栅格化，跟OpenGL有关，格栅化是一个特别费时的操作。
 
-    ![](https://github.com/fumeidonga/markdownPic/blob/master/performance/geshanhua.png?raw=true)
+![](https://github.com/fumeidonga/markdownPic/blob/master/performance/geshanhua.png?raw=true)
 
 2. 60FPS  &  16ms
 
@@ -19,7 +19,8 @@
     
     每秒60fps，那么每一帧的间隔时间就是 1000ms / 60 = 16.66ms.
     
-    Android系统每隔16ms发出VSYNC信号(1000ms/60=16.66ms)，触发对UI进行渲染， 如果每次渲染都成功，这样就能够达到流畅的画面所需要的60fps，为了能够实现60fps，这意味着计算渲染的大多数操作都必须在16ms内完成
+    Android系统每隔16ms发出VSYNC信号(1000ms/60=16.66ms)，触发对UI进行渲染， 如果每次渲染都成功，这样就能够达到流畅的画面所需要的60fps，
+    为了能够实现60fps，这意味着计算渲染的大多数操作都必须在16ms内完成
 
 [参考文章](https://www.jianshu.com/p/71cba1711de0)
 
@@ -32,22 +33,23 @@
 * 负责计算显示的内容，eg：视图创建，布局计算，图片解码，文本绘制等,将对象处理为多维图形,纹理
 
 2. GPU 的作用
+GPU会获取图形数据进行渲染，然后硬件负责把渲染后的内容呈现到屏幕上，他们两者不停的进行协作
 
 * 负责格栅化操作(UI 元素绘制到屏幕上)
 
-    ![](https://github.com/fumeidonga/markdownPic/blob/master/performance/xuanran.png?raw=true)
+![](https://github.com/fumeidonga/markdownPic/blob/master/performance/xuanran.png?raw=true)
 
 ### 2. 优化工具
 1. Systrace 中的frames & Alerts ， 这里面有些提示信息，frames中绿色代表正常，其他颜色表示丢帧
 
-    ![](https://github.com/fumeidonga/markdownPic/blob/master/performance/systrace_frames.png?raw=true)
+![](https://github.com/fumeidonga/markdownPic/blob/master/performance/systrace_frames.png?raw=true)
 
 
-    ![](https://github.com/fumeidonga/markdownPic/blob/master/performance/systrae_alerts.png?raw=true)
+![](https://github.com/fumeidonga/markdownPic/blob/master/performance/systrae_alerts.png?raw=true)
 
 2. Layout Inspector 布局检查器
 
-    ![](https://github.com/fumeidonga/markdownPic/blob/master/performance/layoutinstract.png?raw=true)
+![](https://github.com/fumeidonga/markdownPic/blob/master/performance/layoutinstract.png?raw=true)
 
 3. Choreographer
 
@@ -97,9 +99,9 @@
 
 >  final View temp = createViewFromTag(root, name, inflaterContext, attrs);
 
-   ![](https://github.com/fumeidonga/markdownPic/blob/master/performance/createviw1.png?raw=true)
+![](https://github.com/fumeidonga/markdownPic/blob/master/performance/createviw1.png?raw=true)
     代码如下：
-   ![](https://github.com/fumeidonga/markdownPic/blob/master/performance/createveiw.png?raw=true)
+![](https://github.com/fumeidonga/markdownPic/blob/master/performance/createveiw.png?raw=true)
 
 2. 当factory2 factory都为空，进入createView，里面用到了反射，这是一个性能点
 

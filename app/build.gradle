@@ -70,7 +70,6 @@ android {
     productFlavors {
         boy {
             dimension "version"
-            applicationId "com.rebeau.technology1"
 
         }
 
@@ -78,6 +77,14 @@ android {
             dimension "version"
             applicationId "com.rebeau.technology2"
 
+        }
+    }
+
+    sourceSets {
+        main {
+//            java.srcDirs = ['src/main/debug/java', 'src/main/java']
+            manifest.srcFile 'src/main/AndroidManifest.xml'
+            aidl.srcDirs = ['src/main/aidl', 'src/myaidl/aidl']
         }
     }
 }

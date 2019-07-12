@@ -31,7 +31,7 @@ android {
                 }
             }
             java.srcDirs = ['src/main/java']
-            aidl.srcDirs = ['src/main/java']
+            aidl.srcDirs = ['src/main/aidl']
             res.srcDirs = ['src/main/res']
         }
     }

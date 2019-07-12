@@ -23,6 +23,9 @@ public class MarkdownWebviewActivity extends BaseFragmentActivity {
     @BindView(R2.id.md_webview)
     WebView webView;
 
+    boolean isPause;
+
+
     Handler handler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
@@ -41,6 +44,7 @@ public class MarkdownWebviewActivity extends BaseFragmentActivity {
     @Override
     protected View createSuccessView() {
         RBLogUtil.dt();
+        isPause = true;
         View view = LayoutInflater.from(getApplicationContext()).inflate(R.layout.activity_markdown_webview, null);
         ButterKnife.bind(this, view);
 
@@ -91,6 +95,9 @@ public class MarkdownWebviewActivity extends BaseFragmentActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        if(!isPause) {
+            return;
+        }
         if(!MarkdownUtils.defaultWeb){
             handler.sendEmptyMessageDelayed(0, 1300);
         } else {
@@ -100,8 +107,15 @@ public class MarkdownWebviewActivity extends BaseFragmentActivity {
     }
 
     @Override
+    protected void onPause() {
+        super.onPause();
+        isPause = false;
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
+        isPause = false;
         handler.removeCallbacksAndMessages(null);
     }
 }
