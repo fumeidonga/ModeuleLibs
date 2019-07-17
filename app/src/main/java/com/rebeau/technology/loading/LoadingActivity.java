@@ -234,4 +234,9 @@ public class LoadingActivity extends BaseFragmentActivity implements Permissions
     protected boolean isSlidingPaneBackEnable() {
         return false;
     }
+
+    @Override
+    protected boolean isSetBackgroundColor() {
+        return false;
+    }
 }

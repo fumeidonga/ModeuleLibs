@@ -2,7 +2,7 @@
 
 
 
-Choreographer
+# Choreographer
 
    [kɔːriˈɑːɡrəfər]
 
@@ -26,6 +26,11 @@ Choreographer
 	
 	</pre>
 
+## 结合choreographer，我们可以做成一个可视化的方案
+[fpsviewer](https://github.com/SilenceDut/fpsviewer/) ktolin编写的
+
+
+# 参考
 [高频采集堆栈的方案 UiWatcher](https://github.com/guohaiyang1992/UiWatcher),查看AppUiWatcher
 
 [Choreographer](https://developer.android.com/reference/android/view/Choreographer)
@@ -42,3 +47,6 @@ Choreographer
 
 [从 FrameCallback 理解 Choreographer 原理及简单帧率监控应用](https://juejin.im/entry/58c83f3f8ac247072018d926)
 
+[Choreographer GIT上的实现方式1](https://github.com/wasabeef/Takt)
+
+[Choreographer GIT上的实现方式2](https://github.com/friendlyrobotnyc/TinyDancer)

@@ -62,6 +62,11 @@ public class AndroidFragmentTwo extends BaseLazyLoadFragment {
     }
 
 
+    @OnClick(R.id.show_dialog8)
+    public void startApp8(){
+//        https://github.com/android-notes/Cockroach
+    }
+
     @OnClick(R.id.show_dialog9)
     public void startApp(){
 

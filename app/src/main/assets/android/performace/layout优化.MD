@@ -53,7 +53,7 @@ GPU会获取图形数据进行渲染，然后硬件负责把渲染后的内容�
 
 3. Choreographer
 
-   具体的可查看 原理/Choreographer.md
+   具体的可查看 performace/choreographer.md
 
    [kɔːriˈɑːɡrəfər]
 
@@ -90,6 +90,9 @@ GPU会获取图形数据进行渲染，然后硬件负责把渲染后的内容�
 
 [从 FrameCallback 理解 Choreographer 原理及简单帧率监控应用](https://juejin.im/entry/58c83f3f8ac247072018d926)
 
+[Choreographer GIT上的实现方式1](https://github.com/wasabeef/Takt)
+
+[Choreographer GIT上的实现方式2](https://github.com/friendlyrobotnyc/TinyDancer)
 
 ### 3. 布局加载原理
 0. setContentView()流程

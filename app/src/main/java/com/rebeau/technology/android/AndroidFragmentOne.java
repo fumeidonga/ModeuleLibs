@@ -117,4 +117,11 @@ public class AndroidFragmentOne extends BaseLazyLoadFragment {
         startActivity(new Intent(mActivity, ConstraintLayoutActivity.class));
 
     }
+
+
+    @OnClick(R.id.show_dialog11)
+    public void butto9n(){
+        MarkdownUtils.setData(mActivity, "android/fileprovider.md");
+
+    }
 }

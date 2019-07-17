@@ -429,7 +429,9 @@ public abstract class BaseFragmentActivity extends FragmentActivity implements S
     private LinearLayout createContentLayout() {
         LinearLayout contentLayout = new LinearLayout(this);
         //设置统一的背景色
-        //contentLayout.setBackgroundColor(getResources().getColor(android.R.color.white));
+        if(isSetBackgroundColor()) {
+            contentLayout.setBackgroundColor(getResources().getColor(android.R.color.white));
+        }
         contentLayout.setOrientation(LinearLayout.VERTICAL);
         // 如果显示TitleBar，则将其动态加入布局中
         if (isActivityTitleBarEnable()) {
@@ -450,6 +452,16 @@ public abstract class BaseFragmentActivity extends FragmentActivity implements S
      * @return
      */
     protected boolean isSlidingPaneBackEnable() {
+        return true;
+    }
+
+
+    /**
+     * 是否设置白色的背景
+     *
+     * @return
+     */
+    protected boolean isSetBackgroundColor() {
         return true;
     }
 
