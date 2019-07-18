@@ -1,6 +1,7 @@
 package com.rebeau.technology;
 
 import android.content.Intent;
+import android.view.KeyEvent;
 
 import com.rebeau.base.utils.RBLogUtil;
 import com.rebeau.commons.activity.BaseTabFragmentActivity;
@@ -74,4 +75,21 @@ public class MainActivity extends BaseTabFragmentActivity {
 
     }
 
+    /**
+     * 按返回键时，退到后台
+     * @param keyCode
+     * @param event
+     * @return
+     */
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        switch (keyCode) {
+            case KeyEvent.KEYCODE_BACK:
+                moveTaskToBack(true);
+                return true;
+            default:
+                break;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 }

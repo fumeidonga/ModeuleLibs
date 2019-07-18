@@ -93,7 +93,16 @@
                 android:layout_height="wrap_content"
                 android:textAllCaps="false"
                 android:textColor="@android:color/holo_green_dark"
-                android:text="开发错误收集"
+                android:text="开发奇淫技巧"
+                />
+
+            <Button
+                android:id="@+id/show_dialog10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_green_dark"
+                android:text=""
                 />
         </LinearLayout>
     </ScrollView>

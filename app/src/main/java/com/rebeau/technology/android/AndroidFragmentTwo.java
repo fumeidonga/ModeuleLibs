@@ -65,11 +65,18 @@ public class AndroidFragmentTwo extends BaseLazyLoadFragment {
     @OnClick(R.id.show_dialog8)
     public void startApp8(){
 //        https://github.com/android-notes/Cockroach
+        //绕过Android P对非SDK接口限制
+//        https://github.com/tiann/FreeReflection
     }
 
     @OnClick(R.id.show_dialog9)
     public void startApp(){
 
         startActivity(new Intent(mActivity, ErrorActivity.class));
+    }
+
+    @OnClick(R.id.show_dialog10)
+    public void startApp10(){
+
     }
 }

@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".android.ErrorActivity" />
+        <activity android:name=".android.ErrorActivity"
+            android:theme="@style/Custom.SwipeBack.Transparent.Theme"  />
 
         <meta-data
             android:name="android.max_aspect"
