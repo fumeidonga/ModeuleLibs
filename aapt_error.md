@@ -1,3 +1,13 @@
+强制清除 gradle 依赖缓存
+	
+	Windows:    
+	gradlew build --refresh-dependencies 
+	
+	
+	Mac:
+	./gradlew build --refresh-dependencies
+
+
 
 1. 检测路径中是否有中文
 2. 修改Gradle版本到新版本  

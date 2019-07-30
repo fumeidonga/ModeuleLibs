@@ -203,7 +203,7 @@ public class AppUiWatcher {
         Choreographer.getInstance().postFrameCallback(frameCallback);
 
         LogMonitor.getInstance().startMonitor();
-        NormalMonitor.getInstance().start(context);
+        //NormalMonitor.getInstance().start(context);
     }
 
     // 启用严格模式

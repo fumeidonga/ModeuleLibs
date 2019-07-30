@@ -64,7 +64,9 @@ public class AndroidFragmentTwo extends BaseLazyLoadFragment {
 
     @OnClick(R.id.show_dialog8)
     public void startApp8(){
+//        先初始化Cockroach，再初始化友盟或bugly
 //        https://github.com/android-notes/Cockroach
+
         //绕过Android P对非SDK接口限制
 //        https://github.com/tiann/FreeReflection
     }
