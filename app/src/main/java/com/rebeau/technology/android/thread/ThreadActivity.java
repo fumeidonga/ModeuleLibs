@@ -27,7 +27,7 @@ public class ThreadActivity extends Activity {
 
     @OnClick(R.id.android_performace_tools)
     public void android_profile_cpu(){
-        MarkdownUtils.setData(this, "android/thread/线程.MD");
+        MarkdownUtils.setData(this, "android/thread/线程进程.MD");
 
     }
 

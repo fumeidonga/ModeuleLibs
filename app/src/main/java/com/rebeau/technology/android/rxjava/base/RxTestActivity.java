@@ -55,7 +55,7 @@ public class RxTestActivity extends AppCompatActivity {
      */
 
     protected int getContentViewLayoutID() {
-        return R.layout.activity_home;
+        return R.layout.activity_rxjava;
     }
 
     protected void initView(Bundle savedInstanceState) {

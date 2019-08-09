@@ -93,4 +93,20 @@ public class ErrorActivity extends BaseFragmentActivity {
         intent.setClassName("com.kmxs.reader", "com.km.app.home.view.LoadingActivity");
         startActivity(intent);*/
     }
+
+    @OnClick(R.id.button18)
+    public void array_map18(){
+        MarkdownUtils.setData(this, "android/thread/定时任务.md");
+
+    }
+
+    @OnClick(R.id.button19)
+    public void array_map19(){
+        MarkdownUtils.setData(this, "android/问题集锦.md");
+    }
+
+    @OnClick(R.id.button20)
+    public void array_map20(){
+
+    }
 }

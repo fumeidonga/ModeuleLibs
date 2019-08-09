@@ -36,6 +36,13 @@ import io.reactivex.functions.Predicate;
 import io.reactivex.schedulers.Schedulers;
 
 public class RxjavaActivity extends RxTestActivity {
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(disposable != null) {
+            disposable.dispose();
+        }
+    }
 
     /**
      * Observable 三部曲
@@ -153,7 +160,6 @@ public class RxjavaActivity extends RxTestActivity {
 //        observable.subscribe(observer);
 //        observable1.subscribe(observer1);
         observable2.subscribe(observer2);
-
 
 
     }
@@ -691,21 +697,67 @@ public class RxjavaActivity extends RxTestActivity {
                     }
                 });
     }
-
+    Disposable disposable ;
     /**
      * 每间隔 N s 执行一次
      */
     @OnClick(R.id.bottom10)
     public void interval(){
 
-        Observable.interval(1, TimeUnit.SECONDS)
+        /*disposable = Observable.interval(1, TimeUnit.SECONDS)
                 .subscribe(new Consumer<Long>() {
                     @Override
                     public void accept(Long aLong) throws Exception {
 
                         RBLogUtil.dt("timer :" + aLong);
                     }
-                });
+                });*/
+
+        Observable.create(new ObservableOnSubscribe<Object>() {
+            @Override
+            public void subscribe(ObservableEmitter<Object> e) throws Exception {
+                RBLogUtil.dt();
+                e.onNext(1);
+                e.onComplete();
+            }
+        })
+        .doOnNext(new Consumer<Object>() {
+            @Override
+            public void accept(Object o) throws Exception {
+                RBLogUtil.dt();
+
+            }
+        })
+        .delay(3, TimeUnit.SECONDS, true)       // 设置delayError为true，表示出现错误的时候也需要延迟5s进行通知，达到无论是请求正常还是请求失败，都是5s后重新订阅，即重新请求。
+        .subscribeOn(Schedulers.io())
+        .repeat()   // repeat保证请求成功后能够重新订阅。
+        .retry()    // retry保证请求失败后能重新订阅
+        .observeOn(AndroidSchedulers.mainThread())
+        .subscribe(new Observer<Object>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+                RBLogUtil.dt();
+
+            }
+
+            @Override
+            public void onNext(Object o) {
+
+                RBLogUtil.dt();
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+                RBLogUtil.dt();
+            }
+
+            @Override
+            public void onComplete() {
+
+                RBLogUtil.dt();
+            }
+        });
     }
 
     /**

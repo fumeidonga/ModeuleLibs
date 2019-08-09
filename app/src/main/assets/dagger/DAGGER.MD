@@ -17,7 +17,7 @@ http://blog.csdn.net/android_study_ok/article/details/52398946
 通俗地讲，你要吃一个苹果，你只需一个依赖注入，一个洗干净、削好皮、切好块、扎好牙签的苹果就呈现在你面前了，
 至于这个苹果是怎么洗的、怎么削皮的、怎么切的、如何买的牙签，你统统不需要知道，这些工作都交给了另一个类，充分地解耦！！！
 
-    @Retention(保留)注解说明,这种类型的注解会被保留到那个阶段. 有三个值:
+    @Retention(保留)注解说明,这种类型的注解会被保留到哪个阶段. 有三个值:
     1.RetentionPolicy.SOURCE —— 这种类型的Annotations只在源代码级别保留,编译时就会被忽略
     2.RetentionPolicy.CLASS —— 这种类型的Annotations编译时被保留,在class文件中存在,但JVM将会忽略
     3.RetentionPolicy.RUNTIME —— 这种类型的Annotations将被JVM保留,所以他们能在运行时被JVM或其他使用反射机制的代码所读取和使用.
