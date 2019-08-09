@@ -82,9 +82,11 @@ public class ErrorActivity extends BaseFragmentActivity {
 
     @OnClick(R.id.button17)
     public void button17(){
-
         Intent intent = new Intent();
-        intent.setComponent(new ComponentName("com.kmxs.reader", "com.km.app.home.view.LoadingActivity"));
+//        intent.setComponent(new ComponentName("com.chaozh.iReaderFree", "com.chaozh.iReader.ui.activity.WelcomeActivity"));
+//        intent.setComponent(new ComponentName("com.kmxs.reader", "com.km.app.home.view.LoadingActivity"));
+//        intent.setComponent(new ComponentName("com.sina.weibo", "com.sina.weibo.MainTabActivity"));
+        intent.setComponent(new ComponentName("com.tencent.mobileqq", "com.tencent.mobileqq.activity.SplashActivity"));
         intent.putExtra("anykey", new TestSerializable());
         startActivity(intent);
 
