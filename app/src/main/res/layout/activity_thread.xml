@@ -31,6 +31,20 @@
                 android:textColor="@android:color/holo_red_dark"
                 android:text="线程优化"
                 />
+            <Button
+                android:id="@+id/show_dialog10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_green_dark"
+                android:text="下面一个按钮测试添加 test add view "
+                />
+            <com.rebeau.views.viewgroup.AdLayout
+                android:id="@+id/layout_frame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </com.rebeau.views.viewgroup.AdLayout>
 
         </LinearLayout>
     </ScrollView>
