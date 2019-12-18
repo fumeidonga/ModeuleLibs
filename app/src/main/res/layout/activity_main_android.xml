@@ -15,7 +15,7 @@
             android:id="@+id/show_dialog0"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="Bitmap"
             android:textAllCaps="false"
             android:textColor="@android:color/holo_green_light" />
 

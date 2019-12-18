@@ -12,6 +12,7 @@ import com.rebeau.commons.fragment.BaseLazyLoadFragment;
 import com.rebeau.commons.markdown.MarkdownUtils;
 import com.rebeau.technology.R;
 import com.rebeau.technology.android.rxjava.RxjavaActivity;
+import com.rebeau.technology.java.annotations.AnnimationActivity;
 import com.rebeau.technology.java.testdesignmodel.DesignModelActivity;
 import com.rebeau.views.loading.RBLoadStatusView;
 
@@ -80,4 +81,22 @@ public class JavaFragmentOne extends BaseLazyLoadFragment {
     public void java_reflect(){
 
     }
+
+    @OnClick(R.id.java_annitation)
+    public void java_annitation(){
+        startActivity(new Intent(mActivity, AnnimationActivity.class));
+
+    }
+
+    @OnClick(R.id.java_atomic)
+    public void java_atomic(){
+        //https://www.jianshu.com/p/577c0dc8862c
+    }
+
+
+    @OnClick(R.id.java_map)
+    public void java_map(){
+        //map hashmap LinkedList ...
+    }
+
 }

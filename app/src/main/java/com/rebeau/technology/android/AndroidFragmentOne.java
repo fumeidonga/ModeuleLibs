@@ -61,6 +61,7 @@ public class AndroidFragmentOne extends BaseLazyLoadFragment {
     @OnClick(R.id.show_dialog0)
     public void button0(){
         //startActivity(new Intent(mActivity, MainPerformanceActivity.class));
+        MarkdownUtils.setData(mActivity, "android/bitmap.md");
     }
 
     @OnClick(R.id.thread)

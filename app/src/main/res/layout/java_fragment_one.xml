@@ -1,61 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <ScrollView
-        android:id="@+id/scrollable"
+
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
+        <Button
+            android:id="@+id/java_fragment_innerclass"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text=" 内部类"
+            android:textAllCaps="false"
+            android:textColor="@android:color/holo_green_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-            <Button
-                android:id="@+id/java_fragment_innerclass"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text=" 内部类"
-                android:textAllCaps="false"
-                android:textColor="@android:color/holo_green_dark" />
+        <Button
+            android:id="@+id/java_fragment_lamada"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text=" Lambda"
+            android:textAllCaps="false"
+            android:textColor="@android:color/holo_green_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/java_fragment_innerclass" />
 
-            <Button
-                android:id="@+id/java_fragment_lamada"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text=" Lambda"
-                android:textAllCaps="false"
-                android:textColor="@android:color/holo_green_dark" />
+        <Button
+            android:id="@+id/java_fragment_rxjava"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text=" rx java"
+            android:textAllCaps="false"
+            android:textColor="@android:color/holo_green_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/java_fragment_lamada" />
 
-            <Button
-                android:id="@+id/java_fragment_rxjava"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text=" rx java"
-                android:textAllCaps="false"
-                android:textColor="@android:color/holo_green_dark" />
+        <Button
+            android:id="@+id/java_fragment_designmodel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text=" 设计模式"
+            android:textAllCaps="false"
+            android:textColor="@android:color/holo_green_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/java_fragment_rxjava" />
 
-            <Button
-                android:id="@+id/java_fragment_designmodel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text=" 设计模式"
-                android:textAllCaps="false"
-                android:textColor="@android:color/holo_green_dark" />
+        <Button
+            android:id="@+id/java_reflect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="8dp"
+            android:text=" 反射"
+            android:textAllCaps="false"
+            android:textColor="@android:color/holo_green_dark"
+            app:layout_constraintTop_toBottomOf="@+id/java_fragment_designmodel" />
 
-            <Button
-                android:id="@+id/java_reflect"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text=" 反射"
-                android:textAllCaps="false"
-                android:textColor="@android:color/holo_green_dark" />
+        <Button
+            android:id="@+id/java_annitation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="8dp"
+            android:text=" 注解"
+            android:textAllCaps="false"
+            android:textColor="@android:color/holo_green_dark"
+            app:layout_constraintTop_toBottomOf="@+id/java_reflect" />
 
-        </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+        <Button
+            android:id="@+id/java_atomic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="8dp"
+            android:text=" AtomicXXX"
+            android:textAllCaps="false"
+            android:textColor="@android:color/holo_green_dark"
+            app:layout_constraintTop_toBottomOf="@+id/java_annitation" />
+
+        <Button
+            android:id="@+id/java_map"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="8dp"
+            android:text=" Map 、List"
+            android:textAllCaps="false"
+            android:textColor="@android:color/holo_green_dark"
+            app:layout_constraintTop_toBottomOf="@+id/java_atomic" />
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v4.widget.NestedScrollView>

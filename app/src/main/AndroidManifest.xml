@@ -14,6 +14,8 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".android.ErrorActivity"
             android:theme="@style/Custom.SwipeBack.Transparent.Theme"  />
+        <activity android:name=".java.annotations.AnnimationActivity"
+            android:theme="@style/Custom.SwipeBack.Transparent.Theme"  />
 
         <meta-data
             android:name="android.max_aspect"

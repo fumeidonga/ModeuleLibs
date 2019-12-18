@@ -157,6 +157,75 @@
             android:layout_height="1px"
             android:background="@color/center_line_color" />
 
+        <LinearLayout
+            android:id="@+id/ll_app_night"
+            style="@style/my_item"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_44"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/my_about_item_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="夜间模式" />
+
+            <TextView
+                android:id="@+id/tv_qq_group_night"
+                style="@style/my_about_item_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="@dimen/dp_5"
+                android:layout_height="@dimen/dp_10"
+                android:src="@drawable/rb_ic_arrow_right" />
+        </LinearLayout>
+        <View xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/center_line_color" />
+
+        <LinearLayout
+            android:id="@+id/ll_app_skin"
+            style="@style/my_item"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_44"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/my_about_item_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="换肤" />
+
+            <TextView
+                android:id="@+id/tv_skin"
+                style="@style/my_about_item_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="@dimen/dp_5"
+                android:layout_height="@dimen/dp_10"
+                android:src="@drawable/rb_ic_arrow_right" />
+        </LinearLayout>
+        <View xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/center_line_color" />
+
     </LinearLayout>
 
     <LinearLayout

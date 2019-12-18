@@ -8,11 +8,13 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.rebeau.base.utils.RBLogUtil;
 import com.rebeau.commons.activity.BaseFragmentActivity;
@@ -21,6 +23,15 @@ import com.rebeau.technology.R;
 import com.rebeau.technology.demo.AppAboutFragment;
 import com.rebeau.technology.demo.TestSerializable;
 import com.rebeau.views.loading.RBLoadStatusView;
+
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,6 +44,9 @@ public class ErrorActivity extends BaseFragmentActivity {
 
     @BindView(R.id.text2)
     TextView textView;
+
+    @BindView(R.id.text3)
+    TextView textViewWifi;
 
     private int lastX = 0;
     private int lastY = 0;
@@ -188,5 +202,116 @@ public class ErrorActivity extends BaseFragmentActivity {
     @OnClick(R.id.button20)
     public void array_map20() {
 
+    }
+
+    /**
+     * wifi
+     */
+    @OnClick(R.id.button21)
+    public void array_map21() {
+        getWifiInfo();
+    }
+    @OnClick(R.id.button22)
+    public void array_map22() {
+
+    }
+
+
+    /**
+     * 获取Wifi信息
+     * 这样/data/misc/wifi/wpa_supplicant.conf 文件的内容就被保存下来了，
+     * 接下来只需要解析获取到的内容就可以了
+     */
+    private void getWifiInfo() {
+        Process process = null;
+        DataOutputStream dataOutputStream = null;
+        DataInputStream dataInputStream = null;
+        StringBuffer wifiConf = new StringBuffer();
+        try {
+            process = Runtime.getRuntime().exec("su");
+            dataOutputStream = new DataOutputStream(process.getOutputStream());
+            dataInputStream = new DataInputStream(process.getInputStream());
+            dataOutputStream.writeBytes("cat /data/misc/wifi/wpa_supplicant.conf\n");
+            dataOutputStream.writeBytes("exit\n");
+            dataOutputStream.flush();
+            InputStreamReader inputStreamReader = new InputStreamReader(dataInputStream, "UTF-8");
+            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+            String line = null;
+            while ((line = bufferedReader.readLine()) != null) {
+                wifiConf.append(line);
+            }
+            bufferedReader.close();
+            inputStreamReader.close();
+            process.waitFor();
+        } catch (Exception e) {
+            return;
+        } finally {
+            if (TextUtils.isEmpty(wifiConf.toString())) {
+                textViewWifi.setText("请先获取Root权限...");
+            }
+
+            try {
+                if (dataOutputStream != null) {
+                    dataOutputStream.close();
+                }
+                if (dataInputStream != null) {
+                    dataInputStream.close();
+                }
+                process.destroy();
+            } catch (Exception e) {
+            }
+        }
+
+        ArrayList<WifiInfo> mWifiInfoList = new ArrayList<>();
+
+        Pattern network = Pattern.compile("network=\\{([^\\}]+)\\}", Pattern.DOTALL);
+        Matcher networkMatcher = network.matcher(wifiConf.toString());
+        WifiInfo wifiInfo;
+        while (networkMatcher.find()) {
+            String networkBlock = networkMatcher.group();
+            Pattern ssid = Pattern.compile("ssid=\"([^\"]+)\"");
+            Matcher ssidMatcher = ssid.matcher(networkBlock);
+            if (ssidMatcher.find()) {
+                wifiInfo = new WifiInfo();
+                wifiInfo.setName(ssidMatcher.group(1));
+                Pattern psk = Pattern.compile("psk=\"([^\"]+)\"");
+                Matcher pskMatcher = psk.matcher(networkBlock);
+                if (pskMatcher.find()) {
+                    wifiInfo.setPassword(pskMatcher.group(1));
+                } else {
+                    wifiInfo.setPassword("无密码");
+                }
+                mWifiInfoList.add(wifiInfo);
+            }
+        }
+        StringBuilder stringBuilder = new StringBuilder();
+        // 列表倒序
+        Collections.reverse(mWifiInfoList);
+        for(WifiInfo wifiInfo1 : mWifiInfoList) {
+            stringBuilder.append("name : " + wifiInfo1.getName() + " password : " + wifiInfo1.getPassword() );
+            stringBuilder.append("\n");
+        }
+        textViewWifi.setText(stringBuilder.toString());
+    }
+
+    public class WifiInfo {
+        private String name;
+        private String password;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getPassword() {
+            return password;
+        }
+
+        public void setPassword(String password) {
+            this.password = password;
+        }
     }
 }

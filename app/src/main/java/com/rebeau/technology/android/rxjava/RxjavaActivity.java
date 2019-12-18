@@ -958,4 +958,9 @@ public class RxjavaActivity extends RxTestActivity {
             }
         });
     }
+
+    @OnClick(R.id.bottom15)
+    public void fromCallable(){
+
+    }
 }
